@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AnimateIn from "@/components/AnimateIn";
+import CountUp from "@/components/CountUp";
 import Footer from "@/components/Footer";
 
 const expos = [
@@ -28,6 +29,13 @@ const expos = [
   },
 ];
 
+const stats = [
+  { number: 12, suffix: "", label: "亞太合作國家" },
+  { number: 500, suffix: "+", label: "品牌展商" },
+  { number: 10000, suffix: "+", label: "專業買家人次" },
+  { number: 8, suffix: "", label: "年深耕經驗" },
+];
+
 export default function Home() {
   return (
     <>
@@ -39,7 +47,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <AnimateIn>
-                <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
+                <p className="section-label mb-8">
                   Your Premium Gateway to Southeast Asia
                 </p>
               </AnimateIn>
@@ -93,17 +101,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Bar */}
+      <section className="gradient-navy py-16">
+        <div className="max-w-[1120px] mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <AnimateIn key={stat.label} delay={i * 0.1}>
+                <div className="text-center">
+                  <p className="text-[clamp(2rem,4vw,3rem)] font-bold text-white leading-none mb-2">
+                    <CountUp end={stat.number} suffix={stat.suffix} />
+                  </p>
+                  <p className="text-white/50 text-[13px] tracking-wide">
+                    {stat.label}
+                  </p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About */}
       <section id="about" className="py-32 border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <AnimateIn>
-              <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
-                Why OREI Expo
-              </p>
-              <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
+              <p className="section-label">Why OREI Expo</p>
+              <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
                 為什麼選擇歐瑞會展？
               </h2>
+              <div className="gold-line mb-8" />
               <p className="text-muted leading-relaxed mb-8">
                 我們不只是展會組織方。歐瑞會展整合展前市場分析、展中商務媒合、
                 展後通路對接，為品牌提供完整的東南亞市場進入方案。
@@ -122,22 +149,27 @@ export default function Home() {
                 {
                   num: "01",
                   title: "跨國展會整合",
-                  desc: "一站式參展服務，涵蓋越南、馬來西亞等東南亞核心市場。",
+                  desc: "一站式參展服務，涵蓋越南、馬來西亞等東南亞核心市場，從展位設計到現場執行全程支援。",
                 },
                 {
                   num: "02",
                   title: "精準商務媒合",
-                  desc: "透過 FABIA 商業聯盟網絡，為您對接優質經銷商與代理商。",
+                  desc: "透過 FABIA 商業聯盟網絡，為您對接優質經銷商與代理商，每場展會平均促成 50+ 組有效對接。",
                 },
                 {
                   num: "03",
                   title: "品牌曝光加速",
-                  desc: "結合展會、媒體、社群多管道曝光，讓品牌快速進入市場視野。",
+                  desc: "結合展會、媒體、社群多管道曝光，讓品牌快速進入市場視野，觸及超過 10,000 名專業買家。",
+                },
+                {
+                  num: "04",
+                  title: "展後持續服務",
+                  desc: "展會結束不代表服務結束。我們提供展後買家追蹤、簽約輔導與市場策略報告，確保合作落地。",
                 },
               ].map((item, i) => (
                 <AnimateIn key={item.num} delay={i * 0.08}>
-                  <div className="flex gap-6">
-                    <span className="text-[13px] font-semibold text-gold mt-0.5">
+                  <div className="flex gap-6 group">
+                    <span className="text-[13px] font-semibold text-gold mt-0.5 group-hover:scale-110 transition-transform">
                       {item.num}
                     </span>
                     <div>
@@ -160,12 +192,11 @@ export default function Home() {
       <section id="expos" className="py-32 bg-surface border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
-            <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
-              Expos
-            </p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
+            <p className="section-label">Expos</p>
+            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
               展會作為實體入口
             </h2>
+            <div className="gold-line mb-6" />
           </AnimateIn>
 
           <AnimateIn delay={0.08}>
@@ -181,28 +212,34 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {expos.map((expo, i) => (
               <AnimateIn key={expo.title} delay={i * 0.08}>
-                <div className="bg-white rounded-lg p-8 h-full flex flex-col border border-border">
+                <div className="bg-white rounded-lg p-8 h-full flex flex-col border border-border card-lift">
                   <span
-                    className={`text-[11px] tracking-[0.12em] uppercase font-semibold mb-6 ${
+                    className={`text-[11px] tracking-[0.12em] uppercase font-semibold mb-6 inline-flex items-center gap-2 ${
                       expo.tag === "Featured" ? "text-gold" : "text-muted"
                     }`}
                   >
+                    {expo.tag === "Featured" && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
+                    )}
                     {expo.tag}
                   </span>
                   <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
-                  <p className="text-[13px] text-muted mb-4">{expo.subtitle}</p>
+                  <p className="text-[13px] text-gold mb-4">{expo.subtitle}</p>
                   <p className="text-[14px] text-muted leading-relaxed flex-1">
                     {expo.desc}
                   </p>
                   {expo.tag === "Featured" ? (
                     <Link
                       href={expo.href}
-                      className="mt-8 text-[13px] font-semibold text-navy hover:text-gold transition-colors"
+                      className="mt-8 text-[13px] font-semibold text-navy hover:text-gold transition-colors inline-flex items-center gap-1.5"
                     >
-                      了解更多 &rarr;
+                      了解更多
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M6 3l5 5-5 5" />
+                      </svg>
                     </Link>
                   ) : (
-                    <span className="mt-8 text-[13px] text-muted">
+                    <span className="mt-8 text-[13px] text-muted/60 italic">
                       敬請期待
                     </span>
                   )}
@@ -218,19 +255,25 @@ export default function Home() {
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn>
-              <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
-                FABIA Global Alliance
-              </p>
-              <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
+              <p className="section-label">FABIA Global Alliance</p>
+              <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
                 FABIA VIP
                 <br />
                 Exclusive Event
               </h2>
-              <p className="text-muted leading-relaxed mb-8">
+              <div className="gold-line mb-8" />
+              <p className="text-muted leading-relaxed mb-4">
                 加入 FABIA 國際商業聯盟，享受 VIP
                 專屬展位、品牌頒獎、優先商務媒合等頂級權益。跨越 12
                 國的亞太商業網絡，為您的品牌開啟國際化新篇章。
               </p>
+              <div className="flex items-center gap-3 mb-8">
+                <span className="text-3xl font-bold text-gold">$1,500</span>
+                <span className="text-muted text-sm">USD / Brand Booth</span>
+                <span className="text-[11px] text-muted bg-surface px-3 py-1 rounded-full border border-border ml-2">
+                  限量名額
+                </span>
+              </div>
               <div className="flex flex-wrap gap-4">
                 <Link href="/fabia" className="btn-primary">
                   了解 FABIA 方案
@@ -254,22 +297,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-32 bg-navy text-white">
-        <div className="max-w-[680px] mx-auto px-6 text-center">
+      {/* Trust / Partner Marquee */}
+      <section className="py-12 border-t border-border bg-surface">
+        <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-muted text-[13px] tracking-wide">
+              {[
+                "FABIA International Alliance",
+                "Vietnam Beauty Association",
+                "AMSC ASIA",
+                "Taiwan External Trade Council",
+                "ASEAN Business Forum",
+                "Asia Beauty Summit",
+              ].map((partner) => (
+                <span key={partner} className="opacity-50 hover:opacity-100 transition-opacity">
+                  {partner}
+                </span>
+              ))}
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 gradient-navy text-white relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
+        <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
+          <AnimateIn>
+            <p className="text-gold text-[12px] tracking-[0.3em] uppercase mb-6 font-semibold">
+              Get Started
+            </p>
             <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
               準備好進入
               <br />
               東南亞市場了嗎？
             </h2>
-            <p className="text-white/60 leading-relaxed mb-10">
+            <p className="text-white/50 leading-relaxed mb-10">
               歐瑞會展為您提供一站式展會參展、通路對接與品牌曝光服務
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-[15px] hover:opacity-90 transition-opacity"
+                className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-[15px] hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20"
               >
                 立即諮詢報名
               </Link>

@@ -37,15 +37,18 @@
     font-weight: 600;
     padding: 0.875rem 2.25rem;
     border-radius: 0.375rem;
-    transition: opacity 0.2s;
+    transition: all 0.25s ease;
     display: inline-block;
     text-align: center;
     font-size: 0.9375rem;
     letter-spacing: 0.01em;
+    box-shadow: 0 2px 8px rgba(26, 43, 76, 0.15);
   }
 
   .btn-primary:hover {
-    opacity: 0.85;
+    opacity: 0.9;
+    box-shadow: 0 4px 16px rgba(26, 43, 76, 0.25);
+    transform: translateY(-1px);
   }
 
   .btn-ghost {
@@ -53,7 +56,7 @@
     font-weight: 600;
     padding: 0.875rem 2.25rem;
     border-radius: 0.375rem;
-    transition: background 0.2s;
+    transition: all 0.25s ease;
     display: inline-block;
     text-align: center;
     font-size: 0.9375rem;
@@ -62,5 +65,71 @@
 
   .btn-ghost:hover {
     background: var(--color-surface);
+    border-color: var(--color-navy);
+    transform: translateY(-1px);
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    width: 48px;
+    height: 2px;
+    background: var(--color-gold);
+    border-radius: 1px;
+  }
+
+  /* Stat card */
+  .stat-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .stat-card .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+  }
+
+  /* Subtle gradient overlay for sections */
+  .gradient-navy {
+    background: linear-gradient(135deg, #1A2B4C 0%, #2a3f66 50%, #1A2B4C 100%);
+  }
+
+  /* Card with hover lift */
+  .card-lift {
+    transition: all 0.3s ease;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26, 43, 76, 0.08);
+  }
+
+  /* Section label style */
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--color-gold);
+    border-radius: 1px;
   }
 }
