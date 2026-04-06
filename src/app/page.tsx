@@ -151,73 +151,200 @@ export default function Home() {
       {/* About */}
       <section id="about" className="py-32 border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <AnimateIn>
-              <p className="section-label">Why OREI Expo</p>
-              <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
-                為什麼選擇歐瑞會展？
-              </h2>
-              <div className="gold-line mb-8" />
-              <p className="text-muted text-base leading-relaxed mb-8">
-                我們不只是展會組織方。歐瑞會展整合展前市場分析、展中商務媒合、
-                展後通路對接，為品牌提供完整的東南亞市場進入方案。
-              </p>
-              <Image
-                src="/images/event-photo-2.png"
-                alt="商務媒合現場"
-                width={600}
-                height={400}
-                className="rounded-lg w-full object-cover mb-6"
-              />
-              <Image
-                src="/images/strategy-upgrade.png"
-                alt="歐瑞會展戰略升級 — 從展會到市場進入平台"
-                width={600}
-                height={300}
-                className="rounded-lg w-full object-cover border border-border"
-              />
-            </AnimateIn>
+          {/* Section header */}
+          <AnimateIn>
+            <p className="section-label">Why OREI Expo</p>
+            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
+              為什麼選擇歐瑞會展？
+            </h2>
+            <div className="gold-line mb-6" />
+            <p className="text-muted text-base leading-relaxed max-w-2xl mb-6">
+              我們不只是展會組織方。歐瑞會展整合展前市場分析、展中商務媒合、
+              展後通路對接，為品牌提供完整的東南亞市場進入方案。
+            </p>
+          </AnimateIn>
 
-            <div className="space-y-10">
-              {[
-                {
-                  num: "01",
-                  title: "跨國展會整合",
-                  desc: "一站式參展服務，涵蓋越南、馬來西亞等東南亞核心市場，從展位設計到現場執行全程支援。",
-                },
-                {
-                  num: "02",
-                  title: "精準商務媒合",
-                  desc: "透過 FABIA 商業聯盟網絡，為您對接優質經銷商與代理商，每場展會平均促成 50+ 組有效對接。",
-                },
-                {
-                  num: "03",
-                  title: "品牌曝光加速",
-                  desc: "結合展會、媒體、社群多管道曝光，讓品牌快速進入市場視野，觸及超過 10,000 名專業買家。",
-                },
-                {
-                  num: "04",
-                  title: "展後持續服務",
-                  desc: "展會結束不代表服務結束。我們提供展後買家追蹤、簽約輔導與市場策略報告，確保合作落地。",
-                },
-              ].map((item, i) => (
-                <AnimateIn key={item.num} delay={i * 0.08}>
-                  <div className="flex gap-6 group">
-                    <span className="text-[14px] font-semibold text-gold mt-0.5 group-hover:scale-110 transition-transform">
-                      {item.num}
-                    </span>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1.5">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted text-base leading-relaxed">
-                        {item.desc}
-                      </p>
+          {/* Event photo */}
+          <AnimateIn delay={0.06}>
+            <Image
+              src="/images/event-photo-2.png"
+              alt="商務媒合現場"
+              width={1120}
+              height={500}
+              className="rounded-lg w-full object-cover mb-16 max-h-[420px]"
+            />
+          </AnimateIn>
+
+          {/* Strategy Upgrade — Past vs Present */}
+          <AnimateIn delay={0.1}>
+            <div className="rounded-xl overflow-hidden border border-border mb-20">
+              {/* Top label */}
+              <div className="gradient-navy px-8 py-5 flex items-center justify-center gap-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                <p className="text-white font-bold text-lg tracking-wide">戰略升級</p>
+                <span className="text-white/40 text-[15px] ml-1">Strategic Upgrade</span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {/* Past */}
+                <div className="bg-[#f5f3ef] p-8 md:p-10 relative">
+                  <p className="text-[13px] tracking-[0.2em] uppercase text-muted/60 font-semibold mb-6">
+                    過去 · Past
+                  </p>
+                  <h3 className="text-xl font-bold mb-6 text-navy/70">一般展會網站</h3>
+                  <div className="space-y-5">
+                    {[
+                      { label: "定位", value: "賣展位、介紹展期", note: "功能導向" },
+                      { label: "受眾視角", value: "這只是一個花錢參展的型錄", note: "" },
+                      { label: "最終產出", value: "租賃空間", note: "" },
+                    ].map((row) => (
+                      <div key={row.label} className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-muted/50 min-w-[68px] mt-0.5">{row.label}</span>
+                        <div>
+                          <p className="text-[15px] text-navy/60 leading-relaxed">{row.value}</p>
+                          {row.note && <p className="text-[13px] text-muted/40">({row.note})</p>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Arrow overlay (desktop) */}
+                  <div className="hidden md:flex absolute top-1/2 -right-5 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-gold items-center justify-center shadow-lg">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14" />
+                      <path d="M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  {/* Arrow (mobile) */}
+                  <div className="flex md:hidden justify-center mt-6">
+                    <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center shadow-lg">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 5v14" />
+                        <path d="M5 12l7 7 7-7" />
+                      </svg>
                     </div>
                   </div>
-                </AnimateIn>
-              ))}
+                </div>
+
+                {/* Present */}
+                <div className="bg-white p-8 md:p-10 md:pl-14">
+                  <p className="text-[13px] tracking-[0.2em] uppercase text-gold font-semibold mb-6">
+                    現在 · Now
+                  </p>
+                  <h3 className="text-xl font-bold mb-6 text-navy">高轉換成交型網站</h3>
+                  <div className="space-y-5">
+                    {[
+                      { label: "定位", value: "賣「市場落地」、提供通路對接", note: "結果導向" },
+                      { label: "受眾視角", value: "這是我進入東南亞市場的最快捷徑", note: "" },
+                      { label: "最終產出", value: "國際市場進入平台", note: "International Market Entry & Expo Platform" },
+                    ].map((row) => (
+                      <div key={row.label} className="flex items-start gap-3">
+                        <span className="text-sm font-semibold text-gold min-w-[68px] mt-0.5">{row.label}</span>
+                        <div>
+                          <p className="text-[15px] text-navy leading-relaxed font-medium">{row.value}</p>
+                          {row.note && <p className="text-[13px] text-muted">({row.note})</p>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom flow */}
+              <div className="bg-surface border-t border-border px-8 py-5">
+                <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                  {[
+                    "參加展會（入口）",
+                    "進入東南亞市場",
+                    "建立通路",
+                    "拿到訂單",
+                  ].map((step, i) => (
+                    <div key={step} className="flex items-center gap-3 md:gap-4">
+                      <span className="text-[15px] font-medium text-navy whitespace-nowrap">{step}</span>
+                      {i < 3 && (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold shrink-0">
+                          <path d="M5 12h14" />
+                          <path d="M12 5l7 7-7 7" />
+                        </svg>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+          </AnimateIn>
+
+          {/* 4 Benefits */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {[
+              {
+                num: "01",
+                title: "跨國展會整合",
+                desc: "一站式參展服務，涵蓋越南、馬來西亞等東南亞核心市場，從展位設計到現場執行全程支援。",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M2 12h20" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                ),
+              },
+              {
+                num: "02",
+                title: "精準商務媒合",
+                desc: "透過 FABIA 商業聯盟網絡，為您對接優質經銷商與代理商，每場展會平均促成 50+ 組有效對接。",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                ),
+              },
+              {
+                num: "03",
+                title: "品牌曝光加速",
+                desc: "結合展會、媒體、社群多管道曝光，讓品牌快速進入市場視野，觸及超過 10,000 名專業買家。",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                  </svg>
+                ),
+              },
+              {
+                num: "04",
+                title: "展後持續服務",
+                desc: "展會結束不代表服務結束。我們提供展後買家追蹤、簽約輔導與市場策略報告，確保合作落地。",
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <path d="M22 4L12 14.01l-3-3" />
+                  </svg>
+                ),
+              },
+            ].map((item, i) => (
+              <AnimateIn key={item.num} delay={i * 0.08}>
+                <div className="bg-surface rounded-lg p-8 border border-border card-lift h-full">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                      {item.icon}
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <h3 className="font-semibold text-lg">{item.title}</h3>
+                      <span className="text-[12px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
+                        {item.num}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-muted text-[15px] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </AnimateIn>
+            ))}
           </div>
         </div>
       </section>
