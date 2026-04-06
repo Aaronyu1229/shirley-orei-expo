@@ -5,6 +5,33 @@ import AnimateIn from "@/components/AnimateIn";
 import CountUp from "@/components/CountUp";
 import Footer from "@/components/Footer";
 
+const expoOverview = [
+  {
+    title: "SEA Beauty Business\nMatching Expo",
+    subtitle: "國際美容暨醫美商務媒合展",
+    location: "越南胡志明市",
+    locationEn: "Ho Chi Minh City, Vietnam",
+    format: "B2B 商務媒合",
+    status: "featured" as const,
+  },
+  {
+    title: "AMSC ASIA",
+    subtitle: "亞洲醫學美容暨抗衰老大會",
+    location: "越南胡志明市",
+    locationEn: "Ho Chi Minh City, Vietnam",
+    format: "學術 + 商業大會",
+    status: "coming" as const,
+  },
+  {
+    title: "MYCE Malaysia\nConsumer Expo",
+    subtitle: "馬來西亞消費展",
+    location: "馬來西亞吉隆坡",
+    locationEn: "Kuala Lumpur, Malaysia",
+    format: "B2C 消費展覽",
+    status: "coming" as const,
+  },
+];
+
 const expos = [
   {
     title: "SEA Beauty Business Matching Expo",
@@ -207,13 +234,81 @@ export default function Home() {
           </AnimateIn>
 
           <AnimateIn delay={0.08}>
-            <Image
-              src="/images/expos-table.png"
-              alt="展會一覽"
-              width={1120}
-              height={400}
-              className="rounded-lg w-full object-cover mb-16"
-            />
+            <div className="gradient-navy rounded-xl overflow-hidden mb-16 relative">
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full translate-x-1/3 -translate-y-1/3" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gold/5 rounded-full -translate-x-1/3 translate-y-1/3" />
+
+              {/* Header */}
+              <div className="px-8 pt-8 pb-4 relative z-10">
+                <p className="text-gold text-[13px] tracking-[0.25em] uppercase font-semibold mb-1">
+                  Expos as Strategic Gateways
+                </p>
+                <p className="text-white/40 text-[15px]">
+                  三大展會，覆蓋東南亞核心美業市場
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="mx-8 h-px bg-white/10" />
+
+              {/* Expo Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 relative z-10">
+                {expoOverview.map((expo, i) => (
+                  <div key={expo.subtitle} className="p-8 relative group">
+                    {/* Status badge */}
+                    <div className="flex items-center gap-2 mb-5">
+                      {expo.status === "featured" ? (
+                        <span className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase font-semibold text-gold">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                          Featured
+                        </span>
+                      ) : (
+                        <span className="text-[11px] tracking-[0.15em] uppercase font-semibold text-white/30">
+                          Coming Soon
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-white font-bold text-lg leading-tight mb-1.5 whitespace-pre-line">
+                      {expo.title}
+                    </h3>
+                    <p className="text-gold/70 text-sm mb-6">{expo.subtitle}</p>
+
+                    {/* Info rows */}
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-2.5">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold/60 mt-0.5 shrink-0">
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                          <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                        <div>
+                          <p className="text-white/80 text-[15px] leading-snug">{expo.location}</p>
+                          <p className="text-white/30 text-[13px]">{expo.locationEn}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold/60 shrink-0">
+                          <rect x="3" y="3" width="18" height="18" rx="2" />
+                          <path d="M3 9h18" />
+                          <path d="M9 21V9" />
+                        </svg>
+                        <p className="text-white/60 text-[15px]">{expo.format}</p>
+                      </div>
+                    </div>
+
+                    {/* Vertical divider (desktop) */}
+                    {i < expoOverview.length - 1 && (
+                      <div className="hidden md:block absolute top-8 bottom-8 right-0 w-px bg-white/8" />
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom accent line */}
+              <div className="h-[2px] bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+            </div>
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
