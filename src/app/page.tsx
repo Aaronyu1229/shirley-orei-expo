@@ -140,7 +140,14 @@ export default function Home() {
                 alt="商務媒合現場"
                 width={600}
                 height={400}
-                className="rounded-lg w-full object-cover"
+                className="rounded-lg w-full object-cover mb-6"
+              />
+              <Image
+                src="/images/strategy-upgrade.png"
+                alt="歐瑞會展戰略升級 — 從展會到市場進入平台"
+                width={600}
+                height={300}
+                className="rounded-lg w-full object-cover border border-border"
               />
             </AnimateIn>
 

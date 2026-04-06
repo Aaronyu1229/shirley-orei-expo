@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,12 +10,23 @@ export default function Footer() {
       <div className="max-w-[1120px] mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
           <div className="max-w-xs">
-            <p className="text-[17px] font-bold tracking-[0.15em] mb-2">
-              OREI EXPO
-            </p>
-            <p className="text-[13px] text-gold tracking-[0.1em] mb-4">
-              歐瑞會展
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/images/orei-logo.png"
+                alt="OREI Expo Logo"
+                width={44}
+                height={44}
+                className="rounded-full"
+              />
+              <div>
+                <p className="text-[17px] font-bold tracking-[0.15em] leading-tight">
+                  OREI EXPO
+                </p>
+                <p className="text-[13px] text-gold tracking-[0.1em] leading-tight">
+                  歐瑞會展
+                </p>
+              </div>
+            </div>
             <p className="text-[15px] text-muted leading-relaxed">
               Your Premium Gateway to Southeast Asia
             </p>

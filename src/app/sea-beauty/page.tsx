@@ -193,34 +193,27 @@ export default function SEABeautyPage() {
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <AnimateIn delay={0.04}>
-              <div className="relative group overflow-hidden rounded-lg">
-                <Image
-                  src="/images/event-photo-1.png"
-                  alt="展會實景 — 商務交流"
-                  width={800}
-                  height={600}
-                  className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                  <p className="text-white text-sm font-medium">商務交流現場</p>
+            {[
+              { src: "/images/event-photo-1.png", alt: "展會實景 — 商務交流", caption: "商務交流現場" },
+              { src: "/images/event-photo-2.png", alt: "展會實景 — 品牌展示", caption: "品牌展示體驗" },
+              { src: "/images/venue-3.png", alt: "展會實景 — 買家互動", caption: "買家產品互動" },
+              { src: "/images/venue-4.png", alt: "展會實景 — 展位洽談", caption: "展位商務洽談" },
+            ].map((photo, i) => (
+              <AnimateIn key={photo.src} delay={i * 0.06}>
+                <div className="relative group overflow-hidden rounded-lg">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <p className="text-white text-[15px] font-medium">{photo.caption}</p>
+                  </div>
                 </div>
-              </div>
-            </AnimateIn>
-            <AnimateIn delay={0.08}>
-              <div className="relative group overflow-hidden rounded-lg">
-                <Image
-                  src="/images/event-photo-2.png"
-                  alt="展會實景 — 品牌展示"
-                  width={800}
-                  height={600}
-                  className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                  <p className="text-white text-sm font-medium">品牌展示體驗</p>
-                </div>
-              </div>
-            </AnimateIn>
+              </AnimateIn>
+            ))}
           </div>
 
           {/* Expo overview banner */}

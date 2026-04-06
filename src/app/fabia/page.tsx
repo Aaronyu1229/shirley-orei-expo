@@ -265,13 +265,22 @@ export default function FABIAPage() {
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn>
-              <Image
-                src="/images/venue-6.png"
-                alt="第九屆亞洲美業大賽 頒獎盛典"
-                width={600}
-                height={800}
-                className="rounded-lg w-full max-w-[440px] mx-auto shadow-xl"
-              />
+              <div className="space-y-6">
+                <Image
+                  src="/images/fabia-season9-poster.png"
+                  alt="第九屆亞洲美業大賽 頒獎盛典海報"
+                  width={600}
+                  height={900}
+                  className="rounded-lg w-full max-w-[440px] mx-auto shadow-xl"
+                />
+                <Image
+                  src="/images/venue-6.png"
+                  alt="頒獎盛典活動現場"
+                  width={600}
+                  height={400}
+                  className="rounded-lg w-full max-w-[440px] mx-auto shadow-lg"
+                />
+              </div>
             </AnimateIn>
 
             <AnimateIn delay={0.12}>
