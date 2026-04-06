@@ -96,7 +96,7 @@ export default function SEABeautyPage() {
               </AnimateIn>
 
               <AnimateIn delay={0.16}>
-                <p className="text-muted text-lg leading-relaxed max-w-xl mb-12">
+                <p className="text-muted text-lg leading-relaxed max-w-xl mb-12 text-base">
                   越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
                   為台灣品牌打開東南亞最具潛力的美業市場。
                 </p>
@@ -171,11 +171,11 @@ export default function SEABeautyPage() {
               <AnimateIn key={info.label}>
                 <div className="bg-white p-10 text-center">
                   <div className="flex justify-center mb-4">{info.icon}</div>
-                  <p className="text-[11px] tracking-[0.15em] uppercase text-gold font-semibold mb-2">
+                  <p className="text-[12px] tracking-[0.15em] uppercase text-gold font-semibold mb-2">
                     {info.label}
                   </p>
                   <p className="text-xl font-bold mb-1">{info.value}</p>
-                  <p className="text-[13px] text-muted">{info.sub}</p>
+                  <p className="text-sm text-muted">{info.sub}</p>
                 </div>
               </AnimateIn>
             ))}
@@ -242,7 +242,7 @@ export default function SEABeautyPage() {
           <AnimateIn>
             <p className="section-label">Process</p>
             <h2 className="text-3xl font-bold mb-4">三階段全方位服務</h2>
-            <p className="text-muted text-[15px] max-w-lg mb-4">
+            <p className="text-muted text-base max-w-lg mb-4">
               從展前規劃到展後落地，我們提供完整的品牌出海服務鏈
             </p>
             <div className="gold-line mb-16" />
@@ -257,20 +257,20 @@ export default function SEABeautyPage() {
                     <div className="hidden md:block absolute top-8 left-full w-12 border-t border-dashed border-gold/30 z-10" />
                   )}
                   <div className="bg-white rounded-lg p-8 border border-border h-full">
-                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/10 text-[13px] font-bold text-gold mb-4">
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/10 text-sm font-bold text-gold mb-4">
                       {phase.phase}
                     </span>
                     <h3 className="text-xl font-bold mt-2 mb-1">
                       {phase.title}
                     </h3>
-                    <p className="text-[13px] text-muted mb-6">
+                    <p className="text-sm text-muted mb-6">
                       {phase.subtitle}
                     </p>
                     <ul className="space-y-3">
                       {phase.items.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 text-[14px] leading-relaxed"
+                          className="flex items-start gap-3 text-[15px] leading-relaxed"
                         >
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
                             <circle cx="8" cy="8" r="8" fill="#C5A44E" fillOpacity="0.1" />
@@ -296,7 +296,7 @@ export default function SEABeautyPage() {
               <p className="section-label">For You</p>
               <h2 className="text-3xl font-bold mb-4">誰適合參展？</h2>
               <div className="gold-line mb-8" />
-              <p className="text-muted leading-relaxed mb-8">
+              <p className="text-muted text-base leading-relaxed mb-8">
                 無論您是美容品牌、醫美設備商、連鎖診所或通路拓展企業，
                 SEA Beauty Expo 都能為您量身打造最適合的參展方案。
               </p>
@@ -310,12 +310,12 @@ export default function SEABeautyPage() {
                 <AnimateIn key={item.title} delay={i * 0.08}>
                   <div className="bg-surface rounded-lg p-6 border border-border card-lift h-full">
                     <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                      <span className="text-gold text-[13px] font-bold">
+                      <span className="text-gold text-sm font-bold">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-[15px] mb-2">{item.title}</h3>
-                    <p className="text-[13px] text-muted leading-relaxed">{item.desc}</p>
+                    <h3 className="font-semibold text-base mb-2">{item.title}</h3>
+                    <p className="text-[15px] text-muted leading-relaxed">{item.desc}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -330,11 +330,11 @@ export default function SEABeautyPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn>
-            <p className="text-gold text-[12px] tracking-[0.3em] uppercase mb-6 font-semibold">
+            <p className="text-gold text-[13px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Limited Spots
             </p>
             <h2 className="text-3xl font-bold mb-6">搶佔越南美業市場先機</h2>
-            <p className="text-white/50 leading-relaxed mb-10">
+            <p className="text-white/50 text-lg leading-relaxed mb-10">
               名額有限，立即預約顧問諮詢，了解最適合您品牌的參展方案
             </p>
             <Link

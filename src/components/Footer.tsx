@@ -9,23 +9,23 @@ export default function Footer() {
       <div className="max-w-[1120px] mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
           <div className="max-w-xs">
-            <p className="text-[15px] font-bold tracking-[0.15em] mb-2">
+            <p className="text-[17px] font-bold tracking-[0.15em] mb-2">
               OREI EXPO
             </p>
-            <p className="text-[12px] text-gold tracking-[0.1em] mb-4">
+            <p className="text-[13px] text-gold tracking-[0.1em] mb-4">
               歐瑞會展
             </p>
-            <p className="text-[13px] text-muted leading-relaxed">
+            <p className="text-[15px] text-muted leading-relaxed">
               Your Premium Gateway to Southeast Asia
             </p>
-            <p className="text-[13px] text-muted leading-relaxed">
+            <p className="text-[15px] text-muted leading-relaxed">
               專注亞洲市場的跨國商務媒合與展會整合平台
             </p>
           </div>
 
           <div className="flex gap-16">
             <div>
-              <p className="text-[11px] font-semibold tracking-[0.15em] text-muted uppercase mb-4">
+              <p className="text-[12px] font-semibold tracking-[0.15em] text-muted uppercase mb-4">
                 Pages
               </p>
               <div className="space-y-2.5">
@@ -38,7 +38,7 @@ export default function Footer() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-[13px] text-muted hover:text-gold transition-colors"
+                    className="block text-[15px] text-muted hover:text-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -47,10 +47,10 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="text-[11px] font-semibold tracking-[0.15em] text-muted uppercase mb-4">
+              <p className="text-[12px] font-semibold tracking-[0.15em] text-muted uppercase mb-4">
                 Contact
               </p>
-              <div className="space-y-2.5 text-[13px] text-muted">
+              <div className="space-y-2.5 text-[15px] text-muted">
                 <p>Shirley Chang</p>
                 <a
                   href="mailto:shirley62133@gmail.com"
@@ -68,10 +68,10 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="text-[11px] font-semibold tracking-[0.15em] text-muted uppercase mb-4">
+              <p className="text-[12px] font-semibold tracking-[0.15em] text-muted uppercase mb-4">
                 Social
               </p>
-              <div className="space-y-2.5 text-[13px] text-muted">
+              <div className="space-y-2.5 text-[15px] text-muted">
                 <p>LINE: ivyshirley</p>
                 <p>WeChat: S141339</p>
                 <a
@@ -88,10 +88,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-muted">
+          <p className="text-[13px] text-muted">
             &copy; 2026 OREI Expo. All rights reserved.
           </p>
-          <p className="text-[12px] text-muted/50">
+          <p className="text-[13px] text-muted/50">
             Empowering brands across Southeast Asia
           </p>
         </div>

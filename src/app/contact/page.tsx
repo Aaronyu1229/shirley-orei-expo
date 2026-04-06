@@ -53,7 +53,7 @@ export default function ContactPage() {
   };
 
   const inputClass =
-    "w-full border border-border rounded-lg px-4 py-3 text-[14px] bg-white focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all placeholder:text-muted/40";
+    "w-full border border-border rounded-lg px-4 py-3 text-[15px] bg-white focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all placeholder:text-muted/40";
 
   return (
     <>
@@ -65,14 +65,14 @@ export default function ContactPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 -translate-y-1/3" />
           <div className="relative z-10">
             <AnimateIn>
-              <p className="text-gold text-[12px] tracking-[0.3em] uppercase mb-6 font-semibold flex items-center gap-3">
+              <p className="text-gold text-[13px] tracking-[0.3em] uppercase mb-6 font-semibold flex items-center gap-3">
                 <span className="w-6 h-[1.5px] bg-gold inline-block" />
                 Contact Us
               </p>
               <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.2] tracking-tight mb-4">
                 聯絡我們
               </h1>
-              <p className="text-white/50 text-lg max-w-lg">
+              <p className="text-white/50 text-lg max-w-lg text-base">
                 歐瑞會展 — 您進入東南亞市場的唯一頂級通道
               </p>
             </AnimateIn>
@@ -119,13 +119,13 @@ export default function ContactPage() {
               <div key={item.label} className="py-5 px-6 flex items-center gap-4">
                 {item.icon}
                 <div>
-                  <p className="text-[11px] text-muted uppercase tracking-wider">{item.label}</p>
+                  <p className="text-[12px] text-muted uppercase tracking-wider">{item.label}</p>
                   {item.href ? (
-                    <a href={item.href} className="text-[14px] font-medium hover:text-gold transition-colors">
+                    <a href={item.href} className="text-[15px] font-medium hover:text-gold transition-colors">
                       {item.value}
                     </a>
                   ) : (
-                    <p className="text-[14px] font-medium">{item.value}</p>
+                    <p className="text-[15px] font-medium">{item.value}</p>
                   )}
                 </div>
               </div>
@@ -140,11 +140,11 @@ export default function ContactPage() {
             {/* Form */}
             <div className="lg:col-span-3">
               <AnimateIn>
-                <h2 className="text-xl font-bold mb-2">預約顧問諮詢</h2>
-                <p className="text-muted text-[14px] mb-8">填寫以下表單，我們將在 24 小時內與您聯繫</p>
+                <h2 className="text-2xl font-bold mb-2">預約顧問諮詢</h2>
+                <p className="text-muted text-base mb-8">填寫以下表單，我們將在 24 小時內與您聯繫</p>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-[13px] font-medium mb-1.5">
+                    <label className="block text-sm font-medium mb-1.5">
                       公司名稱 <span className="text-gold">*</span>
                     </label>
                     <input
@@ -159,7 +159,7 @@ export default function ContactPage() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-[13px] font-medium mb-1.5">
+                      <label className="block text-sm font-medium mb-1.5">
                         聯絡人 <span className="text-gold">*</span>
                       </label>
                       <input
@@ -173,7 +173,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[13px] font-medium mb-1.5">
+                      <label className="block text-sm font-medium mb-1.5">
                         電話 <span className="text-gold">*</span>
                       </label>
                       <input
@@ -188,7 +188,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-[13px] font-medium mb-1.5">
+                    <label className="block text-sm font-medium mb-1.5">
                       Email <span className="text-gold">*</span>
                     </label>
                     <input
@@ -202,7 +202,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-[13px] font-medium mb-1.5">
+                    <label className="block text-sm font-medium mb-1.5">
                       感興趣的項目
                     </label>
                     <select
@@ -224,7 +224,7 @@ export default function ContactPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-[13px] font-medium mb-1.5">
+                    <label className="block text-sm font-medium mb-1.5">
                       補充說明
                     </label>
                     <textarea
@@ -246,12 +246,12 @@ export default function ContactPage() {
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-12">
               <AnimateIn delay={0.1}>
-                <h2 className="text-xl font-bold mb-2">聯絡資訊</h2>
-                <p className="text-muted text-[14px] mb-6">多管道溝通，為您提供最便捷的聯繫方式</p>
+                <h2 className="text-2xl font-bold mb-2">聯絡資訊</h2>
+                <p className="text-muted text-base mb-6">多管道溝通，為您提供最便捷的聯繫方式</p>
                 <div className="space-y-4">
                   {contactInfo.map((item) => (
                     <div key={item.label} className="flex items-start gap-4">
-                      <span className="text-[13px] text-muted min-w-[72px]">
+                      <span className="text-sm text-muted min-w-[72px]">
                         {item.label}
                       </span>
                       {item.href ? (
@@ -267,12 +267,12 @@ export default function ContactPage() {
                               ? "noopener noreferrer"
                               : undefined
                           }
-                          className="text-[14px] font-medium hover:text-gold transition-colors"
+                          className="text-[15px] font-medium hover:text-gold transition-colors"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <span className="text-[14px] font-medium">
+                        <span className="text-[15px] font-medium">
                           {item.value}
                         </span>
                       )}
@@ -283,7 +283,7 @@ export default function ContactPage() {
 
               <AnimateIn delay={0.2}>
                 <div className="bg-surface rounded-lg p-6 border border-border">
-                  <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-muted mb-4">
+                  <h3 className="text-sm font-semibold tracking-[0.1em] uppercase text-muted mb-4">
                     掃碼加好友
                   </h3>
                   <div className="grid grid-cols-3 gap-4">
@@ -300,7 +300,7 @@ export default function ContactPage() {
                           height={120}
                           className="rounded-lg border border-border mx-auto mb-2"
                         />
-                        <p className="text-[11px] text-muted font-medium">{qr.label}</p>
+                        <p className="text-[12px] text-muted font-medium">{qr.label}</p>
                       </div>
                     ))}
                   </div>
@@ -319,7 +319,7 @@ export default function ContactPage() {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="flex items-center justify-between text-[14px] text-white/70 hover:text-gold transition-colors group"
+                        className="flex items-center justify-between text-[15px] text-white/70 hover:text-gold transition-colors group"
                       >
                         {link.label}
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">

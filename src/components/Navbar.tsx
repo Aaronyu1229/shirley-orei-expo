@@ -20,10 +20,10 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
       <div className="max-w-[1120px] mx-auto px-6 h-[72px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="text-[15px] font-bold tracking-[0.15em] text-navy">
+          <span className="text-[17px] font-bold tracking-[0.15em] text-navy">
             OREI EXPO
           </span>
-          <span className="text-[11px] text-muted tracking-wide">歐瑞會展</span>
+          <span className="text-[12px] text-muted tracking-wide">歐瑞會展</span>
         </Link>
 
         {/* Desktop */}
@@ -39,7 +39,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] tracking-wide transition-colors ${
+                className={`text-[14px] tracking-wide transition-colors ${
                   isActive
                     ? "text-navy font-semibold"
                     : "text-muted hover:text-navy"
@@ -51,7 +51,7 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className="text-[13px] tracking-wide bg-navy text-white px-5 py-2 rounded font-medium hover:opacity-85 transition-opacity"
+            className="text-[14px] tracking-wide bg-navy text-white px-5 py-2.5 rounded font-medium hover:opacity-85 transition-opacity"
           >
             立即報名
           </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-[14px] text-navy py-2.5 hover:text-gold transition-colors"
+              className="block text-[15px] text-navy py-2.5 hover:text-gold transition-colors"
             >
               {link.label}
             </Link>
@@ -97,7 +97,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="block text-[13px] bg-navy text-white text-center px-5 py-2.5 rounded mt-4 font-medium"
+            className="block text-[15px] bg-navy text-white text-center px-5 py-2.5 rounded mt-4 font-medium"
           >
             立即報名
           </Link>

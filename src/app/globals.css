@@ -92,7 +92,7 @@
   }
 
   .stat-card .stat-label {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     color: var(--color-muted);
   }
 
@@ -113,7 +113,7 @@
 
   /* Section label style */
   .section-label {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-gold);

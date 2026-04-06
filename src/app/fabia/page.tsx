@@ -103,7 +103,7 @@ export default function FABIAPage() {
               </AnimateIn>
 
               <AnimateIn delay={0.12}>
-                <p className="text-muted text-lg leading-relaxed max-w-xl mb-4">
+                <p className="text-muted text-lg leading-relaxed max-w-xl mb-4 text-base">
                   加入 FABIA 國際商業聯盟，開啟品牌國際化之路。 跨越 12
                   國的亞太商業網絡，為您的品牌帶來最高規格的展示舞台。
                 </p>
@@ -113,9 +113,9 @@ export default function FABIAPage() {
                 <div className="flex items-center gap-6 mb-12">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-gold">$1,500</span>
-                    <span className="text-muted text-sm">USD / Brand Booth</span>
+                    <span className="text-muted text-[15px]">USD / Brand Booth</span>
                   </div>
-                  <span className="text-[12px] text-muted bg-surface px-3 py-1 rounded-full border border-border">
+                  <span className="text-[13px] text-muted bg-surface px-3 py-1.5 rounded-full border border-border">
                     26 / 05 / 2026
                   </span>
                 </div>
@@ -159,8 +159,8 @@ export default function FABIAPage() {
             ].map((item, i) => (
               <AnimateIn key={item.en} delay={i * 0.06}>
                 <div className="bg-white p-8 text-center">
-                  <p className="text-[14px] font-medium mb-1">{item.en}</p>
-                  <p className="text-[12px] text-muted">{item.zh}</p>
+                  <p className="text-[15px] font-medium mb-1">{item.en}</p>
+                  <p className="text-[13px] text-muted">{item.zh}</p>
                 </div>
               </AnimateIn>
             ))}
@@ -174,7 +174,7 @@ export default function FABIAPage() {
           <AnimateIn>
             <p className="section-label">Benefits</p>
             <h2 className="text-3xl font-bold mb-4">VIP 專屬權益</h2>
-            <p className="text-muted text-[15px] max-w-lg mb-4">
+            <p className="text-muted text-base max-w-lg mb-4">
               USD $1,500 即享四大頂級權益，為您的品牌帶來最大化曝光與商機
             </p>
             <div className="gold-line mb-16" />
@@ -194,12 +194,12 @@ export default function FABIAPage() {
                       <h3 className="font-semibold text-lg">
                         {item.title}
                       </h3>
-                      <span className="text-[11px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
+                      <span className="text-[12px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
                         {item.num}
                       </span>
                     </div>
-                    <p className="text-[13px] text-gold mb-2">{item.sub}</p>
-                    <p className="text-[14px] text-muted leading-relaxed">
+                    <p className="text-sm text-gold mb-2">{item.sub}</p>
+                    <p className="text-[15px] text-muted leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -222,7 +222,7 @@ export default function FABIAPage() {
                 Summit 2026
               </h2>
               <div className="gold-line mb-6" />
-              <p className="text-muted leading-relaxed mb-4">
+              <p className="text-muted text-base leading-relaxed mb-4">
                 第九屆亞洲美業大賽暨全球美業聯盟總裁峰會，匯聚亞太美業頂級領袖。
               </p>
               <div className="space-y-3 mb-8">
@@ -235,10 +235,10 @@ export default function FABIAPage() {
                   { label: "時間", value: "15:30 - 20:00" },
                 ].map((info) => (
                   <div key={info.label} className="flex gap-4 items-start">
-                    <span className="text-[13px] text-gold font-semibold min-w-[40px]">
+                    <span className="text-sm text-gold font-semibold min-w-[40px]">
                       {info.label}
                     </span>
-                    <span className="text-[14px] text-muted">{info.value}</span>
+                    <span className="text-[15px] text-muted">{info.value}</span>
                   </div>
                 ))}
               </div>
@@ -282,8 +282,8 @@ export default function FABIAPage() {
                 頒獎盛典
               </h2>
               <div className="gold-line mb-6" />
-              <p className="text-muted leading-relaxed mb-6">
-                立足越南，布局亞洲，放眼全球。跨越美學交鋒、行業領袖齊聚，
+              <p className="text-muted text-base leading-relaxed mb-6">
+                立足越南，布局亞洲，放眼全球。跨越美學交鋒、行業領袖齊聯，
                 見證美業榮光，共話產業未來。越南官方主辦，下龍灣榮耀啟幕。
               </p>
               <div className="space-y-3 mb-8">
@@ -292,10 +292,10 @@ export default function FABIAPage() {
                   { label: "地點", value: "越南下龍灣 Vinh Ha Long" },
                 ].map((info) => (
                   <div key={info.label} className="flex gap-4 items-start">
-                    <span className="text-[13px] text-gold font-semibold min-w-[40px]">
+                    <span className="text-sm text-gold font-semibold min-w-[40px]">
                       {info.label}
                     </span>
-                    <span className="text-[14px] text-muted">{info.value}</span>
+                    <span className="text-[15px] text-muted">{info.value}</span>
                   </div>
                 ))}
               </div>
@@ -317,7 +317,7 @@ export default function FABIAPage() {
                 跨越 12 國的亞太商業網絡
               </h2>
               <div className="gold-line mb-6" />
-              <p className="text-muted leading-relaxed mb-8">
+              <p className="text-muted text-base leading-relaxed mb-8">
                 FABIA 國際商業聯盟覆蓋亞太地區 12
                 個國家與地區，為會員品牌提供最廣泛的商務對接網絡。
               </p>
@@ -325,7 +325,7 @@ export default function FABIAPage() {
                 {countries.map((c, i) => (
                   <span
                     key={c}
-                    className="text-[13px] text-navy border border-border px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors cursor-default"
+                    className="text-[15px] text-navy border border-border px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors cursor-default"
                   >
                     {c}
                   </span>
@@ -352,7 +352,7 @@ export default function FABIAPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn>
-            <p className="text-gold text-[12px] tracking-[0.3em] uppercase mb-6 font-semibold">
+            <p className="text-gold text-[13px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Apply Now
             </p>
             <h2 className="text-3xl font-bold mb-6">
@@ -360,7 +360,7 @@ export default function FABIAPage() {
               <br />
               立即申請 FABIA VIP
             </h2>
-            <p className="text-white/50 leading-relaxed mb-4">
+            <p className="text-white/50 text-lg leading-relaxed mb-4">
               2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聚一堂
             </p>
             <p className="text-2xl font-bold text-gold mb-10">
