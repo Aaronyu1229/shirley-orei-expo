@@ -39,8 +39,18 @@ const benefits = [
 ];
 
 const countries = [
-  "台灣", "中國", "越南", "馬來西亞", "新加坡", "印尼",
-  "菲律賓", "汶萊", "日本", "韓國", "香港", "澳洲",
+  "台灣",
+  "中國",
+  "越南",
+  "馬來西亞",
+  "新加坡",
+  "印尼",
+  "菲律賓",
+  "汶萊",
+  "日本",
+  "韓國",
+  "香港",
+  "澳洲",
 ];
 
 export default function FABIAPage() {
@@ -48,52 +58,67 @@ export default function FABIAPage() {
     <>
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero — with FABIA poster */}
       <section className="pt-[72px]">
         <div className="max-w-[1120px] mx-auto px-6 py-32">
-          <AnimateIn>
-            <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
-              FABIA Global Alliance
-            </p>
-          </AnimateIn>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <AnimateIn>
+                <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
+                  FABIA Global Alliance
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.08}>
-            <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-6">
-              FABIA VIP
-              <br />
-              Exclusive Event
-            </h1>
-          </AnimateIn>
+              <AnimateIn delay={0.08}>
+                <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-6">
+                  FABIA VIP
+                  <br />
+                  Exclusive Event
+                </h1>
+              </AnimateIn>
 
-          <AnimateIn delay={0.12}>
-            <p className="text-muted text-lg leading-relaxed max-w-xl mb-4">
-              加入 FABIA 國際商業聯盟，開啟品牌國際化之路。
-              跨越 12 國的亞太商業網絡，為您的品牌帶來最高規格的展示舞台。
-            </p>
-          </AnimateIn>
+              <AnimateIn delay={0.12}>
+                <p className="text-muted text-lg leading-relaxed max-w-xl mb-4">
+                  加入 FABIA 國際商業聯盟，開啟品牌國際化之路。 跨越 12
+                  國的亞太商業網絡，為您的品牌帶來最高規格的展示舞台。
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.16}>
-            <div className="flex items-center gap-6 mb-12">
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold text-gold">$1,500</span>
-                <span className="text-muted text-sm">USD / Brand Booth</span>
-              </div>
-              <span className="text-[12px] text-muted bg-surface px-3 py-1 rounded-full border border-border">
-                26 / 05 / 2026
-              </span>
+              <AnimateIn delay={0.16}>
+                <div className="flex items-center gap-6 mb-12">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-gold">$1,500</span>
+                    <span className="text-muted text-sm">USD / Brand Booth</span>
+                  </div>
+                  <span className="text-[12px] text-muted bg-surface px-3 py-1 rounded-full border border-border">
+                    26 / 05 / 2026
+                  </span>
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.24}>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/contact" className="btn-primary">
+                    立即申請
+                  </Link>
+                  <a href="#benefits" className="btn-ghost">
+                    了解 VIP 權益
+                  </a>
+                </div>
+              </AnimateIn>
             </div>
-          </AnimateIn>
 
-          <AnimateIn delay={0.24}>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">
-                立即申請
-              </Link>
-              <a href="#benefits" className="btn-ghost">
-                了解 VIP 權益
-              </a>
-            </div>
-          </AnimateIn>
+            <AnimateIn delay={0.16}>
+              <Image
+                src="/images/fabia-poster.png"
+                alt="FABIA VIP Exclusive Event 海報"
+                width={600}
+                height={900}
+                className="rounded-lg w-full max-w-[420px] mx-auto shadow-xl"
+                priority
+              />
+            </AnimateIn>
+          </div>
         </div>
       </section>
 
@@ -150,7 +175,106 @@ export default function FABIAPage() {
         </div>
       </section>
 
-      {/* Network */}
+      {/* Asia Beauty Summit 2026 — poster showcase */}
+      <section className="py-32 bg-surface border-t border-border">
+        <div className="max-w-[1120px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimateIn>
+              <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
+                FABIA Season 9
+              </p>
+              <h2 className="text-3xl font-bold mb-6">
+                Asia Beauty & Wellness
+                <br />
+                Summit 2026
+              </h2>
+              <p className="text-muted leading-relaxed mb-4">
+                第九屆亞洲美業大賽暨全球美業聯盟總裁峰會，匯聚亞太美業頂級領袖。
+              </p>
+              <div className="space-y-3 mb-8">
+                {[
+                  { label: "日期", value: "2026 年 5 月 25 - 26 日" },
+                  {
+                    label: "地點",
+                    value: "越南下龍灣 Muong Thanh Luxury Ha Long Centre Hotel",
+                  },
+                  { label: "時間", value: "15:30 - 20:00" },
+                ].map((info) => (
+                  <div key={info.label} className="flex gap-4">
+                    <span className="text-[13px] text-gold font-semibold min-w-[40px]">
+                      {info.label}
+                    </span>
+                    <span className="text-[14px] text-muted">{info.value}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/contact" className="btn-primary">
+                了解更多
+              </Link>
+            </AnimateIn>
+
+            <AnimateIn delay={0.12}>
+              <Image
+                src="/images/venue-5.png"
+                alt="Asia Beauty & Wellness Summit 2026"
+                width={600}
+                height={800}
+                className="rounded-lg w-full max-w-[440px] mx-auto shadow-xl"
+              />
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Asian Beauty Awards */}
+      <section className="py-32 border-t border-border">
+        <div className="max-w-[1120px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimateIn>
+              <Image
+                src="/images/venue-6.png"
+                alt="第九屆亞洲美業大賽 頒獎盛典"
+                width={600}
+                height={800}
+                className="rounded-lg w-full max-w-[440px] mx-auto shadow-xl"
+              />
+            </AnimateIn>
+
+            <AnimateIn delay={0.12}>
+              <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
+                Awards
+              </p>
+              <h2 className="text-3xl font-bold mb-6">
+                第九屆亞洲美業大賽
+                <br />
+                頒獎盛典
+              </h2>
+              <p className="text-muted leading-relaxed mb-6">
+                立足越南，布局亞洲，放眼全球。跨越美學交鋒、行業領袖齊聚，
+                見證美業榮光，共話產業未來。越南官方主辦，下龍灣榮耀啟幕。
+              </p>
+              <div className="space-y-3 mb-8">
+                {[
+                  { label: "日期", value: "2026 年 5 月 24 - 29 日" },
+                  { label: "地點", value: "越南下龍灣 Vinh Ha Long" },
+                ].map((info) => (
+                  <div key={info.label} className="flex gap-4">
+                    <span className="text-[13px] text-gold font-semibold min-w-[40px]">
+                      {info.label}
+                    </span>
+                    <span className="text-[14px] text-muted">{info.value}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/contact" className="btn-primary">
+                報名參加
+              </Link>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Network — 12 countries */}
       <section className="py-32 bg-surface border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">

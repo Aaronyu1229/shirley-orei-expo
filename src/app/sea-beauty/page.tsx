@@ -52,44 +52,61 @@ export default function SEABeautyPage() {
     <>
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero with event photo */}
       <section className="pt-[72px]">
         <div className="max-w-[1120px] mx-auto px-6 py-32">
-          <AnimateIn>
-            <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
-              Featured Expo
-            </p>
-          </AnimateIn>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <AnimateIn>
+                <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
+                  Featured Expo
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.08}>
-            <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
-              SEA Beauty Business
-              <br />
-              Matching Expo
-            </h1>
-          </AnimateIn>
+              <AnimateIn delay={0.08}>
+                <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
+                  SEA Beauty Business
+                  <br />
+                  Matching Expo
+                </h1>
+              </AnimateIn>
 
-          <AnimateIn delay={0.12}>
-            <p className="text-gold text-lg mb-2">國際美容暨醫美商務媒合展</p>
-          </AnimateIn>
+              <AnimateIn delay={0.12}>
+                <p className="text-gold text-lg mb-2">
+                  國際美容暨醫美商務媒合展
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.16}>
-            <p className="text-muted text-lg leading-relaxed max-w-xl mb-12">
-              越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
-              為台灣品牌打開東南亞最具潛力的美業市場。
-            </p>
-          </AnimateIn>
+              <AnimateIn delay={0.16}>
+                <p className="text-muted text-lg leading-relaxed max-w-xl mb-12">
+                  越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
+                  為台灣品牌打開東南亞最具潛力的美業市場。
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.24}>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">
-                立即報名參展
-              </Link>
-              <a href="#process" className="btn-ghost">
-                了解展會流程
-              </a>
+              <AnimateIn delay={0.24}>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/contact" className="btn-primary">
+                    立即報名參展
+                  </Link>
+                  <a href="#process" className="btn-ghost">
+                    了解展會流程
+                  </a>
+                </div>
+              </AnimateIn>
             </div>
-          </AnimateIn>
+
+            <AnimateIn delay={0.16}>
+              <Image
+                src="/images/event-photo-1.png"
+                alt="SEA Beauty 展會現場"
+                width={800}
+                height={600}
+                className="rounded-lg w-full object-cover shadow-lg"
+                priority
+              />
+            </AnimateIn>
+          </div>
         </div>
       </section>
 
@@ -98,9 +115,21 @@ export default function SEABeautyPage() {
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden">
             {[
-              { label: "地點", value: "越南胡志明市", sub: "Ho Chi Minh City, Vietnam" },
-              { label: "形式", value: "B2B 商務媒合", sub: "品牌展示 + 一對一媒合" },
-              { label: "產業", value: "美容 / 醫美", sub: "Beauty & Medical Aesthetics" },
+              {
+                label: "地點",
+                value: "越南胡志明市",
+                sub: "Ho Chi Minh City, Vietnam",
+              },
+              {
+                label: "形式",
+                value: "B2B 商務媒合",
+                sub: "品牌展示 + 一對一媒合",
+              },
+              {
+                label: "產業",
+                value: "美容 / 醫美",
+                sub: "Beauty & Medical Aesthetics",
+              },
             ].map((info) => (
               <AnimateIn key={info.label}>
                 <div className="bg-white p-10 text-center">
@@ -116,7 +145,7 @@ export default function SEABeautyPage() {
         </div>
       </section>
 
-      {/* Venue Photos */}
+      {/* Event Gallery — only real photos */}
       <section className="py-32 border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
@@ -126,19 +155,37 @@ export default function SEABeautyPage() {
             <h2 className="text-3xl font-bold mb-12">展會實景</h2>
           </AnimateIn>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
-              <AnimateIn key={n} delay={n * 0.04}>
-                <Image
-                  src={`/images/venue-${n}.png`}
-                  alt={`展會實景 ${n}`}
-                  width={600}
-                  height={400}
-                  className="rounded-lg w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                />
-              </AnimateIn>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <AnimateIn delay={0.04}>
+              <Image
+                src="/images/event-photo-1.png"
+                alt="展會實景 — 商務交流"
+                width={800}
+                height={600}
+                className="rounded-lg w-full h-[320px] object-cover hover:scale-[1.02] transition-transform duration-500"
+              />
+            </AnimateIn>
+            <AnimateIn delay={0.08}>
+              <Image
+                src="/images/event-photo-2.png"
+                alt="展會實景 — 品牌展示"
+                width={800}
+                height={600}
+                className="rounded-lg w-full h-[320px] object-cover hover:scale-[1.02] transition-transform duration-500"
+              />
+            </AnimateIn>
           </div>
+
+          {/* Expo overview banner */}
+          <AnimateIn delay={0.12}>
+            <Image
+              src="/images/expos-table.png"
+              alt="展會一覽"
+              width={1120}
+              height={400}
+              className="rounded-lg w-full object-cover mt-6"
+            />
+          </AnimateIn>
         </div>
       </section>
 
@@ -149,9 +196,7 @@ export default function SEABeautyPage() {
             <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
               Process
             </p>
-            <h2 className="text-3xl font-bold mb-16">
-              三階段全方位服務
-            </h2>
+            <h2 className="text-3xl font-bold mb-16">三階段全方位服務</h2>
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -173,7 +218,9 @@ export default function SEABeautyPage() {
                         key={item}
                         className="flex items-start gap-3 text-[14px] leading-relaxed"
                       >
-                        <span className="text-gold mt-1 text-[10px]">&#9679;</span>
+                        <span className="text-gold mt-1 text-[10px]">
+                          &#9679;
+                        </span>
                         <span className="text-muted">{item}</span>
                       </li>
                     ))}
@@ -218,9 +265,7 @@ export default function SEABeautyPage() {
       <section className="py-32 bg-navy text-white">
         <div className="max-w-[680px] mx-auto px-6 text-center">
           <AnimateIn>
-            <h2 className="text-3xl font-bold mb-6">
-              搶佔越南美業市場先機
-            </h2>
+            <h2 className="text-3xl font-bold mb-6">搶佔越南美業市場先機</h2>
             <p className="text-white/60 leading-relaxed mb-10">
               名額有限，立即預約顧問諮詢，了解最適合您品牌的參展方案
             </p>

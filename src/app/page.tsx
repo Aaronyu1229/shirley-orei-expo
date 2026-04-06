@@ -33,40 +33,63 @@ export default function Home() {
     <>
       <Navbar />
 
-      {/* Hero */}
+      {/* Hero — split layout with event photo */}
       <section className="min-h-screen flex items-center pt-[72px]">
-        <div className="max-w-[1120px] mx-auto px-6 w-full py-32">
-          <AnimateIn>
-            <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
-              Your Premium Gateway to Southeast Asia
-            </p>
-          </AnimateIn>
+        <div className="max-w-[1120px] mx-auto px-6 w-full py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <AnimateIn>
+                <p className="text-[12px] tracking-[0.3em] uppercase text-gold mb-8">
+                  Your Premium Gateway to Southeast Asia
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.08}>
-            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight mb-8">
-              讓你的品牌
-              <br />
-              <span className="text-gold">走進東南亞市場</span>
-            </h1>
-          </AnimateIn>
+              <AnimateIn delay={0.08}>
+                <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight mb-8">
+                  讓你的品牌
+                  <br />
+                  <span className="text-gold">走進東南亞市場</span>
+                </h1>
+              </AnimateIn>
 
-          <AnimateIn delay={0.16}>
-            <p className="text-muted text-lg leading-relaxed max-w-lg mb-12">
-              歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
-              協助台灣美業與醫美品牌快速進入越南與東南亞市場。
-            </p>
-          </AnimateIn>
+              <AnimateIn delay={0.16}>
+                <p className="text-muted text-lg leading-relaxed max-w-lg mb-12">
+                  歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
+                  協助台灣美業與醫美品牌快速進入越南與東南亞市場。
+                </p>
+              </AnimateIn>
 
-          <AnimateIn delay={0.24}>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">
-                預約顧問諮詢
-              </Link>
-              <Link href="/sea-beauty" className="btn-ghost">
-                了解展會資訊
-              </Link>
+              <AnimateIn delay={0.24}>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/contact" className="btn-primary">
+                    預約顧問諮詢
+                  </Link>
+                  <Link href="/sea-beauty" className="btn-ghost">
+                    了解展會資訊
+                  </Link>
+                </div>
+              </AnimateIn>
             </div>
-          </AnimateIn>
+
+            <AnimateIn delay={0.2}>
+              <div className="relative">
+                <Image
+                  src="/images/event-photo-1.png"
+                  alt="歐瑞會展活動現場"
+                  width={800}
+                  height={600}
+                  className="rounded-lg w-full object-cover shadow-lg"
+                  priority
+                />
+                <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-md p-4 border border-border">
+                  <p className="text-[11px] tracking-[0.1em] uppercase text-gold font-semibold">
+                    12 Countries
+                  </p>
+                  <p className="text-2xl font-bold text-navy">亞太商業網絡</p>
+                </div>
+              </div>
+            </AnimateIn>
+          </div>
         </div>
       </section>
 
@@ -81,10 +104,17 @@ export default function Home() {
               <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
                 為什麼選擇歐瑞會展？
               </h2>
-              <p className="text-muted leading-relaxed">
+              <p className="text-muted leading-relaxed mb-8">
                 我們不只是展會組織方。歐瑞會展整合展前市場分析、展中商務媒合、
                 展後通路對接，為品牌提供完整的東南亞市場進入方案。
               </p>
+              <Image
+                src="/images/event-photo-2.png"
+                alt="商務媒合現場"
+                width={600}
+                height={400}
+                className="rounded-lg w-full object-cover"
+              />
             </AnimateIn>
 
             <div className="space-y-10">
@@ -126,16 +156,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expos */}
+      {/* Expos — with banner image */}
       <section id="expos" className="py-32 bg-surface border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
             <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
               Expos
             </p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-16">
+            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
               展會作為實體入口
             </h2>
+          </AnimateIn>
+
+          <AnimateIn delay={0.08}>
+            <Image
+              src="/images/expos-table.png"
+              alt="展會一覽"
+              width={1120}
+              height={400}
+              className="rounded-lg w-full object-cover mb-16"
+            />
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -173,10 +213,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FABIA Preview */}
+      {/* FABIA Preview — with poster image */}
       <section className="py-32 border-t border-border">
         <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn>
               <p className="text-[12px] tracking-[0.2em] uppercase text-gold mb-4">
                 FABIA Global Alliance
@@ -203,11 +243,11 @@ export default function Home() {
 
             <AnimateIn delay={0.12}>
               <Image
-                src="/images/fabia-countries.png"
-                alt="FABIA 12 countries network"
-                width={800}
-                height={400}
-                className="rounded-lg w-full"
+                src="/images/fabia-poster.png"
+                alt="FABIA VIP Exclusive Event"
+                width={600}
+                height={900}
+                className="rounded-lg w-full max-w-[420px] mx-auto shadow-lg"
               />
             </AnimateIn>
           </div>
