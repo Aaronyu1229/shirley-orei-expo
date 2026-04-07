@@ -125,7 +125,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
-      <section className="relative min-h-[50vh] flex items-center">
+      <section className="relative min-h-[45vh] sm:min-h-[50vh] flex items-center">
         <Image
           src="/images/venue-3.png"
           alt="歐瑞會展商務交流現場"
@@ -135,7 +135,7 @@ export default function ContactPage() {
         />
         <div className="hero-overlay" />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full py-32">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full pt-24 pb-16 sm:py-32">
           <div className="max-w-2xl">
             <AnimateIn variant="fadeIn">
               <p className="text-xs tracking-[0.3em] uppercase text-white/60 font-medium mb-6">
@@ -185,9 +185,9 @@ export default function ContactPage() {
       </section>
 
       {/* ═══════ Form + Sidebar ═══════ */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 sm:gap-20">
             {/* Form */}
             <div className="lg:col-span-3">
               <AnimateIn variant="fadeLeft">

@@ -108,7 +108,7 @@ export default function HeroCarousel() {
   }, [active]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       {/* ── Slides ── */}
       {slides.map((slide, i) => (
         <div
@@ -138,7 +138,7 @@ export default function HeroCarousel() {
 
       {/* ── Content ── */}
       <div
-        className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full py-32"
+        className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full pt-24 pb-28 sm:py-32"
         style={{ zIndex: 4 }}
       >
         <div className="max-w-2xl">
@@ -155,20 +155,20 @@ export default function HeroCarousel() {
                 visibility: i === active ? "visible" : "hidden",
               }}
             >
-              <p className="text-xs tracking-[0.3em] uppercase text-white/80 font-medium mb-6">
+              <p className="text-xs tracking-[0.3em] uppercase text-white/80 font-medium mb-4 sm:mb-6">
                 {slide.tag}
               </p>
 
-              <h1 className="font-serif text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight text-white mb-8 whitespace-pre-line">
+              <h1 className="font-serif text-[clamp(2.25rem,5.5vw,5rem)] font-bold leading-[1.08] tracking-tight text-white mb-5 sm:mb-8 whitespace-pre-line">
                 {slide.headline}
               </h1>
 
-              <p className="text-white/75 text-lg leading-relaxed max-w-lg mb-10">
+              <p className="text-white/75 text-base sm:text-lg leading-relaxed max-w-lg mb-6 sm:mb-10">
                 {slide.desc}
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <Link href={slide.cta.href} className="btn-accent">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
+                <Link href={slide.cta.href} className="btn-accent text-sm sm:text-[0.9375rem]">
                   {slide.cta.label}
                 </Link>
               </div>
@@ -213,7 +213,7 @@ export default function HeroCarousel() {
         </div>
 
         {/* Mobile dots */}
-        <div className="flex md:hidden justify-center gap-2.5 pb-8">
+        <div className="flex md:hidden justify-center gap-2.5 pb-6">
           {slides.map((_, i) => (
             <button
               key={i}

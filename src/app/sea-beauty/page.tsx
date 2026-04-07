@@ -72,7 +72,7 @@ export default function SEABeautyPage() {
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
-      <section className="relative min-h-[70vh] flex items-center">
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center">
         <Image
           src="/images/event-photo-2.png"
           alt="SEA Beauty 展會現場"
@@ -82,7 +82,7 @@ export default function SEABeautyPage() {
         />
         <div className="hero-overlay" />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full py-32">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full pt-24 pb-16 sm:py-32">
           <div className="max-w-2xl">
             <AnimateIn variant="fadeIn">
               <p className="text-xs tracking-[0.3em] uppercase text-white/60 font-medium mb-6">
@@ -174,7 +174,7 @@ export default function SEABeautyPage() {
                     alt={photo.alt}
                     width={800}
                     height={600}
-                    className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-[200px] sm:h-[300px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                     <p className="text-white text-sm font-medium">{photo.alt}</p>

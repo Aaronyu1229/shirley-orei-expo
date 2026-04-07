@@ -49,7 +49,7 @@ export default function FABIAPage() {
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
-      <section className="relative min-h-[70vh] flex items-center">
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center">
         <Image
           src="/images/venue-5.png"
           alt="FABIA VIP 活動場景"
@@ -59,7 +59,7 @@ export default function FABIAPage() {
         />
         <div className="hero-overlay" />
 
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full py-32">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full pt-24 pb-16 sm:py-32">
           <div className="max-w-2xl">
             <AnimateIn variant="fadeIn">
               <p className="text-xs tracking-[0.3em] uppercase text-white/60 font-medium mb-6">
@@ -83,10 +83,10 @@ export default function FABIAPage() {
             </AnimateIn>
 
             <AnimateIn delay={0.24}>
-              <div className="flex items-baseline gap-4 mb-10">
-                <span className="text-4xl font-bold text-white font-serif">$1,500</span>
-                <span className="text-white/50 text-sm">USD / Brand Booth</span>
-                <span className="text-xs text-white/50 border border-white/20 px-3 py-1.5 ml-2">
+              <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 mb-8 sm:mb-10">
+                <span className="text-3xl sm:text-4xl font-bold text-white font-serif">$1,500</span>
+                <span className="text-white/50 text-xs sm:text-sm">USD / Brand Booth</span>
+                <span className="text-xs text-white/50 border border-white/20 px-2 sm:px-3 py-1 sm:py-1.5">
                   26 / 05 / 2026
                 </span>
               </div>
@@ -124,9 +124,9 @@ export default function FABIAPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
             {benefits.map((item, i) => (
               <AnimateIn key={item.num} delay={i * 0.08}>
-                <div className="bg-white p-10 h-full">
+                <div className="bg-white p-6 sm:p-10 h-full">
                   <span className="text-xs tracking-[0.2em] text-accent font-semibold">{item.num}</span>
-                  <h3 className="text-xl font-bold mt-3 mb-1">{item.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mt-3 mb-1">{item.title}</h3>
                   <p className="text-sm text-accent mb-4">{item.sub}</p>
                   <p className="text-muted text-[15px] leading-relaxed">{item.desc}</p>
                 </div>
@@ -246,7 +246,7 @@ export default function FABIAPage() {
                 {countries.map((c) => (
                   <span
                     key={c}
-                    className="text-sm text-dark border border-border px-4 py-2 hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
+                    className="text-xs sm:text-sm text-dark border border-border px-3 sm:px-4 py-1.5 sm:py-2 hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
                   >
                     {c}
                   </span>

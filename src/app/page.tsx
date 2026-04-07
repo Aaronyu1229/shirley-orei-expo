@@ -103,13 +103,13 @@ export default function Home() {
           {/* Strategy Upgrade */}
           <AnimateIn delay={0.1}>
             <div className="border border-border overflow-hidden mb-24">
-              <div className="bg-dark-section px-8 py-5 flex items-center gap-3">
-                <h3 className="text-white font-semibold text-lg tracking-wide">戰略升級</h3>
-                <span className="text-white/40 text-sm">Strategic Upgrade</span>
+              <div className="bg-dark-section px-5 sm:px-8 py-4 sm:py-5 flex items-center gap-3">
+                <h3 className="text-white font-semibold text-base sm:text-lg tracking-wide">戰略升級</h3>
+                <span className="text-white/40 text-xs sm:text-sm">Strategic Upgrade</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="bg-surface p-8 md:p-10 relative">
+                <div className="bg-surface p-5 sm:p-8 md:p-10 relative">
                   <p className="text-xs tracking-[0.2em] uppercase text-muted font-semibold mb-6">
                     過去 · Past
                   </p>
@@ -137,7 +137,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="bg-white p-8 md:p-10 border-t md:border-t-0 md:border-l border-border">
+                <div className="bg-white p-5 sm:p-8 md:p-10 border-t md:border-t-0 md:border-l border-border">
                   <p className="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-6">
                     現在 · Now
                   </p>
@@ -160,13 +160,19 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-surface border-t border-border px-8 py-4">
-                <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
+              <div className="bg-surface border-t border-border px-4 sm:px-8 py-4">
+                <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-5">
                   {["參加展會（入口）", "進入東南亞市場", "建立通路", "拿到訂單"].map((step, i) => (
-                    <div key={step} className="flex items-center gap-3 md:gap-5">
-                      <span className="text-sm font-medium whitespace-nowrap">{step}</span>
+                    <div key={step} className="flex items-center gap-2 sm:gap-5">
+                      <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{step}</span>
                       {i < 3 && (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0 hidden sm:block">
+                          <path d="M5 12h14" />
+                          <path d="M12 5l7 7-7 7" />
+                        </svg>
+                        )}
+                      {i < 3 && (
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0 sm:hidden rotate-90">
                           <path d="M5 12h14" />
                           <path d="M12 5l7 7-7 7" />
                         </svg>
@@ -203,9 +209,9 @@ export default function Home() {
               },
             ].map((item, i) => (
               <AnimateIn key={item.num} delay={i * 0.08}>
-                <div className="bg-white p-10 h-full">
+                <div className="bg-white p-6 sm:p-10 h-full">
                   <span className="text-xs tracking-[0.2em] text-accent font-semibold">{item.num}</span>
-                  <h3 className="text-xl font-bold mt-3 mb-4">{item.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mt-3 mb-4">{item.title}</h3>
                   <p className="text-muted text-[15px] leading-relaxed">{item.desc}</p>
                 </div>
               </AnimateIn>
@@ -258,7 +264,7 @@ export default function Home() {
                   </div>
 
                   {/* Card body */}
-                  <div className="p-8 flex flex-col flex-1">
+                  <div className="p-5 sm:p-8 flex flex-col flex-1">
                     <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
                     <p className="text-sm text-accent mb-4">{expo.subtitle}</p>
                     <p className="text-muted text-[15px] leading-relaxed flex-1">
@@ -301,10 +307,10 @@ export default function Home() {
                 專屬展位、品牌頒獎、優先商務媒合等頂級權益。跨越 12
                 國的亞太商業網絡，為您的品牌開啟國際化新篇章。
               </p>
-              <div className="flex items-baseline gap-3 mb-8">
-                <span className="text-3xl font-bold font-serif">$1,500</span>
-                <span className="text-muted text-sm">USD / Brand Booth</span>
-                <span className="text-xs text-accent font-medium ml-2 border border-accent/30 px-3 py-1">
+              <div className="flex flex-wrap items-baseline gap-2 sm:gap-3 mb-8">
+                <span className="text-2xl sm:text-3xl font-bold font-serif">$1,500</span>
+                <span className="text-muted text-xs sm:text-sm">USD / Brand Booth</span>
+                <span className="text-xs text-accent font-medium border border-accent/30 px-2 sm:px-3 py-1">
                   限量名額
                 </span>
               </div>
@@ -338,7 +344,7 @@ export default function Home() {
             <p className="text-center text-xs tracking-[0.25em] uppercase text-muted font-medium mb-8">
               Trusted Partners
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-4 text-sm text-muted tracking-wide">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap items-center justify-center gap-x-14 gap-y-3 sm:gap-y-4 text-xs sm:text-sm text-muted tracking-wide text-center">
               {[
                 "FABIA International Alliance",
                 "Vietnam Beauty Association",
@@ -368,11 +374,11 @@ export default function Home() {
             <p className="text-white/50 text-lg leading-relaxed mb-10">
               歐瑞會展為您提供一站式展會參展、通路對接與品牌曝光服務
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="btn-accent">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center">
+              <Link href="/contact" className="btn-accent w-full sm:w-auto">
                 立即報名
               </Link>
-              <Link href="/sea-beauty" className="btn-outline-light">
+              <Link href="/sea-beauty" className="btn-outline-light w-full sm:w-auto">
                 瀏覽展會資訊
               </Link>
             </div>
