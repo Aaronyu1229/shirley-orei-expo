@@ -20,6 +20,8 @@ const expos = [
     desc: "越南胡志明市首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。",
     href: "/sea-beauty",
     tag: "Featured",
+    image: "/images/hero-city-hcmc.jpg",
+    imageAlt: "胡志明市天際線",
   },
   {
     title: "AMSC ASIA",
@@ -27,6 +29,8 @@ const expos = [
     desc: "匯聚亞洲醫美抗衰頂級專家的學術與商業大會，品牌技術展示的絕佳舞台。",
     href: "#",
     tag: "Coming Soon",
+    image: "/images/hero-conference.jpg",
+    imageAlt: "國際會議現場",
   },
   {
     title: "MYCE Malaysia Consumer Expo",
@@ -34,6 +38,8 @@ const expos = [
     desc: "面向馬來西亞消費者的大型零售與體驗展會，快速建立品牌知名度。",
     href: "#",
     tag: "Coming Soon",
+    image: "/images/hero-city-kl.jpg",
+    imageAlt: "吉隆坡雙子星塔",
   },
 ];
 
@@ -224,32 +230,54 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {expos.map((expo, i) => (
               <AnimateIn key={expo.title} delay={i * 0.1}>
-                <div className="card p-8 h-full flex flex-col">
-                  <span
-                    className={`text-xs tracking-[0.15em] uppercase font-semibold mb-6 ${
-                      expo.tag === "Featured" ? "text-accent" : "text-light"
-                    }`}
-                  >
-                    {expo.tag}
-                  </span>
-                  <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
-                  <p className="text-sm text-accent mb-4">{expo.subtitle}</p>
-                  <p className="text-muted text-[15px] leading-relaxed flex-1">
-                    {expo.desc}
-                  </p>
-                  {expo.tag === "Featured" ? (
-                    <Link
-                      href={expo.href}
-                      className="mt-8 text-sm font-medium text-dark hover:text-accent transition-colors inline-flex items-center gap-2 group"
+                <div className="card h-full flex flex-col overflow-hidden">
+                  {/* Card image */}
+                  <div className="relative h-[200px] overflow-hidden">
+                    <Image
+                      src={expo.image}
+                      alt={expo.imageAlt}
+                      fill
+                      className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
+                        expo.tag === "Coming Soon" ? "grayscale-[30%]" : ""
+                      }`}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    {/* Dark overlay for Coming Soon */}
+                    {expo.tag === "Coming Soon" && (
+                      <div className="absolute inset-0 bg-dark/30" />
+                    )}
+                    <span
+                      className={`absolute top-4 left-4 text-xs tracking-[0.15em] uppercase font-semibold px-3 py-1.5 ${
+                        expo.tag === "Featured"
+                          ? "bg-accent text-white"
+                          : "bg-white/90 text-dark"
+                      }`}
                     >
-                      了解更多
-                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
-                        <path d="M6 3l5 5-5 5" />
-                      </svg>
-                    </Link>
-                  ) : (
-                    <span className="mt-8 text-sm text-light italic">敬請期待</span>
-                  )}
+                      {expo.tag}
+                    </span>
+                  </div>
+
+                  {/* Card body */}
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
+                    <p className="text-sm text-accent mb-4">{expo.subtitle}</p>
+                    <p className="text-muted text-[15px] leading-relaxed flex-1">
+                      {expo.desc}
+                    </p>
+                    {expo.tag === "Featured" ? (
+                      <Link
+                        href={expo.href}
+                        className="mt-8 text-sm font-medium text-dark hover:text-accent transition-colors inline-flex items-center gap-2 group"
+                      >
+                        了解更多
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
+                          <path d="M6 3l5 5-5 5" />
+                        </svg>
+                      </Link>
+                    ) : (
+                      <span className="mt-8 text-sm text-light italic">敬請期待</span>
+                    )}
+                  </div>
                 </div>
               </AnimateIn>
             ))}
