@@ -128,7 +128,7 @@ export default function SEABeautyPage() {
             </AnimateIn>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+        <div className="hero-fade" />
       </section>
 
       {/* ═══════ Key Info ═══════ */}

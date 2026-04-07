@@ -147,12 +147,11 @@ export default function FABIAPage() {
             </AnimateIn>
           </div>
         </div>
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        <div className="hero-fade" />
       </section>
 
       {/* Benefits */}
-      <section id="benefits" className="py-32 relative">
+      <section id="benefits" className="pt-16 pb-32 relative">
         <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <AnimateIn>

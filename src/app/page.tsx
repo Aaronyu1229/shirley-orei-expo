@@ -143,12 +143,11 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom gradient fade to white */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+        <div className="hero-fade" />
       </section>
 
       {/* ═══════ About ═══════ */}
-      <section id="about" className="pt-20 pb-32">
+      <section id="about" className="pt-10 pb-32">
         <div className="max-w-[1120px] mx-auto px-6">
           {/* Section header */}
           <AnimateIn>
