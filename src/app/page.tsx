@@ -20,8 +20,8 @@ const expos = [
     desc: "越南胡志明市首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。",
     href: "/sea-beauty",
     tag: "Featured",
-    image: "/images/hero-city-hcmc.jpg",
-    imageAlt: "胡志明市天際線",
+    image: "/images/expo-beauty.jpg",
+    imageAlt: "美容產品展示",
   },
   {
     title: "AMSC ASIA",
@@ -29,8 +29,8 @@ const expos = [
     desc: "匯聚亞洲醫美抗衰頂級專家的學術與商業大會，品牌技術展示的絕佳舞台。",
     href: "#",
     tag: "Coming Soon",
-    image: "/images/hero-conference.jpg",
-    imageAlt: "國際會議現場",
+    image: "/images/expo-medical3.jpg",
+    imageAlt: "醫美護膚療程",
   },
   {
     title: "MYCE Malaysia Consumer Expo",
@@ -38,8 +38,8 @@ const expos = [
     desc: "面向馬來西亞消費者的大型零售與體驗展會，快速建立品牌知名度。",
     href: "#",
     tag: "Coming Soon",
-    image: "/images/hero-city-kl.jpg",
-    imageAlt: "吉隆坡雙子星塔",
+    image: "/images/expo-consumer5.jpg",
+    imageAlt: "大型展會活動現場",
   },
 ];
 
