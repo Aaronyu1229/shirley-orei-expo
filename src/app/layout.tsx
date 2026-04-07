@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
-import { Noto_Sans_TC } from "next/font/google";
+import { Noto_Sans_TC, Noto_Serif_TC, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const notoSansTC = Noto_Sans_TC({
   variable: "--font-noto-sans-tc",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const notoSerifTC = Noto_Serif_TC({
+  variable: "--font-noto-serif-tc",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -38,7 +50,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-TW" className={`${notoSansTC.variable} antialiased`}>
+    <html
+      lang="zh-TW"
+      className={`${notoSansTC.variable} ${notoSerifTC.variable} ${playfairDisplay.variable} antialiased`}
+    >
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );

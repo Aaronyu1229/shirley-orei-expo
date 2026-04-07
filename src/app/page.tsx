@@ -68,93 +68,102 @@ export default function Home() {
     <>
       <Navbar />
 
-      {/* Hero — split layout with event photo */}
-      <section className="min-h-screen flex items-center pt-[72px]">
-        <div className="max-w-[1120px] mx-auto px-6 w-full py-24">
+      {/* ═══════ Hero — Immersive Dark ═══════ */}
+      <section className="min-h-screen flex items-center gradient-hero text-white pt-[72px] relative overflow-hidden">
+        {/* Decorative grid dots */}
+        <div className="absolute inset-0 dot-grid opacity-30" />
+        {/* Decorative arcs echoing the logo ring */}
+        <div className="absolute top-1/4 right-[5%] w-[500px] h-[500px] border border-gold/[0.06] rounded-full" />
+        <div className="absolute top-1/4 right-[5%] w-[400px] h-[400px] border border-gold/[0.04] rounded-full translate-x-12 translate-y-12" />
+
+        <div className="max-w-[1120px] mx-auto px-6 w-full py-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <AnimateIn>
-                <p className="section-label mb-8">
+              <AnimateIn variant="fadeIn" duration={0.8}>
+                <p className="section-label mb-8 !text-gold/80">
                   Your Premium Gateway to Southeast Asia
                 </p>
               </AnimateIn>
 
-              <AnimateIn delay={0.08}>
-                <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight mb-8">
+              <AnimateIn variant="slideUp" delay={0.15} duration={0.9}>
+                <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight mb-8">
                   讓你的品牌
                   <br />
-                  <span className="text-gold">走進東南亞市場</span>
+                  <span className="text-gradient-gold">走進東南亞市場</span>
                 </h1>
               </AnimateIn>
 
-              <AnimateIn delay={0.16}>
-                <p className="text-muted text-lg leading-relaxed max-w-lg mb-12">
+              <AnimateIn delay={0.3}>
+                <p className="text-white/60 text-lg leading-relaxed max-w-lg mb-12">
                   歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
                   協助台灣美業與醫美品牌快速進入越南與東南亞市場。
                 </p>
               </AnimateIn>
 
-              <AnimateIn delay={0.24}>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn-primary">
+              <AnimateIn delay={0.4}>
+                <div className="flex flex-wrap gap-4 mb-16">
+                  <Link href="/contact" className="btn-gold">
                     預約顧問諮詢
                   </Link>
-                  <Link href="/sea-beauty" className="btn-ghost">
+                  <Link
+                    href="/sea-beauty"
+                    className="border border-white/20 text-white font-semibold px-6 py-3.5 rounded-lg text-base hover:bg-white/10 hover:border-white/40 transition-all inline-block"
+                  >
                     了解展會資訊
                   </Link>
                 </div>
               </AnimateIn>
+
+              {/* Stats inline */}
+              <AnimateIn delay={0.5}>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                  {stats.map((stat, i) => (
+                    <div key={stat.label}>
+                      <p className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white leading-none mb-1">
+                        <CountUp end={stat.number} suffix={stat.suffix} />
+                      </p>
+                      <p className="text-white/40 text-[14px] tracking-wide">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </AnimateIn>
             </div>
 
-            <AnimateIn delay={0.2}>
+            <AnimateIn variant="scaleUp" delay={0.3} duration={1}>
               <div className="relative">
+                <div className="absolute -inset-4 bg-gold/[0.06] rounded-2xl blur-2xl" />
                 <Image
                   src="/images/event-photo-1.png"
                   alt="歐瑞會展活動現場"
                   width={800}
                   height={600}
-                  className="rounded-lg w-full object-cover shadow-lg"
+                  className="rounded-2xl w-full object-cover shadow-2xl relative z-10"
                   priority
                 />
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-md p-4 border border-border">
-                  <p className="text-[13px] tracking-[0.1em] uppercase text-gold font-semibold">
+                <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-5 border border-border z-20">
+                  <p className="text-[12px] tracking-[0.15em] uppercase text-gold font-semibold">
                     12 Countries
                   </p>
-                  <p className="text-2xl font-bold text-navy">亞太商業網絡</p>
+                  <p className="text-xl font-bold text-navy">亞太商業網絡</p>
                 </div>
               </div>
             </AnimateIn>
           </div>
         </div>
+
+        {/* Bottom gradient fade to white */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* Stats Bar */}
-      <section className="gradient-navy py-16">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <AnimateIn key={stat.label} delay={i * 0.1}>
-                <div className="text-center">
-                  <p className="text-[clamp(2rem,4vw,3rem)] font-bold text-white leading-none mb-2">
-                    <CountUp end={stat.number} suffix={stat.suffix} />
-                  </p>
-                  <p className="text-white/50 text-base tracking-wide">
-                    {stat.label}
-                  </p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="py-32 border-t border-border">
+      {/* ═══════ About ═══════ */}
+      <section id="about" className="pt-20 pb-32">
         <div className="max-w-[1120px] mx-auto px-6">
           {/* Section header */}
           <AnimateIn>
             <p className="section-label">Why OREI Expo</p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
+            <h2 className="font-serif text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
               為什麼選擇歐瑞會展？
             </h2>
             <div className="gold-line mb-6" />
@@ -164,36 +173,39 @@ export default function Home() {
             </p>
           </AnimateIn>
 
-          {/* Event photo */}
-          <AnimateIn delay={0.06}>
-            <Image
-              src="/images/event-photo-2.png"
-              alt="商務媒合現場"
-              width={1120}
-              height={500}
-              className="rounded-lg w-full object-cover mb-16 max-h-[420px]"
-            />
+          {/* Event photo with overlay */}
+          <AnimateIn variant="scaleUp" delay={0.06}>
+            <div className="relative rounded-2xl overflow-hidden mb-16 group">
+              <Image
+                src="/images/event-photo-2.png"
+                alt="商務媒合現場"
+                width={1120}
+                height={500}
+                className="w-full object-cover max-h-[420px] group-hover:scale-[1.02] transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
+            </div>
           </AnimateIn>
 
           {/* Strategy Upgrade — Past vs Present */}
           <AnimateIn delay={0.1}>
-            <div className="rounded-xl overflow-hidden border border-border mb-20">
+            <div className="rounded-2xl overflow-hidden border border-border mb-20 shadow-lg">
               {/* Top label */}
               <div className="gradient-navy px-8 py-5 flex items-center justify-center gap-3">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
-                <p className="text-white font-bold text-lg tracking-wide">戰略升級</p>
+                <p className="text-white font-bold text-lg tracking-wide font-serif">戰略升級</p>
                 <span className="text-white/40 text-base ml-1">Strategic Upgrade</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Past */}
-                <div className="bg-[#f5f3ef] p-8 md:p-10 relative">
+                <div className="bg-surface p-8 md:p-10 relative">
                   <p className="text-[14px] tracking-[0.2em] uppercase text-muted/60 font-semibold mb-6">
                     過去 · Past
                   </p>
-                  <h3 className="text-xl font-bold mb-6 text-navy/70">一般展會網站</h3>
+                  <h3 className="text-xl font-bold mb-6 text-navy/60">一般展會網站</h3>
                   <div className="space-y-5">
                     {[
                       { label: "定位", value: "賣展位、介紹展期", note: "功能導向" },
@@ -203,7 +215,7 @@ export default function Home() {
                       <div key={row.label} className="flex items-start gap-3">
                         <span className="text-[15px] font-semibold text-muted/50 min-w-[68px] mt-0.5">{row.label}</span>
                         <div>
-                          <p className="text-base text-navy/60 leading-relaxed">{row.value}</p>
+                          <p className="text-base text-navy/50 leading-relaxed">{row.value}</p>
                           {row.note && <p className="text-[14px] text-muted/40">({row.note})</p>}
                         </div>
                       </div>
@@ -228,7 +240,7 @@ export default function Home() {
                 </div>
 
                 {/* Present */}
-                <div className="bg-white p-8 md:p-10 md:pl-14">
+                <div className="bg-white p-8 md:p-10">
                   <p className="text-[14px] tracking-[0.2em] uppercase text-gold font-semibold mb-6">
                     現在 · Now
                   </p>
@@ -276,7 +288,7 @@ export default function Home() {
           </AnimateIn>
 
           {/* 4 Benefits */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               {
                 num: "01",
@@ -326,15 +338,15 @@ export default function Home() {
                 ),
               },
             ].map((item, i) => (
-              <AnimateIn key={item.num} delay={i * 0.08}>
-                <div className="bg-surface rounded-lg p-8 border border-border card-lift h-full">
+              <AnimateIn key={item.num} delay={i * 0.08} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}>
+                <div className="card-glass p-8 h-full">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center shrink-0">
                       {item.icon}
                     </div>
                     <div className="flex items-center gap-3">
                       <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <span className="text-[13px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
+                      <span className="text-[12px] text-gold bg-gold/10 px-2.5 py-1 rounded-full font-semibold">
                         {item.num}
                       </span>
                     </div>
@@ -349,19 +361,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expos — with banner image */}
-      <section id="expos" className="py-32 bg-surface border-t border-border">
+      {/* ═══════ Expos ═══════ */}
+      <section id="expos" className="py-32 bg-surface relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
             <p className="section-label">Expos</p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
+            <h2 className="font-serif text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
               展會作為實體入口
             </h2>
             <div className="gold-line mb-6" />
           </AnimateIn>
 
-          <AnimateIn delay={0.08}>
-            <div className="gradient-navy rounded-xl overflow-hidden mb-16 relative">
+          <AnimateIn variant="scaleUp" delay={0.08}>
+            <div className="gradient-navy rounded-2xl overflow-hidden mb-16 relative">
               {/* Decorative corner accents */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-gold/5 rounded-full -translate-x-1/3 translate-y-1/3" />
@@ -387,7 +400,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-5">
                       {expo.status === "featured" ? (
                         <span className="inline-flex items-center gap-1.5 text-[12px] tracking-[0.15em] uppercase font-semibold text-gold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                           Featured
                         </span>
                       ) : (
@@ -438,10 +451,10 @@ export default function Home() {
             </div>
           </AnimateIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {expos.map((expo, i) => (
-              <AnimateIn key={expo.title} delay={i * 0.08}>
-                <div className="bg-white rounded-lg p-8 h-full flex flex-col border border-border card-lift">
+              <AnimateIn key={expo.title} delay={i * 0.1}>
+                <div className="card-glass p-8 h-full flex flex-col">
                   <span
                     className={`text-[13px] tracking-[0.12em] uppercase font-semibold mb-6 inline-flex items-center gap-2 ${
                       expo.tag === "Featured" ? "text-gold" : "text-muted"
@@ -460,10 +473,10 @@ export default function Home() {
                   {expo.tag === "Featured" ? (
                     <Link
                       href={expo.href}
-                      className="mt-8 text-base font-semibold text-navy hover:text-gold transition-colors inline-flex items-center gap-1.5"
+                      className="mt-8 text-base font-semibold text-navy hover:text-gold transition-colors inline-flex items-center gap-1.5 group"
                     >
                       了解更多
-                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
                         <path d="M6 3l5 5-5 5" />
                       </svg>
                     </Link>
@@ -479,13 +492,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FABIA Preview — with poster image */}
-      <section className="py-32 border-t border-border">
+      {/* ═══════ FABIA Preview ═══════ */}
+      <section className="py-32 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimateIn>
+            <AnimateIn variant="fadeLeft">
               <p className="section-label">FABIA Global Alliance</p>
-              <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
+              <h2 className="font-serif text-3xl md:text-[2.5rem] font-bold leading-tight mb-4">
                 FABIA VIP
                 <br />
                 Exclusive Event
@@ -497,7 +511,7 @@ export default function Home() {
                 國的亞太商業網絡，為您的品牌開啟國際化新篇章。
               </p>
               <div className="flex items-center gap-3 mb-8">
-                <span className="text-3xl font-bold text-gold">$1,500</span>
+                <span className="text-3xl font-bold text-gradient-gold font-serif">$1,500</span>
                 <span className="text-muted text-base">USD / Brand Booth</span>
                 <span className="text-[13px] text-muted bg-surface px-3 py-1.5 rounded-full border border-border ml-2">
                   限量名額
@@ -513,23 +527,30 @@ export default function Home() {
               </div>
             </AnimateIn>
 
-            <AnimateIn delay={0.12}>
-              <Image
-                src="/images/fabia-poster.png"
-                alt="FABIA VIP Exclusive Event"
-                width={600}
-                height={900}
-                className="rounded-lg w-full max-w-[420px] mx-auto shadow-lg"
-              />
+            <AnimateIn variant="fadeRight" delay={0.12}>
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gold/[0.05] rounded-2xl blur-xl" />
+                <Image
+                  src="/images/fabia-poster.png"
+                  alt="FABIA VIP Exclusive Event"
+                  width={600}
+                  height={900}
+                  className="rounded-2xl w-full max-w-[420px] mx-auto shadow-2xl relative z-10"
+                />
+              </div>
             </AnimateIn>
           </div>
         </div>
       </section>
 
-      {/* Trust / Partner Marquee */}
-      <section className="py-12 border-t border-border bg-surface">
+      {/* ═══════ Trust / Partner Marquee ═══════ */}
+      <section className="py-14 bg-surface relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6">
-          <AnimateIn>
+          <AnimateIn variant="fadeIn">
+            <p className="text-center text-[13px] tracking-[0.2em] uppercase text-muted/60 font-semibold mb-6">
+              Trusted Partners
+            </p>
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-muted text-base tracking-wide">
               {[
                 "FABIA International Alliance",
@@ -539,7 +560,7 @@ export default function Home() {
                 "ASEAN Business Forum",
                 "Asia Beauty Summit",
               ].map((partner) => (
-                <span key={partner} className="opacity-50 hover:opacity-100 transition-opacity">
+                <span key={partner} className="opacity-40 hover:opacity-100 transition-opacity duration-500">
                   {partner}
                 </span>
               ))}
@@ -548,17 +569,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ═══════ CTA ═══════ */}
       <section className="py-32 gradient-navy text-white relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-0 left-0 w-80 h-80 bg-gold/[0.04] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold/[0.03] rounded-full translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-gold/[0.04] rounded-full" />
+
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
-          <AnimateIn>
+          <AnimateIn variant="scaleUp">
             <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Get Started
             </p>
-            <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
+            <h2 className="font-serif text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
               準備好進入
               <br />
               東南亞市場了嗎？
@@ -569,13 +592,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-base hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20"
+                className="btn-gold animate-pulse-glow"
               >
                 立即諮詢報名
               </Link>
               <Link
                 href="/sea-beauty"
-                className="border border-white/20 text-white font-semibold px-8 py-3.5 rounded text-base hover:bg-white/10 transition-colors"
+                className="border border-white/20 text-white font-semibold px-8 py-3.5 rounded-lg text-base hover:bg-white/10 transition-colors inline-block"
               >
                 瀏覽展會資訊
               </Link>

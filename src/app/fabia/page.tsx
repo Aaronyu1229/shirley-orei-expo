@@ -84,26 +84,30 @@ export default function FABIAPage() {
     <>
       <Navbar />
 
-      {/* Hero — with FABIA poster */}
-      <section className="pt-[72px]">
-        <div className="max-w-[1120px] mx-auto px-6 py-32">
+      {/* Hero — dark immersive with FABIA poster */}
+      <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
+        <div className="dot-grid" />
+        <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <AnimateIn>
-                <p className="section-label mb-8">FABIA Global Alliance</p>
+                <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-8 font-semibold flex items-center gap-3">
+                  <span className="w-8 h-[1.5px] bg-gold inline-block" />
+                  FABIA Global Alliance
+                </p>
               </AnimateIn>
 
               <AnimateIn delay={0.08}>
-                <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
+                <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
                   FABIA VIP
                   <br />
-                  Exclusive Event
+                  <span className="text-gradient-gold">Exclusive Event</span>
                 </h1>
                 <div className="gold-line mb-6" />
               </AnimateIn>
 
               <AnimateIn delay={0.12}>
-                <p className="text-muted text-lg leading-relaxed max-w-xl mb-4">
+                <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-4">
                   加入 FABIA 國際商業聯盟，開啟品牌國際化之路。 跨越 12
                   國的亞太商業網絡，為您的品牌帶來最高規格的展示舞台。
                 </p>
@@ -112,10 +116,10 @@ export default function FABIAPage() {
               <AnimateIn delay={0.16}>
                 <div className="flex items-center gap-6 mb-12">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-gold">$1,500</span>
-                    <span className="text-muted text-base">USD / Brand Booth</span>
+                    <span className="text-4xl font-bold text-gradient-gold">$1,500</span>
+                    <span className="text-white/50 text-base">USD / Brand Booth</span>
                   </div>
-                  <span className="text-[14px] text-muted bg-surface px-3 py-1.5 rounded-full border border-border">
+                  <span className="text-[14px] text-white/60 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
                     26 / 05 / 2026
                   </span>
                 </div>
@@ -123,43 +127,48 @@ export default function FABIAPage() {
 
               <AnimateIn delay={0.24}>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn-primary">
+                  <Link href="/contact" className="btn-gold">
                     立即申請
                   </Link>
-                  <a href="#benefits" className="btn-ghost">
+                  <a href="#benefits" className="text-white/70 border border-white/20 font-medium px-6 py-3 rounded-lg hover:bg-white/10 hover:text-white transition-all duration-300">
                     了解 VIP 權益
                   </a>
                 </div>
               </AnimateIn>
             </div>
 
-            <AnimateIn delay={0.16}>
-              <Image
-                src="/images/fabia-poster.png"
-                alt="FABIA VIP Exclusive Event 海報"
-                width={600}
-                height={900}
-                className="rounded-lg w-full max-w-[420px] mx-auto shadow-xl"
-                priority
-              />
+            <AnimateIn delay={0.16} variant="scaleUp">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full scale-75" />
+                <Image
+                  src="/images/fabia-poster.png"
+                  alt="FABIA VIP Exclusive Event 海報"
+                  width={600}
+                  height={900}
+                  className="rounded-2xl w-full max-w-[420px] mx-auto shadow-2xl relative z-10"
+                  priority
+                />
+              </div>
             </AnimateIn>
           </div>
         </div>
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Highlights */}
-      <section className="border-t border-border py-20">
+      <section className="py-20">
         <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { en: "Connect with Industry Leaders", zh: "對接行業領袖" },
               { en: "Access Southeast Asia Market", zh: "進入東南亞市場" },
               { en: "Exclusive VIP Access", zh: "VIP 專屬權益" },
               { en: "Gain Recognition & Partnerships", zh: "獲得認證與合作" },
             ].map((item, i) => (
-              <AnimateIn key={item.en} delay={i * 0.06}>
-                <div className="bg-white p-8 text-center">
-                  <p className="text-base font-medium mb-1">{item.en}</p>
+              <AnimateIn key={item.en} delay={i * 0.06} variant="fadeUp">
+                <div className="card-glass p-8 text-center rounded-2xl">
+                  <p className="text-base font-semibold mb-1">{item.en}</p>
                   <p className="text-[14px] text-muted">{item.zh}</p>
                 </div>
               </AnimateIn>
@@ -169,11 +178,15 @@ export default function FABIAPage() {
       </section>
 
       {/* Benefits */}
-      <section id="benefits" className="py-32 border-t border-border">
-        <div className="max-w-[1120px] mx-auto px-6">
+      <section id="benefits" className="py-32">
+        <div className="section-divider" />
+        <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <AnimateIn>
-            <p className="section-label">Benefits</p>
-            <h2 className="text-3xl font-bold mb-4">VIP 專屬權益</h2>
+            <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
+              <span className="w-8 h-[1.5px] bg-gold inline-block" />
+              Benefits
+            </p>
+            <h2 className="font-serif text-3xl font-bold mb-4">VIP 專屬權益</h2>
             <p className="text-muted text-base max-w-lg mb-4">
               USD $1,500 即享四大頂級權益，為您的品牌帶來最大化曝光與商機
             </p>
@@ -182,16 +195,16 @@ export default function FABIAPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {benefits.map((item, i) => (
-              <AnimateIn key={item.num} delay={i * 0.08}>
-                <div className="flex gap-6 bg-surface rounded-lg p-8 border border-border card-lift">
+              <AnimateIn key={item.num} delay={i * 0.08} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}>
+                <div className="card-glass flex gap-6 rounded-2xl p-8">
                   <div className="shrink-0">
-                    <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center">
                       {item.icon}
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center gap-3 mb-1">
-                      <h3 className="font-semibold text-lg">
+                      <h3 className="font-serif font-semibold text-lg">
                         {item.title}
                       </h3>
                       <span className="text-[13px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
@@ -211,12 +224,16 @@ export default function FABIAPage() {
       </section>
 
       {/* Asia Beauty Summit 2026 — poster showcase */}
-      <section className="py-32 bg-surface border-t border-border">
-        <div className="max-w-[1120px] mx-auto px-6">
+      <section className="py-32 bg-surface/50">
+        <div className="section-divider" />
+        <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimateIn>
-              <p className="section-label">FABIA Season 9</p>
-              <h2 className="text-3xl font-bold mb-4">
+            <AnimateIn variant="fadeLeft">
+              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
+                <span className="w-8 h-[1.5px] bg-gold inline-block" />
+                FABIA Season 9
+              </p>
+              <h2 className="font-serif text-3xl font-bold mb-4">
                 Asia Beauty & Wellness
                 <br />
                 Summit 2026
@@ -247,45 +264,55 @@ export default function FABIAPage() {
               </Link>
             </AnimateIn>
 
-            <AnimateIn delay={0.12}>
-              <Image
-                src="/images/venue-5.png"
-                alt="Asia Beauty & Wellness Summit 2026"
-                width={600}
-                height={800}
-                className="rounded-lg w-full max-w-[440px] mx-auto shadow-xl"
-              />
+            <AnimateIn delay={0.12} variant="fadeRight">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gold/10 blur-3xl rounded-full scale-75" />
+                <Image
+                  src="/images/venue-5.png"
+                  alt="Asia Beauty & Wellness Summit 2026"
+                  width={600}
+                  height={800}
+                  className="rounded-2xl w-full max-w-[440px] mx-auto shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
             </AnimateIn>
           </div>
         </div>
       </section>
 
       {/* Asian Beauty Awards */}
-      <section className="py-32 border-t border-border">
-        <div className="max-w-[1120px] mx-auto px-6">
+      <section className="py-32">
+        <div className="section-divider" />
+        <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimateIn>
+            <AnimateIn variant="fadeLeft">
               <div className="space-y-6">
-                <Image
-                  src="/images/fabia-season9-poster.png"
-                  alt="第九屆亞洲美業大賽 頒獎盛典海報"
-                  width={600}
-                  height={900}
-                  className="rounded-lg w-full max-w-[440px] mx-auto shadow-xl"
-                />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gold/10 blur-3xl rounded-full scale-75" />
+                  <Image
+                    src="/images/fabia-season9-poster.png"
+                    alt="第九屆亞洲美業大賽 頒獎盛典海報"
+                    width={600}
+                    height={900}
+                    className="rounded-2xl w-full max-w-[440px] mx-auto shadow-2xl relative z-10"
+                  />
+                </div>
                 <Image
                   src="/images/venue-6.png"
                   alt="頒獎盛典活動現場"
                   width={600}
                   height={400}
-                  className="rounded-lg w-full max-w-[440px] mx-auto shadow-lg"
+                  className="rounded-2xl w-full max-w-[440px] mx-auto shadow-lg hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </AnimateIn>
 
-            <AnimateIn delay={0.12}>
-              <p className="section-label">Awards</p>
-              <h2 className="text-3xl font-bold mb-4">
+            <AnimateIn delay={0.12} variant="fadeRight">
+              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
+                <span className="w-8 h-[1.5px] bg-gold inline-block" />
+                Awards
+              </p>
+              <h2 className="font-serif text-3xl font-bold mb-4">
                 第九屆亞洲美業大賽
                 <br />
                 頒獎盛典
@@ -317,12 +344,16 @@ export default function FABIAPage() {
       </section>
 
       {/* Network — 12 countries */}
-      <section className="py-32 bg-surface border-t border-border">
-        <div className="max-w-[1120px] mx-auto px-6">
+      <section className="py-32 bg-surface/50">
+        <div className="section-divider" />
+        <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <AnimateIn>
-              <p className="section-label">Network</p>
-              <h2 className="text-3xl font-bold mb-4">
+            <AnimateIn variant="fadeLeft">
+              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
+                <span className="w-8 h-[1.5px] bg-gold inline-block" />
+                Network
+              </p>
+              <h2 className="font-serif text-3xl font-bold mb-4">
                 跨越 12 國的亞太商業網絡
               </h2>
               <div className="gold-line mb-6" />
@@ -331,10 +362,10 @@ export default function FABIAPage() {
                 個國家與地區，為會員品牌提供最廣泛的商務對接網絡。
               </p>
               <div className="flex flex-wrap gap-2">
-                {countries.map((c, i) => (
+                {countries.map((c) => (
                   <span
                     key={c}
-                    className="text-base text-navy border border-border px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors cursor-default"
+                    className="text-base text-navy border border-border/60 bg-white px-4 py-2 rounded-full hover:border-gold hover:text-gold hover:bg-gold/5 transition-all duration-300 cursor-default"
                   >
                     {c}
                   </span>
@@ -342,13 +373,13 @@ export default function FABIAPage() {
               </div>
             </AnimateIn>
 
-            <AnimateIn delay={0.12}>
+            <AnimateIn delay={0.12} variant="fadeRight">
               <Image
                 src="/images/fabia-countries.png"
                 alt="FABIA 12 countries"
                 width={800}
                 height={400}
-                className="rounded-lg w-full"
+                className="rounded-2xl w-full hover:scale-[1.02] transition-transform duration-500"
               />
             </AnimateIn>
           </div>
@@ -357,14 +388,16 @@ export default function FABIAPage() {
 
       {/* CTA */}
       <section className="py-32 gradient-navy text-white relative overflow-hidden">
+        <div className="dot-grid" />
         <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-gold/5 rounded-full" />
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
-          <AnimateIn>
+          <AnimateIn variant="scaleUp">
             <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Apply Now
             </p>
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="font-serif text-3xl font-bold mb-6">
               名額有限
               <br />
               立即申請 FABIA VIP
@@ -372,12 +405,12 @@ export default function FABIAPage() {
             <p className="text-white/50 text-lg leading-relaxed mb-4">
               2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聚一堂
             </p>
-            <p className="text-2xl font-bold text-gold mb-10">
+            <p className="text-2xl font-bold text-gradient-gold mb-10">
               USD $1,500 / Brand Booth
             </p>
             <Link
               href="/contact"
-              className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-base hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20 inline-block"
+              className="btn-gold animate-pulse-glow inline-block"
             >
               立即報名
             </Link>

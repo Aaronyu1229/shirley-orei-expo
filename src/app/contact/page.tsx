@@ -53,37 +53,37 @@ export default function ContactPage() {
   };
 
   const inputClass =
-    "w-full border border-border rounded-lg px-4 py-3 text-base bg-white focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all placeholder:text-muted/40";
+    "w-full border border-border/60 rounded-xl px-4 py-3.5 text-base bg-white focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all placeholder:text-muted/40 hover:border-gold/30";
 
   return (
     <>
       <Navbar />
 
-      {/* Hero — compact with visual accent */}
-      <section className="pt-[72px] gradient-navy text-white">
-        <div className="max-w-[1120px] mx-auto px-6 py-20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 -translate-y-1/3" />
-          <div className="relative z-10">
-            <AnimateIn>
-              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold flex items-center gap-3">
-                <span className="w-6 h-[1.5px] bg-gold inline-block" />
-                Contact Us
-              </p>
-              <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.2] tracking-tight mb-4">
-                聯絡我們
-              </h1>
-              <p className="text-white/50 text-lg max-w-lg">
-                歐瑞會展 — 您進入東南亞市場的唯一頂級通道
-              </p>
-            </AnimateIn>
-          </div>
+      {/* Hero — dark immersive */}
+      <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
+        <div className="dot-grid" />
+        <div className="max-w-[1120px] mx-auto px-6 py-24 relative z-10">
+          <AnimateIn>
+            <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold flex items-center gap-3">
+              <span className="w-8 h-[1.5px] bg-gold inline-block" />
+              Contact Us
+            </p>
+            <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.2] tracking-tight mb-4">
+              聯絡我們
+            </h1>
+            <p className="text-white/50 text-lg max-w-lg">
+              歐瑞會展 — 您進入東南亞市場的唯一頂級通道
+            </p>
+          </AnimateIn>
         </div>
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* Quick contact strip */}
-      <section className="border-b border-border">
+      <section className="py-6">
         <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               {
                 icon: (
@@ -116,31 +116,35 @@ export default function ContactPage() {
                 value: "ivyshirley",
               },
             ].map((item) => (
-              <div key={item.label} className="py-5 px-6 flex items-center gap-4">
-                {item.icon}
-                <div>
-                  <p className="text-[13px] text-muted uppercase tracking-wider">{item.label}</p>
-                  {item.href ? (
-                    <a href={item.href} className="text-base font-medium hover:text-gold transition-colors">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-base font-medium">{item.value}</p>
-                  )}
+              <AnimateIn key={item.label} variant="fadeUp">
+                <div className="card-glass rounded-2xl py-5 px-6 flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-[13px] text-muted uppercase tracking-wider">{item.label}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-base font-medium hover:text-gold transition-colors">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-base font-medium">{item.value}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
       </section>
 
       <section className="pb-32">
-        <div className="max-w-[1120px] mx-auto px-6 pt-20">
+        <div className="max-w-[1120px] mx-auto px-6 pt-16">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-20">
             {/* Form */}
             <div className="lg:col-span-3">
-              <AnimateIn>
-                <h2 className="text-2xl font-bold mb-2">預約顧問諮詢</h2>
+              <AnimateIn variant="fadeLeft">
+                <h2 className="font-serif text-2xl font-bold mb-2">預約顧問諮詢</h2>
                 <p className="text-muted text-base mb-8">填寫以下表單，我們將在 24 小時內與您聯繫</p>
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
@@ -236,7 +240,7 @@ export default function ContactPage() {
                       placeholder="請簡述您的品牌與需求..."
                     />
                   </div>
-                  <button type="submit" className="btn-primary w-full py-4">
+                  <button type="submit" className="btn-gold w-full py-4 text-base">
                     送出報名 / 諮詢
                   </button>
                 </form>
@@ -244,9 +248,9 @@ export default function ContactPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-2 space-y-12">
-              <AnimateIn delay={0.1}>
-                <h2 className="text-2xl font-bold mb-2">聯絡資訊</h2>
+            <div className="lg:col-span-2 space-y-10">
+              <AnimateIn delay={0.1} variant="fadeRight">
+                <h2 className="font-serif text-2xl font-bold mb-2">聯絡資訊</h2>
                 <p className="text-muted text-base mb-6">多管道溝通，為您提供最便捷的聯繫方式</p>
                 <div className="space-y-4">
                   {contactInfo.map((item) => (
@@ -281,8 +285,8 @@ export default function ContactPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn delay={0.2}>
-                <div className="bg-surface rounded-lg p-6 border border-border">
+              <AnimateIn delay={0.2} variant="fadeRight">
+                <div className="card-glass rounded-2xl p-6">
                   <h3 className="text-[15px] font-semibold tracking-[0.1em] uppercase text-muted mb-4">
                     掃碼加好友
                   </h3>
@@ -298,7 +302,7 @@ export default function ContactPage() {
                           alt={`${qr.label} QR Code`}
                           width={120}
                           height={120}
-                          className="rounded-lg border border-border mx-auto mb-2"
+                          className="rounded-xl border border-border/40 mx-auto mb-2 hover:scale-105 transition-transform duration-300"
                         />
                         <p className="text-[13px] text-muted font-medium">{qr.label}</p>
                       </div>
@@ -308,10 +312,11 @@ export default function ContactPage() {
               </AnimateIn>
 
               {/* Quick links */}
-              <AnimateIn delay={0.3}>
-                <div className="bg-navy rounded-lg p-6 text-white">
-                  <h3 className="font-semibold mb-4">快速了解</h3>
-                  <div className="space-y-3">
+              <AnimateIn delay={0.3} variant="fadeRight">
+                <div className="gradient-navy rounded-2xl p-6 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full translate-x-1/3 -translate-y-1/3" />
+                  <h3 className="font-serif font-semibold mb-4 relative z-10">快速了解</h3>
+                  <div className="space-y-3 relative z-10">
                     {[
                       { label: "SEA Beauty 展會資訊", href: "/sea-beauty" },
                       { label: "FABIA VIP 方案", href: "/fabia" },

@@ -71,67 +71,75 @@ export default function SEABeautyPage() {
     <>
       <Navbar />
 
-      {/* Hero with event photo */}
-      <section className="pt-[72px]">
-        <div className="max-w-[1120px] mx-auto px-6 py-32">
+      {/* ═══════ Hero ═══════ */}
+      <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-20" />
+        <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <AnimateIn>
-                <p className="section-label mb-8">Featured Expo</p>
+              <AnimateIn variant="fadeIn">
+                <p className="section-label mb-8 !text-gold/80">Featured Expo</p>
               </AnimateIn>
 
-              <AnimateIn delay={0.08}>
-                <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
+              <AnimateIn variant="slideUp" delay={0.1}>
+                <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
                   SEA Beauty Business
                   <br />
                   Matching Expo
                 </h1>
               </AnimateIn>
 
-              <AnimateIn delay={0.12}>
+              <AnimateIn delay={0.2}>
                 <p className="text-gold text-lg font-medium mb-2">
                   國際美容暨醫美商務媒合展
                 </p>
                 <div className="gold-line mb-6" />
               </AnimateIn>
 
-              <AnimateIn delay={0.16}>
-                <p className="text-muted text-lg leading-relaxed max-w-xl mb-12">
+              <AnimateIn delay={0.3}>
+                <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-12">
                   越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
                   為台灣品牌打開東南亞最具潛力的美業市場。
                 </p>
               </AnimateIn>
 
-              <AnimateIn delay={0.24}>
+              <AnimateIn delay={0.4}>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn-primary">
+                  <Link href="/contact" className="btn-gold">
                     立即報名參展
                   </Link>
-                  <a href="#process" className="btn-ghost">
+                  <a
+                    href="#process"
+                    className="border border-white/20 text-white font-semibold px-6 py-3.5 rounded-lg text-base hover:bg-white/10 transition-all inline-block"
+                  >
                     了解展會流程
                   </a>
                 </div>
               </AnimateIn>
             </div>
 
-            <AnimateIn delay={0.16}>
-              <Image
-                src="/images/event-photo-1.png"
-                alt="SEA Beauty 展會現場"
-                width={800}
-                height={600}
-                className="rounded-lg w-full object-cover shadow-lg"
-                priority
-              />
+            <AnimateIn variant="scaleUp" delay={0.2}>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gold/[0.06] rounded-2xl blur-2xl" />
+                <Image
+                  src="/images/event-photo-1.png"
+                  alt="SEA Beauty 展會現場"
+                  width={800}
+                  height={600}
+                  className="rounded-2xl w-full object-cover shadow-2xl relative z-10"
+                  priority
+                />
+              </div>
             </AnimateIn>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* Key Info */}
-      <section className="border-t border-border py-20">
+      {/* ═══════ Key Info ═══════ */}
+      <section className="pt-8 pb-20">
         <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: (
@@ -167,10 +175,14 @@ export default function SEABeautyPage() {
                 value: "美容 / 醫美",
                 sub: "Beauty & Medical Aesthetics",
               },
-            ].map((info) => (
-              <AnimateIn key={info.label}>
-                <div className="bg-white p-10 text-center">
-                  <div className="flex justify-center mb-4">{info.icon}</div>
+            ].map((info, i) => (
+              <AnimateIn key={info.label} delay={i * 0.08}>
+                <div className="card-glass p-8 text-center">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center">
+                      {info.icon}
+                    </div>
+                  </div>
                   <p className="text-[13px] tracking-[0.15em] uppercase text-gold font-semibold mb-2">
                     {info.label}
                   </p>
@@ -183,12 +195,13 @@ export default function SEABeautyPage() {
         </div>
       </section>
 
-      {/* Event Gallery */}
-      <section className="py-32 border-t border-border">
+      {/* ═══════ Event Gallery ═══════ */}
+      <section className="py-32 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
             <p className="section-label">Gallery</p>
-            <h2 className="text-3xl font-bold mb-4">展會實景</h2>
+            <h2 className="font-serif text-3xl font-bold mb-4">展會實景</h2>
             <div className="gold-line mb-12" />
           </AnimateIn>
 
@@ -199,8 +212,8 @@ export default function SEABeautyPage() {
               { src: "/images/venue-3.png", alt: "展會實景 — 買家互動", caption: "買家產品互動" },
               { src: "/images/venue-4.png", alt: "展會實景 — 展位洽談", caption: "展位商務洽談" },
             ].map((photo, i) => (
-              <AnimateIn key={photo.src} delay={i * 0.06}>
-                <div className="relative group overflow-hidden rounded-lg">
+              <AnimateIn key={photo.src} delay={i * 0.08} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}>
+                <div className="relative group overflow-hidden rounded-2xl">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -208,7 +221,7 @@ export default function SEABeautyPage() {
                     height={600}
                     className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                     <p className="text-white text-base font-medium">{photo.caption}</p>
                   </div>
                 </div>
@@ -217,46 +230,49 @@ export default function SEABeautyPage() {
           </div>
 
           {/* Expo overview banner */}
-          <AnimateIn delay={0.12}>
-            <Image
-              src="/images/expos-table.png"
-              alt="展會一覽"
-              width={1120}
-              height={400}
-              className="rounded-lg w-full object-cover mt-6"
-            />
+          <AnimateIn variant="scaleUp" delay={0.12}>
+            <div className="relative rounded-2xl overflow-hidden mt-6 group">
+              <Image
+                src="/images/expos-table.png"
+                alt="展會一覽"
+                width={1120}
+                height={400}
+                className="w-full object-cover group-hover:scale-[1.01] transition-transform duration-700"
+              />
+            </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* 3-Phase Process */}
-      <section id="process" className="py-32 bg-surface border-t border-border">
+      {/* ═══════ 3-Phase Process ═══════ */}
+      <section id="process" className="py-32 bg-surface relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
             <p className="section-label">Process</p>
-            <h2 className="text-3xl font-bold mb-4">三階段全方位服務</h2>
+            <h2 className="font-serif text-3xl font-bold mb-4">三階段全方位服務</h2>
             <p className="text-muted text-base max-w-lg mb-4">
               從展前規劃到展後落地，我們提供完整的品牌出海服務鏈
             </p>
             <div className="gold-line mb-16" />
           </AnimateIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {timeline.map((phase, i) => (
-              <AnimateIn key={phase.phase} delay={i * 0.1}>
+              <AnimateIn key={phase.phase} delay={i * 0.12}>
                 <div className="relative">
                   {/* Phase connector line (desktop only) */}
                   {i < timeline.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-12 border-t border-dashed border-gold/30 z-10" />
+                    <div className="hidden md:block absolute top-8 left-full w-8 border-t-2 border-dashed border-gold/30 z-10" />
                   )}
-                  <div className="bg-white rounded-lg p-8 border border-border h-full">
-                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gold/10 text-sm font-bold text-gold mb-4">
+                  <div className="card-glass p-8 h-full">
+                    <span className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gold/10 text-sm font-bold text-gold mb-4">
                       {phase.phase}
                     </span>
                     <h3 className="text-xl font-bold mt-2 mb-1">
                       {phase.title}
                     </h3>
-                    <p className="text-[15px] text-muted mb-6">
+                    <p className="text-[15px] text-gold/70 mb-6">
                       {phase.subtitle}
                     </p>
                     <ul className="space-y-3">
@@ -281,13 +297,14 @@ export default function SEABeautyPage() {
         </div>
       </section>
 
-      {/* Who Should Join — Card Grid */}
-      <section className="py-32 border-t border-border">
+      {/* ═══════ Who Should Join ═══════ */}
+      <section className="py-32 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <AnimateIn>
+            <AnimateIn variant="fadeLeft">
               <p className="section-label">For You</p>
-              <h2 className="text-3xl font-bold mb-4">誰適合參展？</h2>
+              <h2 className="font-serif text-3xl font-bold mb-4">誰適合參展？</h2>
               <div className="gold-line mb-8" />
               <p className="text-muted text-base leading-relaxed mb-8">
                 無論您是美容品牌、醫美設備商、連鎖診所或通路拓展企業，
@@ -300,9 +317,9 @@ export default function SEABeautyPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {targetAudience.map((item, i) => (
-                <AnimateIn key={item.title} delay={i * 0.08}>
-                  <div className="bg-surface rounded-lg p-6 border border-border card-lift h-full">
-                    <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                <AnimateIn key={item.title} delay={i * 0.08} variant="fadeRight">
+                  <div className="card-glass p-6 h-full">
+                    <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
                       <span className="text-gold text-sm font-bold">
                         {String(i + 1).padStart(2, "0")}
                       </span>
@@ -317,22 +334,24 @@ export default function SEABeautyPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ═══════ CTA ═══════ */}
       <section className="py-32 gradient-navy text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-0 left-0 w-80 h-80 bg-gold/[0.04] rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold/[0.03] rounded-full translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gold/[0.04] rounded-full" />
+
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
-          <AnimateIn>
+          <AnimateIn variant="scaleUp">
             <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Limited Spots
             </p>
-            <h2 className="text-3xl font-bold mb-6">搶佔越南美業市場先機</h2>
+            <h2 className="font-serif text-3xl font-bold mb-6">搶佔越南美業市場先機</h2>
             <p className="text-white/50 text-lg leading-relaxed mb-10">
               名額有限，立即預約顧問諮詢，了解最適合您品牌的參展方案
             </p>
             <Link
               href="/contact"
-              className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-base hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20 inline-block"
+              className="btn-gold animate-pulse-glow"
             >
               立即報名
             </Link>
