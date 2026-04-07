@@ -96,7 +96,7 @@ export default function SEABeautyPage() {
               </AnimateIn>
 
               <AnimateIn delay={0.16}>
-                <p className="text-muted text-lg leading-relaxed max-w-xl mb-12 text-base">
+                <p className="text-muted text-lg leading-relaxed max-w-xl mb-12">
                   越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
                   為台灣品牌打開東南亞最具潛力的美業市場。
                 </p>
@@ -171,11 +171,11 @@ export default function SEABeautyPage() {
               <AnimateIn key={info.label}>
                 <div className="bg-white p-10 text-center">
                   <div className="flex justify-center mb-4">{info.icon}</div>
-                  <p className="text-[12px] tracking-[0.15em] uppercase text-gold font-semibold mb-2">
+                  <p className="text-[13px] tracking-[0.15em] uppercase text-gold font-semibold mb-2">
                     {info.label}
                   </p>
                   <p className="text-xl font-bold mb-1">{info.value}</p>
-                  <p className="text-sm text-muted">{info.sub}</p>
+                  <p className="text-[15px] text-muted">{info.sub}</p>
                 </div>
               </AnimateIn>
             ))}
@@ -209,7 +209,7 @@ export default function SEABeautyPage() {
                     className="w-full h-[320px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                    <p className="text-white text-[15px] font-medium">{photo.caption}</p>
+                    <p className="text-white text-base font-medium">{photo.caption}</p>
                   </div>
                 </div>
               </AnimateIn>
@@ -256,14 +256,14 @@ export default function SEABeautyPage() {
                     <h3 className="text-xl font-bold mt-2 mb-1">
                       {phase.title}
                     </h3>
-                    <p className="text-sm text-muted mb-6">
+                    <p className="text-[15px] text-muted mb-6">
                       {phase.subtitle}
                     </p>
                     <ul className="space-y-3">
                       {phase.items.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 text-[15px] leading-relaxed"
+                          className="flex items-start gap-3 text-base leading-relaxed"
                         >
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
                             <circle cx="8" cy="8" r="8" fill="#C5A44E" fillOpacity="0.1" />
@@ -308,7 +308,7 @@ export default function SEABeautyPage() {
                       </span>
                     </div>
                     <h3 className="font-semibold text-base mb-2">{item.title}</h3>
-                    <p className="text-[15px] text-muted leading-relaxed">{item.desc}</p>
+                    <p className="text-base text-muted leading-relaxed">{item.desc}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -323,7 +323,7 @@ export default function SEABeautyPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn>
-            <p className="text-gold text-[13px] tracking-[0.3em] uppercase mb-6 font-semibold">
+            <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Limited Spots
             </p>
             <h2 className="text-3xl font-bold mb-6">搶佔越南美業市場先機</h2>
@@ -332,7 +332,7 @@ export default function SEABeautyPage() {
             </p>
             <Link
               href="/contact"
-              className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-[15px] hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20 inline-block"
+              className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-base hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20 inline-block"
             >
               立即報名
             </Link>

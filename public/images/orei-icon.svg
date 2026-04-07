@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="ring-dark" x1="30" y1="40" x2="160" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a3f66"/>
+      <stop offset="0.3" stop-color="#1A2B4C"/>
+      <stop offset="0.7" stop-color="#0f1a33"/>
+      <stop offset="1" stop-color="#1A2B4C"/>
+    </linearGradient>
+    <linearGradient id="ring-highlight" x1="60" y1="20" x2="140" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3d5a8a"/>
+      <stop offset="1" stop-color="#1A2B4C"/>
+    </linearGradient>
+    <linearGradient id="swoosh-gold" x1="65" y1="155" x2="175" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9a7d30"/>
+      <stop offset="0.25" stop-color="#C5A44E"/>
+      <stop offset="0.5" stop-color="#d9c06e"/>
+      <stop offset="0.75" stop-color="#e8d49a"/>
+      <stop offset="1" stop-color="#C5A44E"/>
+    </linearGradient>
+  </defs>
+  <!-- Ring back half (bottom-right, behind swoosh) -->
+  <path d="M155 145 C175 120, 178 90, 168 65 C158 40, 138 25, 110 22 C100 21, 90 22, 80 25"
+        stroke="url(#ring-dark)" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <!-- Gold swoosh -->
+  <path d="M58 162 C75 140, 100 108, 125 78 C145 55, 160 40, 178 28"
+        stroke="url(#swoosh-gold)" stroke-width="15" stroke-linecap="round" fill="none"/>
+  <!-- Ring front half (top-left, over swoosh) -->
+  <path d="M80 25 C55 35, 35 55, 28 82 C20 112, 28 142, 50 162 C72 180, 100 185, 128 175 C145 168, 155 158, 155 145"
+        stroke="url(#ring-highlight)" stroke-width="24" stroke-linecap="round" fill="none"/>
+</svg>

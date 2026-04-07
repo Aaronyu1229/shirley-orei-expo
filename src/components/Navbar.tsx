@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -19,12 +20,19 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
       <div className="max-w-[1120px] mx-auto px-6 h-[72px] flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image
+            src="/images/orei-icon.svg"
+            alt="OREI Expo"
+            width={36}
+            height={36}
+            className="w-9 h-9"
+          />
           <div className="flex flex-col">
             <span className="text-[16px] font-bold tracking-[0.12em] text-navy leading-tight">
               OREI EXPO
             </span>
-            <span className="text-[11px] text-muted tracking-wide leading-tight">歐瑞會展</span>
+            <span className="text-[12px] text-muted tracking-wide leading-tight">歐瑞會展</span>
           </div>
         </Link>
 
@@ -41,7 +49,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[14px] tracking-wide transition-colors ${
+                className={`text-[15px] tracking-wide transition-colors ${
                   isActive
                     ? "text-navy font-semibold"
                     : "text-muted hover:text-navy"
@@ -53,7 +61,7 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className="text-[14px] tracking-wide bg-navy text-white px-5 py-2.5 rounded font-medium hover:opacity-85 transition-opacity"
+            className="text-[15px] tracking-wide bg-navy text-white px-5 py-2.5 rounded font-medium hover:opacity-85 transition-opacity"
           >
             立即報名
           </Link>
@@ -91,7 +99,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-[15px] text-navy py-2.5 hover:text-gold transition-colors"
+              className="block text-base text-navy py-2.5 hover:text-gold transition-colors"
             >
               {link.label}
             </Link>
@@ -99,7 +107,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="block text-[15px] bg-navy text-white text-center px-5 py-2.5 rounded mt-4 font-medium"
+            className="block text-base bg-navy text-white text-center px-5 py-3 rounded mt-4 font-medium"
           >
             立即報名
           </Link>

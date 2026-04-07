@@ -88,7 +88,7 @@ export default function Home() {
               </AnimateIn>
 
               <AnimateIn delay={0.16}>
-                <p className="text-muted text-lg leading-relaxed max-w-lg mb-12 text-base">
+                <p className="text-muted text-lg leading-relaxed max-w-lg mb-12">
                   歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
                   協助台灣美業與醫美品牌快速進入越南與東南亞市場。
                 </p>
@@ -117,7 +117,7 @@ export default function Home() {
                   priority
                 />
                 <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-md p-4 border border-border">
-                  <p className="text-[12px] tracking-[0.1em] uppercase text-gold font-semibold">
+                  <p className="text-[13px] tracking-[0.1em] uppercase text-gold font-semibold">
                     12 Countries
                   </p>
                   <p className="text-2xl font-bold text-navy">亞太商業網絡</p>
@@ -138,7 +138,7 @@ export default function Home() {
                   <p className="text-[clamp(2rem,4vw,3rem)] font-bold text-white leading-none mb-2">
                     <CountUp end={stat.number} suffix={stat.suffix} />
                   </p>
-                  <p className="text-white/50 text-[15px] tracking-wide">
+                  <p className="text-white/50 text-base tracking-wide">
                     {stat.label}
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export default function Home() {
               為什麼選擇歐瑞會展？
             </h2>
             <div className="gold-line mb-6" />
-            <p className="text-muted text-base leading-relaxed max-w-2xl mb-6">
+            <p className="text-muted text-[17px] leading-relaxed max-w-2xl mb-6">
               我們不只是展會組織方。歐瑞會展整合展前市場分析、展中商務媒合、
               展後通路對接，為品牌提供完整的東南亞市場進入方案。
             </p>
@@ -184,13 +184,13 @@ export default function Home() {
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
                 <p className="text-white font-bold text-lg tracking-wide">戰略升級</p>
-                <span className="text-white/40 text-[15px] ml-1">Strategic Upgrade</span>
+                <span className="text-white/40 text-base ml-1">Strategic Upgrade</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Past */}
                 <div className="bg-[#f5f3ef] p-8 md:p-10 relative">
-                  <p className="text-[13px] tracking-[0.2em] uppercase text-muted/60 font-semibold mb-6">
+                  <p className="text-[14px] tracking-[0.2em] uppercase text-muted/60 font-semibold mb-6">
                     過去 · Past
                   </p>
                   <h3 className="text-xl font-bold mb-6 text-navy/70">一般展會網站</h3>
@@ -201,10 +201,10 @@ export default function Home() {
                       { label: "最終產出", value: "租賃空間", note: "" },
                     ].map((row) => (
                       <div key={row.label} className="flex items-start gap-3">
-                        <span className="text-sm font-semibold text-muted/50 min-w-[68px] mt-0.5">{row.label}</span>
+                        <span className="text-[15px] font-semibold text-muted/50 min-w-[68px] mt-0.5">{row.label}</span>
                         <div>
-                          <p className="text-[15px] text-navy/60 leading-relaxed">{row.value}</p>
-                          {row.note && <p className="text-[13px] text-muted/40">({row.note})</p>}
+                          <p className="text-base text-navy/60 leading-relaxed">{row.value}</p>
+                          {row.note && <p className="text-[14px] text-muted/40">({row.note})</p>}
                         </div>
                       </div>
                     ))}
@@ -229,7 +229,7 @@ export default function Home() {
 
                 {/* Present */}
                 <div className="bg-white p-8 md:p-10 md:pl-14">
-                  <p className="text-[13px] tracking-[0.2em] uppercase text-gold font-semibold mb-6">
+                  <p className="text-[14px] tracking-[0.2em] uppercase text-gold font-semibold mb-6">
                     現在 · Now
                   </p>
                   <h3 className="text-xl font-bold mb-6 text-navy">高轉換成交型網站</h3>
@@ -240,10 +240,10 @@ export default function Home() {
                       { label: "最終產出", value: "國際市場進入平台", note: "International Market Entry & Expo Platform" },
                     ].map((row) => (
                       <div key={row.label} className="flex items-start gap-3">
-                        <span className="text-sm font-semibold text-gold min-w-[68px] mt-0.5">{row.label}</span>
+                        <span className="text-[15px] font-semibold text-gold min-w-[68px] mt-0.5">{row.label}</span>
                         <div>
-                          <p className="text-[15px] text-navy leading-relaxed font-medium">{row.value}</p>
-                          {row.note && <p className="text-[13px] text-muted">({row.note})</p>}
+                          <p className="text-base text-navy leading-relaxed font-medium">{row.value}</p>
+                          {row.note && <p className="text-[14px] text-muted">({row.note})</p>}
                         </div>
                       </div>
                     ))}
@@ -261,7 +261,7 @@ export default function Home() {
                     "拿到訂單",
                   ].map((step, i) => (
                     <div key={step} className="flex items-center gap-3 md:gap-4">
-                      <span className="text-[15px] font-medium text-navy whitespace-nowrap">{step}</span>
+                      <span className="text-base font-medium text-navy whitespace-nowrap">{step}</span>
                       {i < 3 && (
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gold shrink-0">
                           <path d="M5 12h14" />
@@ -334,12 +334,12 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-3">
                       <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <span className="text-[12px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
+                      <span className="text-[13px] text-gold bg-gold/10 px-2 py-0.5 rounded-full font-medium">
                         {item.num}
                       </span>
                     </div>
                   </div>
-                  <p className="text-muted text-[15px] leading-relaxed">
+                  <p className="text-muted text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -368,10 +368,10 @@ export default function Home() {
 
               {/* Header */}
               <div className="px-8 pt-8 pb-4 relative z-10">
-                <p className="text-gold text-[13px] tracking-[0.25em] uppercase font-semibold mb-1">
+                <p className="text-gold text-[14px] tracking-[0.25em] uppercase font-semibold mb-1">
                   Expos as Strategic Gateways
                 </p>
-                <p className="text-white/40 text-[15px]">
+                <p className="text-white/40 text-base">
                   三大展會，覆蓋東南亞核心美業市場
                 </p>
               </div>
@@ -386,12 +386,12 @@ export default function Home() {
                     {/* Status badge */}
                     <div className="flex items-center gap-2 mb-5">
                       {expo.status === "featured" ? (
-                        <span className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.15em] uppercase font-semibold text-gold">
+                        <span className="inline-flex items-center gap-1.5 text-[12px] tracking-[0.15em] uppercase font-semibold text-gold">
                           <span className="w-1.5 h-1.5 rounded-full bg-gold" />
                           Featured
                         </span>
                       ) : (
-                        <span className="text-[11px] tracking-[0.15em] uppercase font-semibold text-white/30">
+                        <span className="text-[12px] tracking-[0.15em] uppercase font-semibold text-white/30">
                           Coming Soon
                         </span>
                       )}
@@ -401,7 +401,7 @@ export default function Home() {
                     <h3 className="text-white font-bold text-lg leading-tight mb-1.5 whitespace-pre-line">
                       {expo.title}
                     </h3>
-                    <p className="text-gold/70 text-sm mb-6">{expo.subtitle}</p>
+                    <p className="text-gold/70 text-[15px] mb-6">{expo.subtitle}</p>
 
                     {/* Info rows */}
                     <div className="space-y-3">
@@ -411,8 +411,8 @@ export default function Home() {
                           <circle cx="12" cy="9" r="2.5" />
                         </svg>
                         <div>
-                          <p className="text-white/80 text-[15px] leading-snug">{expo.location}</p>
-                          <p className="text-white/30 text-[13px]">{expo.locationEn}</p>
+                          <p className="text-white/80 text-base leading-snug">{expo.location}</p>
+                          <p className="text-white/30 text-[14px]">{expo.locationEn}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2.5">
@@ -421,7 +421,7 @@ export default function Home() {
                           <path d="M3 9h18" />
                           <path d="M9 21V9" />
                         </svg>
-                        <p className="text-white/60 text-[15px]">{expo.format}</p>
+                        <p className="text-white/60 text-base">{expo.format}</p>
                       </div>
                     </div>
 
@@ -443,7 +443,7 @@ export default function Home() {
               <AnimateIn key={expo.title} delay={i * 0.08}>
                 <div className="bg-white rounded-lg p-8 h-full flex flex-col border border-border card-lift">
                   <span
-                    className={`text-[12px] tracking-[0.12em] uppercase font-semibold mb-6 inline-flex items-center gap-2 ${
+                    className={`text-[13px] tracking-[0.12em] uppercase font-semibold mb-6 inline-flex items-center gap-2 ${
                       expo.tag === "Featured" ? "text-gold" : "text-muted"
                     }`}
                   >
@@ -453,14 +453,14 @@ export default function Home() {
                     {expo.tag}
                   </span>
                   <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
-                  <p className="text-sm text-gold mb-4">{expo.subtitle}</p>
-                  <p className="text-[15px] text-muted leading-relaxed flex-1">
+                  <p className="text-[15px] text-gold mb-4">{expo.subtitle}</p>
+                  <p className="text-base text-muted leading-relaxed flex-1">
                     {expo.desc}
                   </p>
                   {expo.tag === "Featured" ? (
                     <Link
                       href={expo.href}
-                      className="mt-8 text-[15px] font-semibold text-navy hover:text-gold transition-colors inline-flex items-center gap-1.5"
+                      className="mt-8 text-base font-semibold text-navy hover:text-gold transition-colors inline-flex items-center gap-1.5"
                     >
                       了解更多
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
@@ -468,7 +468,7 @@ export default function Home() {
                       </svg>
                     </Link>
                   ) : (
-                    <span className="mt-8 text-[15px] text-muted/60 italic">
+                    <span className="mt-8 text-base text-muted/60 italic">
                       敬請期待
                     </span>
                   )}
@@ -491,15 +491,15 @@ export default function Home() {
                 Exclusive Event
               </h2>
               <div className="gold-line mb-8" />
-              <p className="text-muted text-base leading-relaxed mb-4">
+              <p className="text-muted text-[17px] leading-relaxed mb-4">
                 加入 FABIA 國際商業聯盟，享受 VIP
                 專屬展位、品牌頒獎、優先商務媒合等頂級權益。跨越 12
                 國的亞太商業網絡，為您的品牌開啟國際化新篇章。
               </p>
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-3xl font-bold text-gold">$1,500</span>
-                <span className="text-muted text-[15px]">USD / Brand Booth</span>
-                <span className="text-[12px] text-muted bg-surface px-3 py-1.5 rounded-full border border-border ml-2">
+                <span className="text-muted text-base">USD / Brand Booth</span>
+                <span className="text-[13px] text-muted bg-surface px-3 py-1.5 rounded-full border border-border ml-2">
                   限量名額
                 </span>
               </div>
@@ -530,7 +530,7 @@ export default function Home() {
       <section className="py-12 border-t border-border bg-surface">
         <div className="max-w-[1120px] mx-auto px-6">
           <AnimateIn>
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-muted text-[15px] tracking-wide">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-muted text-base tracking-wide">
               {[
                 "FABIA International Alliance",
                 "Vietnam Beauty Association",
@@ -555,7 +555,7 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn>
-            <p className="text-gold text-[13px] tracking-[0.3em] uppercase mb-6 font-semibold">
+            <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
               Get Started
             </p>
             <h2 className="text-3xl md:text-[2.5rem] font-bold leading-tight mb-6">
@@ -569,13 +569,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-[15px] hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20"
+                className="bg-gold text-white font-semibold px-8 py-3.5 rounded text-base hover:opacity-90 transition-all hover:shadow-lg hover:shadow-gold/20"
               >
                 立即諮詢報名
               </Link>
               <Link
                 href="/sea-beauty"
-                className="border border-white/20 text-white font-semibold px-8 py-3.5 rounded text-[15px] hover:bg-white/10 transition-colors"
+                className="border border-white/20 text-white font-semibold px-8 py-3.5 rounded text-base hover:bg-white/10 transition-colors"
               >
                 瀏覽展會資訊
               </Link>
