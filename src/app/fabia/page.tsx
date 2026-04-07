@@ -90,10 +90,7 @@ export default function FABIAPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <AnimateIn>
-                <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-8 font-semibold flex items-center gap-3">
-                  <span className="w-8 h-[1.5px] bg-gold inline-block" />
-                  FABIA Global Alliance
-                </p>
+                <p className="section-label mb-8 !text-gold/80">FABIA Global Alliance</p>
               </AnimateIn>
 
               <AnimateIn delay={0.08}>
@@ -154,36 +151,12 @@ export default function FABIAPage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* Highlights */}
-      <section className="py-20">
-        <div className="max-w-[1120px] mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { en: "Connect with Industry Leaders", zh: "對接行業領袖" },
-              { en: "Access Southeast Asia Market", zh: "進入東南亞市場" },
-              { en: "Exclusive VIP Access", zh: "VIP 專屬權益" },
-              { en: "Gain Recognition & Partnerships", zh: "獲得認證與合作" },
-            ].map((item, i) => (
-              <AnimateIn key={item.en} delay={i * 0.06} variant="fadeUp">
-                <div className="card-glass p-8 text-center rounded-2xl">
-                  <p className="text-base font-semibold mb-1">{item.en}</p>
-                  <p className="text-[14px] text-muted">{item.zh}</p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Benefits */}
-      <section id="benefits" className="py-32">
-        <div className="section-divider" />
+      <section id="benefits" className="py-32 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <AnimateIn>
-            <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
-              <span className="w-8 h-[1.5px] bg-gold inline-block" />
-              Benefits
-            </p>
+            <p className="section-label">Benefits</p>
             <h2 className="font-serif text-3xl font-bold mb-4">VIP 專屬權益</h2>
             <p className="text-muted text-base max-w-lg mb-4">
               USD $1,500 即享四大頂級權益，為您的品牌帶來最大化曝光與商機
@@ -222,15 +195,12 @@ export default function FABIAPage() {
       </section>
 
       {/* Asia Beauty Summit 2026 — poster showcase */}
-      <section className="py-32 bg-surface/50">
-        <div className="section-divider" />
+      <section className="py-32 bg-surface/50 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn variant="fadeLeft">
-              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
-                <span className="w-8 h-[1.5px] bg-gold inline-block" />
-                FABIA Season 9
-              </p>
+              <p className="section-label">FABIA Season 9</p>
               <h2 className="font-serif text-3xl font-bold mb-4">
                 Asia Beauty & Wellness
                 <br />
@@ -278,8 +248,8 @@ export default function FABIAPage() {
       </section>
 
       {/* Asian Beauty Awards */}
-      <section className="py-32">
-        <div className="section-divider" />
+      <section className="py-32 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn variant="fadeLeft">
@@ -304,10 +274,7 @@ export default function FABIAPage() {
             </AnimateIn>
 
             <AnimateIn delay={0.12} variant="fadeRight">
-              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
-                <span className="w-8 h-[1.5px] bg-gold inline-block" />
-                Awards
-              </p>
+              <p className="section-label">Awards</p>
               <h2 className="font-serif text-3xl font-bold mb-4">
                 第九屆亞洲美業大賽
                 <br />
@@ -315,7 +282,7 @@ export default function FABIAPage() {
               </h2>
               <div className="gold-line mb-6" />
               <p className="text-muted text-base leading-relaxed mb-6">
-                立足越南，布局亞洲，放眼全球。跨越美學交鋒、行業領袖齊聯，
+                立足越南，布局亞洲，放眼全球。匯聚行業領袖與美學先鋒，
                 見證美業榮光，共話產業未來。越南官方主辦，下龍灣榮耀啟幕。
               </p>
               <div className="space-y-3 mb-8">
@@ -340,15 +307,12 @@ export default function FABIAPage() {
       </section>
 
       {/* Network — 12 countries */}
-      <section className="py-32 bg-surface/50">
-        <div className="section-divider" />
+      <section className="py-32 bg-surface/50 relative">
+        <div className="section-divider absolute top-0 left-0 right-0" />
         <div className="max-w-[1120px] mx-auto px-6 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <AnimateIn variant="fadeLeft">
-              <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-4 font-semibold flex items-center gap-3">
-                <span className="w-8 h-[1.5px] bg-gold inline-block" />
-                Network
-              </p>
+              <p className="section-label">Network</p>
               <h2 className="font-serif text-3xl font-bold mb-4">
                 跨越 12 國的亞太商業網絡
               </h2>
@@ -395,7 +359,7 @@ export default function FABIAPage() {
               立即申請 FABIA VIP
             </h2>
             <p className="text-white/50 text-lg leading-relaxed mb-4">
-              2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聯一堂
+              2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聚一堂
             </p>
             <p className="text-2xl font-bold text-gold mb-10">
               USD $1,500 / Brand Booth

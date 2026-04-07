@@ -10,7 +10,6 @@ const navLinks = [
   { label: "展會", href: "/#expos" },
   { label: "SEA Beauty", href: "/sea-beauty" },
   { label: "FABIA", href: "/fabia" },
-  { label: "聯絡", href: "/contact" },
 ];
 
 export default function Navbar() {

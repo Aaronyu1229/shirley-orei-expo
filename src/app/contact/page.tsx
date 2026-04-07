@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AnimateIn from "@/components/AnimateIn";
@@ -151,7 +152,7 @@ export default function ContactPage() {
 
       {/* Hero */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
-        <div className="max-w-[1120px] mx-auto px-6 py-24 relative z-10">
+        <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
           <AnimateIn>
             <p className="section-label mb-6 !text-gold/80">Contact Us</p>
             <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.2] tracking-tight mb-4">
@@ -380,7 +381,7 @@ export default function ContactPage() {
                       disabled={status === "submitting"}
                       className="btn-gold w-full py-4 text-base disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      {status === "submitting" ? "送出中..." : "送出報名 / 諮詢"}
+                      {status === "submitting" ? "送出中..." : "提交諮詢"}
                     </button>
                   </form>
                 )}
@@ -460,7 +461,7 @@ export default function ContactPage() {
                       { label: "SEA Beauty 展會資訊", href: "/sea-beauty" },
                       { label: "FABIA VIP 方案", href: "/fabia" },
                     ].map((link) => (
-                      <a
+                      <Link
                         key={link.href}
                         href={link.href}
                         className="flex items-center justify-between text-base text-white/70 hover:text-gold transition-colors group"
@@ -469,7 +470,7 @@ export default function ContactPage() {
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
                           <path d="M6 3l5 5-5 5" />
                         </svg>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

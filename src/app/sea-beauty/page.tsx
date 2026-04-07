@@ -117,7 +117,7 @@ export default function SEABeautyPage() {
             <AnimateIn variant="scaleUp" delay={0.2}>
               <div className="relative">
                 <Image
-                  src="/images/event-photo-1.png"
+                  src="/images/event-photo-2.png"
                   alt="SEA Beauty 展會現場"
                   width={800}
                   height={600}
@@ -202,9 +202,9 @@ export default function SEABeautyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { src: "/images/event-photo-1.png", alt: "展會實景 — 商務交流", caption: "商務交流現場" },
-              { src: "/images/event-photo-2.png", alt: "展會實景 — 品牌展示", caption: "品牌展示體驗" },
-              { src: "/images/venue-3.png", alt: "展會實景 — 買家互動", caption: "買家產品互動" },
+              { src: "/images/venue-3.png", alt: "展會實景 — 商務交流", caption: "商務交流現場" },
+              { src: "/images/event-photo-1.png", alt: "展會實景 — 品牌展示", caption: "品牌展示體驗" },
+              { src: "/images/event-photo-2.png", alt: "展會實景 — 買家互動", caption: "買家產品互動" },
               { src: "/images/venue-4.png", alt: "展會實景 — 展位洽談", caption: "展位商務洽談" },
             ].map((photo, i) => (
               <AnimateIn key={photo.src} delay={i * 0.08} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}>

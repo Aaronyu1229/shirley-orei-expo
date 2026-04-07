@@ -330,15 +330,17 @@ export default function Home() {
             ].map((item, i) => (
               <AnimateIn key={item.num} delay={i * 0.08} variant={i % 2 === 0 ? "fadeLeft" : "fadeRight"}>
                 <div className="card-glass p-8 h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center shrink-0">
-                      {item.icon}
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <h3 className="font-semibold text-lg">{item.title}</h3>
-                      <span className="text-[12px] text-gold bg-gold/10 px-2.5 py-1 rounded-full font-semibold">
-                        {item.num}
-                      </span>
+                  <div className="flex items-start gap-4 mb-4">
+                    <span className="text-[28px] font-bold text-gold/20 leading-none font-serif shrink-0">
+                      {item.num}
+                    </span>
+                    <div>
+                      <div className="flex items-center gap-3 mb-1">
+                        <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                          {item.icon}
+                        </div>
+                        <h3 className="font-semibold text-lg">{item.title}</h3>
+                      </div>
                     </div>
                   </div>
                   <p className="text-muted text-base leading-relaxed">
@@ -383,7 +385,7 @@ export default function Home() {
               <div className="mx-8 h-px bg-white/10" />
 
               {/* Expo Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 relative z-10">
                 {expoOverview.map((expo, i) => (
                   <div key={expo.subtitle} className="p-8 relative group">
                     {/* Status badge */}
@@ -549,7 +551,7 @@ export default function Home() {
                 "ASEAN Business Forum",
                 "Asia Beauty Summit",
               ].map((partner) => (
-                <span key={partner} className="opacity-40 hover:opacity-100 transition-opacity duration-500">
+                <span key={partner} className="opacity-60 hover:opacity-100 transition-opacity duration-500">
                   {partner}
                 </span>
               ))}

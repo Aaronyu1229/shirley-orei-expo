@@ -39,7 +39,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-16">
             <div>
               <p className="text-[13px] font-semibold tracking-[0.15em] text-gold/60 uppercase mb-4">
                 Pages
@@ -70,7 +70,7 @@ export default function Footer() {
                 <p>Shirley Chang</p>
                 <a
                   href="mailto:shirley62133@gmail.com"
-                  className="block hover:text-gold transition-colors duration-300"
+                  className="block hover:text-gold transition-colors duration-300 break-all"
                 >
                   shirley62133@gmail.com
                 </a>
@@ -83,7 +83,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <p className="text-[13px] font-semibold tracking-[0.15em] text-gold/60 uppercase mb-4">
                 Social
               </p>
