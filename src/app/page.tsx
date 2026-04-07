@@ -69,76 +69,77 @@ export default function Home() {
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
-      <section className="min-h-screen flex items-center gradient-hero text-white pt-[72px] relative overflow-hidden">
-        <div className="max-w-[1120px] mx-auto px-6 w-full py-24 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <AnimateIn variant="fadeIn" duration={0.8}>
-                <p className="section-label mb-8 !text-gold/80">
-                  Your Premium Gateway to Southeast Asia
-                </p>
-              </AnimateIn>
+      <section className="gradient-hero text-white pt-[72px] relative overflow-hidden">
+        {/* Bleed image — desktop */}
+        <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block">
+          <Image
+            src="/images/event-photo-1.png"
+            alt="歐瑞會展活動現場"
+            fill
+            className="object-cover hero-bleed"
+            priority
+          />
+        </div>
 
-              <AnimateIn variant="slideUp" delay={0.15} duration={0.9}>
-                <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight mb-8">
-                  讓你的品牌
-                  <br />
-                  <span className="text-gold">走進東南亞市場</span>
-                </h1>
-              </AnimateIn>
+        <div className="max-w-[1120px] mx-auto px-6 w-full relative z-10 lg:min-h-[calc(100vh-72px)] lg:flex lg:items-center">
+          <div className="py-20 lg:py-0 lg:w-1/2">
+            <AnimateIn variant="fadeIn" duration={0.8}>
+              <p className="section-label mb-8 !text-gold/80">
+                Your Premium Gateway to Southeast Asia
+              </p>
+            </AnimateIn>
 
-              <AnimateIn delay={0.3}>
-                <p className="text-white/60 text-lg leading-relaxed max-w-lg mb-12">
-                  歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
-                  協助台灣美業與醫美品牌快速進入越南與東南亞市場。
-                </p>
-              </AnimateIn>
+            <AnimateIn variant="slideUp" delay={0.15} duration={0.9}>
+              <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight mb-8">
+                讓你的品牌
+                <br />
+                <span className="text-gold">走進東南亞市場</span>
+              </h1>
+            </AnimateIn>
 
-              <AnimateIn delay={0.4}>
-                <div className="flex flex-wrap gap-4 mb-16">
-                  <Link href="/contact" className="btn-gold">
-                    預約顧問諮詢
-                  </Link>
-                  <Link href="/sea-beauty" className="btn-outline-light">
-                    了解展會資訊
-                  </Link>
-                </div>
-              </AnimateIn>
+            <AnimateIn delay={0.3}>
+              <p className="text-white/60 text-lg leading-relaxed max-w-lg mb-12">
+                歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
+                協助台灣美業與醫美品牌快速進入越南與東南亞市場。
+              </p>
+            </AnimateIn>
 
-              {/* Stats inline */}
-              <AnimateIn delay={0.5}>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                  {stats.map((stat, i) => (
-                    <div key={stat.label}>
-                      <p className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white leading-none mb-1">
-                        <CountUp end={stat.number} suffix={stat.suffix} />
-                      </p>
-                      <p className="text-white/40 text-[14px] tracking-wide">
-                        {stat.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </AnimateIn>
-            </div>
-
-            <AnimateIn variant="scaleUp" delay={0.3} duration={1}>
-              <div className="relative">
-                <Image
-                  src="/images/event-photo-1.png"
-                  alt="歐瑞會展活動現場"
-                  width={800}
-                  height={600}
-                  className="rounded-2xl w-full object-cover shadow-2xl relative z-10"
-                  priority
-                />
-                <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-5 border border-border z-20">
-                  <p className="text-[12px] tracking-[0.15em] uppercase text-gold font-semibold">
-                    12 Countries
-                  </p>
-                  <p className="text-xl font-bold text-navy">亞太商業網絡</p>
-                </div>
+            <AnimateIn delay={0.4}>
+              <div className="flex flex-wrap gap-4 mb-16">
+                <Link href="/contact" className="btn-gold">
+                  預約顧問諮詢
+                </Link>
+                <Link href="/sea-beauty" className="btn-outline-light">
+                  了解展會資訊
+                </Link>
               </div>
+            </AnimateIn>
+
+            {/* Stats inline */}
+            <AnimateIn delay={0.5}>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-white leading-none mb-1">
+                      <CountUp end={stat.number} suffix={stat.suffix} />
+                    </p>
+                    <p className="text-white/40 text-[14px] tracking-wide">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </AnimateIn>
+
+            {/* Mobile image */}
+            <AnimateIn variant="scaleUp" delay={0.3} className="lg:hidden mt-16">
+              <Image
+                src="/images/event-photo-1.png"
+                alt="歐瑞會展活動現場"
+                width={800}
+                height={600}
+                className="rounded-2xl w-full object-cover shadow-2xl"
+              />
             </AnimateIn>
           </div>
         </div>

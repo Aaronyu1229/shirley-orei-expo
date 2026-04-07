@@ -73,58 +73,65 @@ export default function SEABeautyPage() {
 
       {/* ═══════ Hero ═══════ */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
+        {/* Bleed image — desktop */}
+        <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block">
+          <Image
+            src="/images/event-photo-2.png"
+            alt="SEA Beauty 展會現場"
+            fill
+            className="object-cover hero-bleed"
+            priority
+          />
+        </div>
+
         <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <AnimateIn variant="fadeIn">
-                <p className="section-label mb-8 !text-gold/80">Featured Expo</p>
-              </AnimateIn>
+          <div className="lg:w-1/2">
+            <AnimateIn variant="fadeIn">
+              <p className="section-label mb-8 !text-gold/80">Featured Expo</p>
+            </AnimateIn>
 
-              <AnimateIn variant="slideUp" delay={0.1}>
-                <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
-                  SEA Beauty Business
-                  <br />
-                  Matching Expo
-                </h1>
-              </AnimateIn>
+            <AnimateIn variant="slideUp" delay={0.1}>
+              <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
+                SEA Beauty Business
+                <br />
+                Matching Expo
+              </h1>
+            </AnimateIn>
 
-              <AnimateIn delay={0.2}>
-                <p className="text-gold text-lg font-medium mb-2">
-                  國際美容暨醫美商務媒合展
-                </p>
-                <div className="gold-line mb-6" />
-              </AnimateIn>
+            <AnimateIn delay={0.2}>
+              <p className="text-gold text-lg font-medium mb-2">
+                國際美容暨醫美商務媒合展
+              </p>
+              <div className="gold-line mb-6" />
+            </AnimateIn>
 
-              <AnimateIn delay={0.3}>
-                <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-12">
-                  越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
-                  為台灣品牌打開東南亞最具潛力的美業市場。
-                </p>
-              </AnimateIn>
+            <AnimateIn delay={0.3}>
+              <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-12">
+                越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
+                為台灣品牌打開東南亞最具潛力的美業市場。
+              </p>
+            </AnimateIn>
 
-              <AnimateIn delay={0.4}>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn-gold">
-                    立即報名參展
-                  </Link>
-                  <a href="#process" className="btn-outline-light">
-                    了解展會流程
-                  </a>
-                </div>
-              </AnimateIn>
-            </div>
-
-            <AnimateIn variant="scaleUp" delay={0.2}>
-              <div className="relative">
-                <Image
-                  src="/images/event-photo-2.png"
-                  alt="SEA Beauty 展會現場"
-                  width={800}
-                  height={600}
-                  className="rounded-2xl w-full object-cover shadow-2xl relative z-10"
-                  priority
-                />
+            <AnimateIn delay={0.4}>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="btn-gold">
+                  立即報名參展
+                </Link>
+                <a href="#process" className="btn-outline-light">
+                  了解展會流程
+                </a>
               </div>
+            </AnimateIn>
+
+            {/* Mobile image */}
+            <AnimateIn variant="scaleUp" delay={0.3} className="lg:hidden mt-16">
+              <Image
+                src="/images/event-photo-2.png"
+                alt="SEA Beauty 展會現場"
+                width={800}
+                height={600}
+                className="rounded-2xl w-full object-cover shadow-2xl"
+              />
             </AnimateIn>
           </div>
         </div>

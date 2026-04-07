@@ -84,66 +84,73 @@ export default function FABIAPage() {
     <>
       <Navbar />
 
-      {/* Hero — dark immersive with FABIA poster */}
+      {/* Hero — dark immersive with bleed image */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
+        {/* Bleed image — desktop */}
+        <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block">
+          <Image
+            src="/images/venue-5.png"
+            alt="FABIA VIP 活動場景"
+            fill
+            className="object-cover hero-bleed"
+            priority
+          />
+        </div>
+
         <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <AnimateIn>
-                <p className="section-label mb-8 !text-gold/80">FABIA Global Alliance</p>
-              </AnimateIn>
+          <div className="lg:w-1/2">
+            <AnimateIn>
+              <p className="section-label mb-8 !text-gold/80">FABIA Global Alliance</p>
+            </AnimateIn>
 
-              <AnimateIn delay={0.08}>
-                <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
-                  FABIA VIP
-                  <br />
-                  <span className="text-gold">Exclusive Event</span>
-                </h1>
-                <div className="gold-line mb-6" />
-              </AnimateIn>
+            <AnimateIn delay={0.08}>
+              <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
+                FABIA VIP
+                <br />
+                <span className="text-gold">Exclusive Event</span>
+              </h1>
+              <div className="gold-line mb-6" />
+            </AnimateIn>
 
-              <AnimateIn delay={0.12}>
-                <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-4">
-                  加入 FABIA 國際商業聯盟，開啟品牌國際化之路。 跨越 12
-                  國的亞太商業網絡，為您的品牌帶來最高規格的展示舞台。
-                </p>
-              </AnimateIn>
+            <AnimateIn delay={0.12}>
+              <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-4">
+                加入 FABIA 國際商業聯盟，開啟品牌國際化之路。 跨越 12
+                國的亞太商業網絡，為您的品牌帶來最高規格的展示舞台。
+              </p>
+            </AnimateIn>
 
-              <AnimateIn delay={0.16}>
-                <div className="flex items-center gap-6 mb-12">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-gold">$1,500</span>
-                    <span className="text-white/50 text-base">USD / Brand Booth</span>
-                  </div>
-                  <span className="text-[14px] text-white/60 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
-                    26 / 05 / 2026
-                  </span>
+            <AnimateIn delay={0.16}>
+              <div className="flex items-center gap-6 mb-12">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-bold text-gold">$1,500</span>
+                  <span className="text-white/50 text-base">USD / Brand Booth</span>
                 </div>
-              </AnimateIn>
-
-              <AnimateIn delay={0.24}>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn-gold">
-                    立即申請
-                  </Link>
-                  <a href="#benefits" className="btn-outline-light">
-                    了解 VIP 權益
-                  </a>
-                </div>
-              </AnimateIn>
-            </div>
-
-            <AnimateIn delay={0.16} variant="scaleUp">
-              <div className="relative">
-                <Image
-                  src="/images/fabia-poster.png"
-                  alt="FABIA VIP Exclusive Event 海報"
-                  width={600}
-                  height={900}
-                  className="rounded-2xl w-full max-w-[420px] mx-auto shadow-2xl relative z-10"
-                  priority
-                />
+                <span className="text-[14px] text-white/60 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
+                  26 / 05 / 2026
+                </span>
               </div>
+            </AnimateIn>
+
+            <AnimateIn delay={0.24}>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="btn-gold">
+                  立即申請
+                </Link>
+                <a href="#benefits" className="btn-outline-light">
+                  了解 VIP 權益
+                </a>
+              </div>
+            </AnimateIn>
+
+            {/* Mobile poster */}
+            <AnimateIn delay={0.16} variant="scaleUp" className="lg:hidden mt-16">
+              <Image
+                src="/images/fabia-poster.png"
+                alt="FABIA VIP Exclusive Event 海報"
+                width={600}
+                height={900}
+                className="rounded-2xl w-full max-w-[420px] mx-auto shadow-2xl"
+              />
             </AnimateIn>
           </div>
         </div>

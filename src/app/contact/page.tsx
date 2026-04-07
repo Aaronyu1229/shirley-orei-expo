@@ -152,16 +152,28 @@ export default function ContactPage() {
 
       {/* Hero */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
+        {/* Bleed image — desktop */}
+        <div className="absolute right-0 top-0 bottom-0 w-[55%] hidden lg:block">
+          <Image
+            src="/images/venue-3.png"
+            alt="歐瑞會展商務交流現場"
+            fill
+            className="object-cover hero-bleed"
+          />
+        </div>
+
         <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
-          <AnimateIn>
-            <p className="section-label mb-6 !text-gold/80">Contact Us</p>
-            <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.2] tracking-tight mb-4">
-              聯絡我們
-            </h1>
-            <p className="text-white/50 text-lg max-w-lg">
-              歐瑞會展 — 您進入東南亞市場的唯一頂級通道
-            </p>
-          </AnimateIn>
+          <div className="lg:w-1/2">
+            <AnimateIn>
+              <p className="section-label mb-6 !text-gold/80">Contact Us</p>
+              <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.2] tracking-tight mb-4">
+                聯絡我們
+              </h1>
+              <p className="text-white/50 text-lg max-w-lg">
+                歐瑞會展 — 您進入東南亞市場的唯一頂級通道
+              </p>
+            </AnimateIn>
+          </div>
         </div>
         <div className="hero-fade" />
       </section>
