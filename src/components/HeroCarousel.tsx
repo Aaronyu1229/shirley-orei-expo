@@ -155,7 +155,7 @@ export default function HeroCarousel() {
                 visibility: i === active ? "visible" : "hidden",
               }}
             >
-              <p className="text-xs tracking-[0.3em] uppercase text-white/60 font-medium mb-6">
+              <p className="text-xs tracking-[0.3em] uppercase text-white/80 font-medium mb-6">
                 {slide.tag}
               </p>
 
@@ -163,7 +163,7 @@ export default function HeroCarousel() {
                 {slide.headline}
               </h1>
 
-              <p className="text-white/60 text-lg leading-relaxed max-w-lg mb-10">
+              <p className="text-white/75 text-lg leading-relaxed max-w-lg mb-10">
                 {slide.desc}
               </p>
 
@@ -189,7 +189,7 @@ export default function HeroCarousel() {
                 key={slide.src}
                 onClick={() => goTo(i)}
                 className={`relative flex-1 py-5 text-left text-sm font-medium transition-colors duration-300 ${
-                  i === active ? "text-white" : "text-white/40 hover:text-white/70"
+                  i === active ? "text-white" : "text-white/60 hover:text-white/90"
                 }`}
               >
                 <span className="relative z-10">{slide.tag}</span>
@@ -227,8 +227,14 @@ export default function HeroCarousel() {
         </div>
       </div>
 
-      {/* ── Hero fade bottom ── */}
-      <div className="hero-fade-bottom" style={{ zIndex: 3 }} />
+      {/* ── Bottom dark gradient (for tab readability) ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[200px] pointer-events-none"
+        style={{
+          zIndex: 3,
+          background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 50%, transparent 100%)",
+        }}
+      />
     </section>
   );
 }
