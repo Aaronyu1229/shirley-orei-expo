@@ -68,14 +68,8 @@ export default function Home() {
     <>
       <Navbar />
 
-      {/* ═══════ Hero — Immersive Dark ═══════ */}
+      {/* ═══════ Hero ═══════ */}
       <section className="min-h-screen flex items-center gradient-hero text-white pt-[72px] relative overflow-hidden">
-        {/* Decorative grid dots */}
-        <div className="absolute inset-0 dot-grid opacity-30" />
-        {/* Decorative arcs echoing the logo ring */}
-        <div className="absolute top-1/4 right-[5%] w-[500px] h-[500px] border border-gold/[0.06] rounded-full" />
-        <div className="absolute top-1/4 right-[5%] w-[400px] h-[400px] border border-gold/[0.04] rounded-full translate-x-12 translate-y-12" />
-
         <div className="max-w-[1120px] mx-auto px-6 w-full py-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -89,7 +83,7 @@ export default function Home() {
                 <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight mb-8">
                   讓你的品牌
                   <br />
-                  <span className="text-gradient-gold">走進東南亞市場</span>
+                  <span className="text-gold">走進東南亞市場</span>
                 </h1>
               </AnimateIn>
 
@@ -105,10 +99,7 @@ export default function Home() {
                   <Link href="/contact" className="btn-gold">
                     預約顧問諮詢
                   </Link>
-                  <Link
-                    href="/sea-beauty"
-                    className="border border-white/20 text-white font-semibold px-6 py-3.5 rounded-lg text-base hover:bg-white/10 hover:border-white/40 transition-all inline-block"
-                  >
+                  <Link href="/sea-beauty" className="btn-outline-light">
                     了解展會資訊
                   </Link>
                 </div>
@@ -133,7 +124,6 @@ export default function Home() {
 
             <AnimateIn variant="scaleUp" delay={0.3} duration={1}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gold/[0.06] rounded-2xl blur-2xl" />
                 <Image
                   src="/images/event-photo-1.png"
                   alt="歐瑞會展活動現場"
@@ -511,7 +501,7 @@ export default function Home() {
                 國的亞太商業網絡，為您的品牌開啟國際化新篇章。
               </p>
               <div className="flex items-center gap-3 mb-8">
-                <span className="text-3xl font-bold text-gradient-gold font-serif">$1,500</span>
+                <span className="text-3xl font-bold text-gold font-serif">$1,500</span>
                 <span className="text-muted text-base">USD / Brand Booth</span>
                 <span className="text-[13px] text-muted bg-surface px-3 py-1.5 rounded-full border border-border ml-2">
                   限量名額
@@ -521,15 +511,14 @@ export default function Home() {
                 <Link href="/fabia" className="btn-primary">
                   了解 FABIA 方案
                 </Link>
-                <Link href="/contact" className="btn-ghost">
-                  預約諮詢
+                <Link href="/contact" className="btn-outline">
+                  立即報名
                 </Link>
               </div>
             </AnimateIn>
 
             <AnimateIn variant="fadeRight" delay={0.12}>
               <div className="relative">
-                <div className="absolute -inset-3 bg-gold/[0.05] rounded-2xl blur-xl" />
                 <Image
                   src="/images/fabia-poster.png"
                   alt="FABIA VIP Exclusive Event"
@@ -571,11 +560,6 @@ export default function Home() {
 
       {/* ═══════ CTA ═══════ */}
       <section className="py-32 gradient-navy text-white relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-80 h-80 bg-gold/[0.04] rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold/[0.03] rounded-full translate-x-1/3 translate-y-1/3" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-gold/[0.04] rounded-full" />
-
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn variant="scaleUp">
             <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
@@ -590,16 +574,10 @@ export default function Home() {
               歐瑞會展為您提供一站式展會參展、通路對接與品牌曝光服務
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="btn-gold animate-pulse-glow"
-              >
-                立即諮詢報名
+              <Link href="/contact" className="btn-gold">
+                立即報名
               </Link>
-              <Link
-                href="/sea-beauty"
-                className="border border-white/20 text-white font-semibold px-8 py-3.5 rounded-lg text-base hover:bg-white/10 transition-colors inline-block"
-              >
+              <Link href="/sea-beauty" className="btn-outline-light">
                 瀏覽展會資訊
               </Link>
             </div>

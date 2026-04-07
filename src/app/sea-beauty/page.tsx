@@ -73,7 +73,6 @@ export default function SEABeautyPage() {
 
       {/* ═══════ Hero ═══════ */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-20" />
         <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -108,10 +107,7 @@ export default function SEABeautyPage() {
                   <Link href="/contact" className="btn-gold">
                     立即報名參展
                   </Link>
-                  <a
-                    href="#process"
-                    className="border border-white/20 text-white font-semibold px-6 py-3.5 rounded-lg text-base hover:bg-white/10 transition-all inline-block"
-                  >
+                  <a href="#process" className="btn-outline-light">
                     了解展會流程
                   </a>
                 </div>
@@ -120,7 +116,6 @@ export default function SEABeautyPage() {
 
             <AnimateIn variant="scaleUp" delay={0.2}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gold/[0.06] rounded-2xl blur-2xl" />
                 <Image
                   src="/images/event-photo-1.png"
                   alt="SEA Beauty 展會現場"
@@ -336,10 +331,6 @@ export default function SEABeautyPage() {
 
       {/* ═══════ CTA ═══════ */}
       <section className="py-32 gradient-navy text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-80 h-80 bg-gold/[0.04] rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gold/[0.03] rounded-full translate-x-1/3 translate-y-1/3" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gold/[0.04] rounded-full" />
-
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn variant="scaleUp">
             <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
@@ -351,7 +342,7 @@ export default function SEABeautyPage() {
             </p>
             <Link
               href="/contact"
-              className="btn-gold animate-pulse-glow"
+              className="btn-gold"
             >
               立即報名
             </Link>

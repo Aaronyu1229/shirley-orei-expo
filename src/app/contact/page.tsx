@@ -23,6 +23,33 @@ const contactInfo = [
   },
 ];
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+interface FormErrors {
+  company?: string;
+  name?: string;
+  phone?: string;
+  email?: string;
+}
+
+function validateForm(data: {
+  company: string;
+  name: string;
+  phone: string;
+  email: string;
+}): FormErrors {
+  const errors: FormErrors = {};
+  if (!data.company.trim()) errors.company = "請輸入公司名稱";
+  if (!data.name.trim()) errors.name = "請輸入聯絡人姓名";
+  if (!data.phone.trim()) errors.phone = "請輸入電話號碼";
+  if (!data.email.trim()) {
+    errors.email = "請輸入 Email";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+    errors.email = "請輸入有效的 Email 格式";
+  }
+  return errors;
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     company: "",
@@ -32,42 +59,101 @@ export default function ContactPage() {
     interest: "",
     message: "",
   });
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    // Clear error on change if field was touched
+    if (touched[name] && errors[name as keyof FormErrors]) {
+      const newErrors = { ...errors };
+      delete newErrors[name as keyof FormErrors];
+      setErrors(newErrors);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleBlur = (
+    e: React.FocusEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name } = e.target;
+    setTouched({ ...touched, [name]: true });
+    // Validate single field on blur
+    const fieldErrors = validateForm(formData);
+    if (fieldErrors[name as keyof FormErrors]) {
+      setErrors({ ...errors, [name as keyof FormErrors]: fieldErrors[name as keyof FormErrors] });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `【OREI Expo 報名】${formData.company} - ${formData.name}`
-    );
-    const body = encodeURIComponent(
-      `公司名稱：${formData.company}\n聯絡人：${formData.name}\n電話：${formData.phone}\nEmail：${formData.email}\n感興趣項目：${formData.interest}\n補充說明：${formData.message}`
-    );
-    window.location.href = `mailto:shirley62133@gmail.com?subject=${subject}&body=${body}`;
+
+    // Validate all fields
+    const fieldErrors = validateForm(formData);
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors);
+      setTouched({ company: true, name: true, phone: true, email: true });
+      return;
+    }
+
+    setStatus("submitting");
+    setErrors({});
+
+    try {
+      // Build mailto link as fallback (no backend)
+      const subject = encodeURIComponent(
+        `【OREI Expo 報名】${formData.company} - ${formData.name}`
+      );
+      const body = encodeURIComponent(
+        `公司名稱：${formData.company}\n聯絡人：${formData.name}\n電話：${formData.phone}\nEmail：${formData.email}\n感興趣項目：${formData.interest}\n補充說明：${formData.message}`
+      );
+      window.location.href = `mailto:shirley62133@gmail.com?subject=${subject}&body=${body}`;
+
+      // Show success after brief delay (mailto opens email client)
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
-  const inputClass =
-    "w-full border border-border/60 rounded-xl px-4 py-3.5 text-base bg-white focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all placeholder:text-muted/40 hover:border-gold/30";
+  const handleReset = () => {
+    setFormData({
+      company: "",
+      name: "",
+      phone: "",
+      email: "",
+      interest: "",
+      message: "",
+    });
+    setStatus("idle");
+    setErrors({});
+    setTouched({});
+  };
+
+  const inputClass = (field?: keyof FormErrors) =>
+    `w-full border rounded-xl px-4 py-3.5 text-base bg-white focus:outline-none focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all placeholder:text-muted/40 hover:border-gold/30 ${
+      field && errors[field] && touched[field]
+        ? "border-red-400 focus:ring-red-200 focus:border-red-400"
+        : "border-border/60"
+    }`;
 
   return (
     <>
       <Navbar />
 
-      {/* Hero — dark immersive */}
+      {/* Hero */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
-        <div className="dot-grid" />
         <div className="max-w-[1120px] mx-auto px-6 py-24 relative z-10">
           <AnimateIn>
-            <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold flex items-center gap-3">
-              <span className="w-8 h-[1.5px] bg-gold inline-block" />
-              Contact Us
-            </p>
+            <p className="section-label mb-6 !text-gold/80">Contact Us</p>
             <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1.2] tracking-tight mb-4">
               聯絡我們
             </h1>
@@ -76,7 +162,6 @@ export default function ContactPage() {
             </p>
           </AnimateIn>
         </div>
-        {/* Bottom gradient fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
@@ -146,104 +231,159 @@ export default function ContactPage() {
               <AnimateIn variant="fadeLeft">
                 <h2 className="font-serif text-2xl font-bold mb-2">預約顧問諮詢</h2>
                 <p className="text-muted text-base mb-8">填寫以下表單，我們將在 24 小時內與您聯繫</p>
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label className="block text-[15px] font-medium mb-1.5">
-                      公司名稱 <span className="text-gold">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      required
-                      value={formData.company}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="請輸入公司名稱"
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-[15px] font-medium mb-1.5">
-                        聯絡人 <span className="text-gold">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={inputClass}
-                        placeholder="姓名"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[15px] font-medium mb-1.5">
-                        電話 <span className="text-gold">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className={inputClass}
-                        placeholder="+886..."
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-[15px] font-medium mb-1.5">
-                      Email <span className="text-gold">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className={inputClass}
-                      placeholder="email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[15px] font-medium mb-1.5">
-                      感興趣的項目
-                    </label>
-                    <select
-                      name="interest"
-                      value={formData.interest}
-                      onChange={handleChange}
-                      className={inputClass}
+
+                {status === "success" ? (
+                  <div className="form-success">
+                    <p className="font-semibold mb-1">感謝您的諮詢！</p>
+                    <p className="text-sm mb-4">
+                      您的 Email 應用程式已開啟，請確認並送出郵件。我們將在 24 小時內回覆。
+                    </p>
+                    <button
+                      onClick={handleReset}
+                      className="btn-outline text-sm px-4 py-2"
                     >
-                      <option value="">請選擇</option>
-                      <option value="SEA Beauty Expo">
-                        SEA Beauty 國際美容商務媒合展
-                      </option>
-                      <option value="FABIA VIP">
-                        FABIA VIP Exclusive Event
-                      </option>
-                      <option value="AMSC ASIA">AMSC ASIA 醫美大會</option>
-                      <option value="MYCE">MYCE 馬來西亞消費展</option>
-                      <option value="多項展會">多項展會 / 全年方案</option>
-                    </select>
+                      填寫新的表單
+                    </button>
                   </div>
-                  <div>
-                    <label className="block text-[15px] font-medium mb-1.5">
-                      補充說明
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className={`${inputClass} resize-none`}
-                      placeholder="請簡述您的品牌與需求..."
-                    />
-                  </div>
-                  <button type="submit" className="btn-gold w-full py-4 text-base">
-                    送出報名 / 諮詢
-                  </button>
-                </form>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                    {status === "error" && (
+                      <div className="form-error">
+                        <p className="font-semibold">送出失敗</p>
+                        <p className="text-sm">
+                          請稍後再試，或直接透過 Email / LINE 聯繫我們。
+                        </p>
+                      </div>
+                    )}
+
+                    <div>
+                      <label htmlFor="company" className="block text-[15px] font-medium mb-1.5">
+                        公司名稱 <span className="text-gold">*</span>
+                      </label>
+                      <input
+                        id="company"
+                        type="text"
+                        name="company"
+                        required
+                        autoComplete="organization"
+                        value={formData.company}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={inputClass("company")}
+                        placeholder="請輸入公司名稱"
+                      />
+                      {errors.company && touched.company && (
+                        <p className="input-error-text">{errors.company}</p>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="name" className="block text-[15px] font-medium mb-1.5">
+                          聯絡人 <span className="text-gold">*</span>
+                        </label>
+                        <input
+                          id="name"
+                          type="text"
+                          name="name"
+                          required
+                          autoComplete="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          className={inputClass("name")}
+                          placeholder="姓名"
+                        />
+                        {errors.name && touched.name && (
+                          <p className="input-error-text">{errors.name}</p>
+                        )}
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-[15px] font-medium mb-1.5">
+                          電話 <span className="text-gold">*</span>
+                        </label>
+                        <input
+                          id="phone"
+                          type="tel"
+                          name="phone"
+                          required
+                          autoComplete="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                          className={inputClass("phone")}
+                          placeholder="+886..."
+                        />
+                        {errors.phone && touched.phone && (
+                          <p className="input-error-text">{errors.phone}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-[15px] font-medium mb-1.5">
+                        Email <span className="text-gold">*</span>
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        required
+                        autoComplete="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={inputClass("email")}
+                        placeholder="email@example.com"
+                      />
+                      {errors.email && touched.email && (
+                        <p className="input-error-text">{errors.email}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label htmlFor="interest" className="block text-[15px] font-medium mb-1.5">
+                        感興趣的項目
+                      </label>
+                      <select
+                        id="interest"
+                        name="interest"
+                        value={formData.interest}
+                        onChange={handleChange}
+                        className={inputClass()}
+                      >
+                        <option value="">請選擇</option>
+                        <option value="SEA Beauty Expo">
+                          SEA Beauty 國際美容商務媒合展
+                        </option>
+                        <option value="FABIA VIP">
+                          FABIA VIP Exclusive Event
+                        </option>
+                        <option value="AMSC ASIA">AMSC ASIA 醫美大會</option>
+                        <option value="MYCE">MYCE 馬來西亞消費展</option>
+                        <option value="多項展會">多項展會 / 全年方案</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-[15px] font-medium mb-1.5">
+                        補充說明
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className={`${inputClass()} resize-none`}
+                        placeholder="請簡述您的品牌與需求..."
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="btn-gold w-full py-4 text-base disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {status === "submitting" ? "送出中..." : "送出報名 / 諮詢"}
+                    </button>
+                  </form>
+                )}
               </AnimateIn>
             </div>
 
@@ -314,7 +454,6 @@ export default function ContactPage() {
               {/* Quick links */}
               <AnimateIn delay={0.3} variant="fadeRight">
                 <div className="gradient-navy rounded-2xl p-6 text-white relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full translate-x-1/3 -translate-y-1/3" />
                   <h3 className="font-serif font-semibold mb-4 relative z-10">快速了解</h3>
                   <div className="space-y-3 relative z-10">
                     {[

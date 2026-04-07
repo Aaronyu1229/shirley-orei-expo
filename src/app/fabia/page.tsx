@@ -86,7 +86,6 @@ export default function FABIAPage() {
 
       {/* Hero — dark immersive with FABIA poster */}
       <section className="pt-[72px] gradient-hero text-white relative overflow-hidden">
-        <div className="dot-grid" />
         <div className="max-w-[1120px] mx-auto px-6 py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -101,7 +100,7 @@ export default function FABIAPage() {
                 <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.1] tracking-tight mb-4">
                   FABIA VIP
                   <br />
-                  <span className="text-gradient-gold">Exclusive Event</span>
+                  <span className="text-gold">Exclusive Event</span>
                 </h1>
                 <div className="gold-line mb-6" />
               </AnimateIn>
@@ -116,7 +115,7 @@ export default function FABIAPage() {
               <AnimateIn delay={0.16}>
                 <div className="flex items-center gap-6 mb-12">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-gradient-gold">$1,500</span>
+                    <span className="text-4xl font-bold text-gold">$1,500</span>
                     <span className="text-white/50 text-base">USD / Brand Booth</span>
                   </div>
                   <span className="text-[14px] text-white/60 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
@@ -130,7 +129,7 @@ export default function FABIAPage() {
                   <Link href="/contact" className="btn-gold">
                     立即申請
                   </Link>
-                  <a href="#benefits" className="text-white/70 border border-white/20 font-medium px-6 py-3 rounded-lg hover:bg-white/10 hover:text-white transition-all duration-300">
+                  <a href="#benefits" className="btn-outline-light">
                     了解 VIP 權益
                   </a>
                 </div>
@@ -139,7 +138,6 @@ export default function FABIAPage() {
 
             <AnimateIn delay={0.16} variant="scaleUp">
               <div className="relative">
-                <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full scale-75" />
                 <Image
                   src="/images/fabia-poster.png"
                   alt="FABIA VIP Exclusive Event 海報"
@@ -266,7 +264,6 @@ export default function FABIAPage() {
 
             <AnimateIn delay={0.12} variant="fadeRight">
               <div className="relative">
-                <div className="absolute inset-0 bg-gold/10 blur-3xl rounded-full scale-75" />
                 <Image
                   src="/images/venue-5.png"
                   alt="Asia Beauty & Wellness Summit 2026"
@@ -288,7 +285,6 @@ export default function FABIAPage() {
             <AnimateIn variant="fadeLeft">
               <div className="space-y-6">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gold/10 blur-3xl rounded-full scale-75" />
                   <Image
                     src="/images/fabia-season9-poster.png"
                     alt="第九屆亞洲美業大賽 頒獎盛典海報"
@@ -388,10 +384,6 @@ export default function FABIAPage() {
 
       {/* CTA */}
       <section className="py-32 gradient-navy text-white relative overflow-hidden">
-        <div className="dot-grid" />
-        <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-gold/5 rounded-full" />
         <div className="max-w-[680px] mx-auto px-6 text-center relative z-10">
           <AnimateIn variant="scaleUp">
             <p className="text-gold text-[14px] tracking-[0.3em] uppercase mb-6 font-semibold">
@@ -403,14 +395,14 @@ export default function FABIAPage() {
               立即申請 FABIA VIP
             </h2>
             <p className="text-white/50 text-lg leading-relaxed mb-4">
-              2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聚一堂
+              2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聯一堂
             </p>
-            <p className="text-2xl font-bold text-gradient-gold mb-10">
+            <p className="text-2xl font-bold text-gold mb-10">
               USD $1,500 / Brand Booth
             </p>
             <Link
               href="/contact"
-              className="btn-gold animate-pulse-glow inline-block"
+              className="btn-gold"
             >
               立即報名
             </Link>

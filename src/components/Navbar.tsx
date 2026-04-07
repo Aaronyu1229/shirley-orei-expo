@@ -109,6 +109,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="md:hidden p-2"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <svg
             width="20"
