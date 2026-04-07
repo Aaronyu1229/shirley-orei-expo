@@ -3,111 +3,101 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="gradient-navy text-white relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/[0.03] rounded-full translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/[0.03] rounded-full -translate-x-1/3 translate-y-1/3" />
-
-      {/* Gold accent line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-
-      <div className="max-w-[1120px] mx-auto px-6 py-16 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
-          <div className="max-w-xs">
-            <div className="mb-4 flex items-center gap-3">
+    <footer className="bg-dark-section text-white">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 pt-20 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
               <Image
                 src="/images/orei-icon.svg"
                 alt="OREI Expo"
-                width={40}
-                height={40}
-                className="w-10 h-10"
+                width={32}
+                height={32}
+                className="w-8 h-8"
               />
-              <div>
-                <p className="text-[17px] font-bold tracking-[0.15em] leading-tight text-white">
-                  OREI EXPO
-                </p>
-                <p className="text-[14px] text-gold tracking-[0.1em] leading-tight">
-                  歐瑞會展
-                </p>
-              </div>
+              <span className="text-[15px] font-semibold tracking-[0.15em]">
+                OREI EXPO
+              </span>
             </div>
-            <p className="text-base text-white/50 leading-relaxed">
+            <p className="text-sm text-white/50 leading-relaxed mb-1">
               Your Premium Gateway to Southeast Asia
             </p>
-            <p className="text-base text-white/40 leading-relaxed">
+            <p className="text-sm text-white/35 leading-relaxed">
               專注亞洲市場的跨國商務媒合與展會整合平台
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-16">
-            <div>
-              <p className="text-[13px] font-semibold tracking-[0.15em] text-gold/60 uppercase mb-4">
-                Pages
-              </p>
-              <div className="space-y-2.5">
-                {[
-                  { label: "首頁", href: "/" },
-                  { label: "SEA Beauty", href: "/sea-beauty" },
-                  { label: "FABIA", href: "/fabia" },
-                  { label: "聯絡我們", href: "/contact" },
-                ].map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block text-base text-white/50 hover:text-gold transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
+          {/* Pages */}
+          <div>
+            <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/30 mb-5">
+              Pages
+            </p>
+            <div className="space-y-3">
+              {[
+                { label: "首頁", href: "/" },
+                { label: "SEA Beauty", href: "/sea-beauty" },
+                { label: "FABIA", href: "/fabia" },
+                { label: "聯絡我們", href: "/contact" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-white/50 hover:text-white transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
+          </div>
 
-            <div>
-              <p className="text-[13px] font-semibold tracking-[0.15em] text-gold/60 uppercase mb-4">
-                Contact
-              </p>
-              <div className="space-y-2.5 text-base text-white/50">
-                <p>Shirley Chang</p>
-                <a
-                  href="mailto:shirley62133@gmail.com"
-                  className="block hover:text-gold transition-colors duration-300 break-all"
-                >
-                  shirley62133@gmail.com
-                </a>
-                <a
-                  href="tel:+886953009113"
-                  className="block hover:text-gold transition-colors duration-300"
-                >
-                  +886 953 009 113
-                </a>
-              </div>
+          {/* Contact */}
+          <div>
+            <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/30 mb-5">
+              Contact
+            </p>
+            <div className="space-y-3 text-sm text-white/50">
+              <p>Shirley Chang</p>
+              <a
+                href="mailto:shirley62133@gmail.com"
+                className="block hover:text-white transition-colors duration-200 break-all"
+              >
+                shirley62133@gmail.com
+              </a>
+              <a
+                href="tel:+886953009113"
+                className="block hover:text-white transition-colors duration-200"
+              >
+                +886 953 009 113
+              </a>
             </div>
+          </div>
 
-            <div className="col-span-2 sm:col-span-1">
-              <p className="text-[13px] font-semibold tracking-[0.15em] text-gold/60 uppercase mb-4">
-                Social
-              </p>
-              <div className="space-y-2.5 text-base text-white/50">
-                <p>LINE: ivyshirley</p>
-                <p>WeChat: S141339</p>
-                <a
-                  href="https://wa.me/886953009113"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block hover:text-gold transition-colors duration-300"
-                >
-                  WhatsApp
-                </a>
-              </div>
+          {/* Social */}
+          <div>
+            <p className="text-xs font-medium tracking-[0.2em] uppercase text-white/30 mb-5">
+              Social
+            </p>
+            <div className="space-y-3 text-sm text-white/50">
+              <p>LINE: ivyshirley</p>
+              <p>WeChat: S141339</p>
+              <a
+                href="https://wa.me/886953009113"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-white transition-colors duration-200"
+              >
+                WhatsApp
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[14px] text-white/30">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/25">
             &copy; 2026 OREI Expo. All rights reserved.
           </p>
-          <p className="text-[14px] text-white/20">
+          <p className="text-xs text-white/15">
             Empowering brands across Southeast Asia
           </p>
         </div>

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Noto_Sans_TC, Noto_Serif_TC, Playfair_Display } from "next/font/google";
+import { Inter, Noto_Sans_TC, Noto_Serif_TC, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const notoSansTC = Noto_Sans_TC({
   variable: "--font-noto-sans-tc",
@@ -52,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="zh-TW"
-      className={`${notoSansTC.variable} ${notoSerifTC.variable} ${playfairDisplay.variable} antialiased`}
+      className={`${inter.variable} ${notoSansTC.variable} ${notoSerifTC.variable} ${playfairDisplay.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>

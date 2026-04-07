@@ -18,54 +18,43 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const isHome = pathname === "/";
+  const isTransparent = !scrolled && isHome;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm"
-          : isHome
-            ? "bg-transparent"
-            : "bg-white/95 backdrop-blur-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isTransparent
+          ? "bg-transparent"
+          : "bg-white/95 backdrop-blur-md border-b border-border"
       }`}
     >
-      <div className="max-w-[1120px] mx-auto px-6 h-[72px] flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/images/orei-icon.svg"
             alt="OREI Expo"
-            width={36}
-            height={36}
-            className="w-9 h-9"
+            width={32}
+            height={32}
+            className="w-8 h-8"
           />
-          <div className="flex flex-col">
-            <span
-              className={`text-[16px] font-bold tracking-[0.12em] leading-tight transition-colors duration-500 ${
-                !scrolled && isHome ? "text-white" : "text-navy"
-              }`}
-            >
-              OREI EXPO
-            </span>
-            <span
-              className={`text-[12px] tracking-wide leading-tight transition-colors duration-500 ${
-                !scrolled && isHome ? "text-white/60" : "text-muted"
-              }`}
-            >
-              歐瑞會展
-            </span>
-          </div>
+          <span
+            className={`text-[15px] font-semibold tracking-[0.15em] transition-colors duration-300 ${
+              isTransparent ? "text-white" : "text-dark"
+            }`}
+          >
+            OREI EXPO
+          </span>
         </Link>
 
-        {/* Desktop */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -77,14 +66,14 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[15px] tracking-wide transition-colors duration-300 ${
+                className={`text-sm tracking-wide transition-colors duration-200 ${
                   isActive
-                    ? !scrolled && isHome
-                      ? "text-gold font-semibold"
-                      : "text-navy font-semibold"
-                    : !scrolled && isHome
+                    ? isTransparent
+                      ? "text-white font-medium"
+                      : "text-dark font-medium"
+                    : isTransparent
                       ? "text-white/70 hover:text-white"
-                      : "text-muted hover:text-navy"
+                      : "text-muted hover:text-dark"
                 }`}
               >
                 {link.label}
@@ -93,13 +82,13 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className={`text-[15px] tracking-wide font-medium px-5 py-2.5 rounded-lg transition-all duration-300 ${
-              !scrolled && isHome
-                ? "bg-gold text-white hover:bg-gold-light"
-                : "bg-navy text-white hover:opacity-85"
+            className={`text-sm font-medium px-5 py-2.5 transition-all duration-200 ${
+              isTransparent
+                ? "bg-white text-dark hover:bg-white/90"
+                : "bg-dark text-white hover:bg-black"
             }`}
           >
-            立即報名
+            聯繫我們
           </Link>
         </nav>
 
@@ -117,8 +106,8 @@ export default function Navbar() {
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
-            className={`transition-colors duration-500 ${
-              !scrolled && isHome ? "text-white" : "text-navy"
+            className={`transition-colors duration-300 ${
+              isTransparent ? "text-white" : "text-dark"
             }`}
           >
             {open ? (
@@ -132,13 +121,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden bg-white/95 backdrop-blur-md border-t border-border px-6 py-6 space-y-1">
+        <nav className="md:hidden bg-white border-t border-border px-6 py-6 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block text-base text-navy py-2.5 hover:text-gold transition-colors"
+              className="block text-[15px] text-dark py-3 hover:text-accent transition-colors border-b border-border/50 last:border-0"
             >
               {link.label}
             </Link>
@@ -146,9 +135,9 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="block text-base bg-navy text-white text-center px-5 py-3 rounded-lg mt-4 font-medium"
+            className="block text-[15px] bg-dark text-white text-center px-5 py-3.5 mt-4 font-medium"
           >
-            立即報名
+            聯繫我們
           </Link>
         </nav>
       )}
