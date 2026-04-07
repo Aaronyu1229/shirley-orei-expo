@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import AnimateIn from "@/components/AnimateIn";
 import CountUp from "@/components/CountUp";
+import HeroCarousel from "@/components/HeroCarousel";
 import Footer from "@/components/Footer";
 
 const stats = [
@@ -41,55 +42,8 @@ export default function Home() {
     <>
       <Navbar />
 
-      {/* ═══════ Hero — full bleed image ═══════ */}
-      <section className="relative min-h-screen flex items-center">
-        <Image
-          src="/images/event-photo-1.png"
-          alt="歐瑞會展活動現場"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="hero-overlay" />
-
-        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full py-32">
-          <div className="max-w-2xl">
-            <AnimateIn variant="fadeIn" duration={0.8}>
-              <p className="text-xs tracking-[0.3em] uppercase text-white/60 font-medium mb-6">
-                Your Premium Gateway to Southeast Asia
-              </p>
-            </AnimateIn>
-
-            <AnimateIn variant="slideUp" delay={0.15} duration={0.9}>
-              <h1 className="font-serif text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight text-white mb-8">
-                讓你的品牌
-                <br />
-                走進東南亞市場
-              </h1>
-            </AnimateIn>
-
-            <AnimateIn delay={0.3}>
-              <p className="text-white/60 text-lg leading-relaxed max-w-lg mb-10">
-                歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，
-                協助台灣美業與醫美品牌快速進入越南與東南亞市場。
-              </p>
-            </AnimateIn>
-
-            <AnimateIn delay={0.4}>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="btn-accent">
-                  預約顧問諮詢
-                </Link>
-                <Link href="/sea-beauty" className="btn-outline-light">
-                  了解展會資訊
-                </Link>
-              </div>
-            </AnimateIn>
-          </div>
-        </div>
-
-        <div className="hero-fade-bottom" />
-      </section>
+      {/* ═══════ Hero Carousel ═══════ */}
+      <HeroCarousel />
 
       {/* ═══════ Stats bar ═══════ */}
       <section className="py-16 border-b border-border">
