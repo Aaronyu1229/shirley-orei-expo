@@ -16,7 +16,7 @@ interface Slide {
 const slides: readonly Slide[] = [
   {
     src: "/images/hero-city-hcmc.jpg",
-    alt: "胡志明市天際線",
+    alt: "河內城市天際線",
     tag: "Your Premium Gateway to Southeast Asia",
     headline: "讓你的品牌\n走進東南亞市場",
     desc: "歐瑞會展 — 專注亞洲市場的跨國商務媒合與展會整合平台，協助台灣美業與醫美品牌快速進入越南與東南亞市場。",
@@ -27,7 +27,7 @@ const slides: readonly Slide[] = [
     alt: "國際展會現場",
     tag: "SEA Beauty Expo",
     headline: "越南首屆\n美業商務媒合展",
-    desc: "胡志明市大型美容／醫美 B2B 對接展，精準商務媒合，為品牌打開東南亞最具潛力的美業市場。",
+    desc: "河內大型美容／醫美 B2B 對接展，精準商務媒合，為品牌打開東南亞最具潛力的美業市場。",
     cta: { label: "了解展會資訊", href: "/sea-beauty" },
   },
   {
@@ -35,7 +35,7 @@ const slides: readonly Slide[] = [
     alt: "吉隆坡雙子星塔",
     tag: "FABIA Global Alliance",
     headline: "跨越 12 國的\n亞太商業網絡",
-    desc: "加入 FABIA 國際商業聯盟，開啟品牌國際化之路。USD $1,500 即享頂級 VIP 參展體驗。",
+    desc: "加入 FABIA 國際商業聯盟，開啟品牌國際化之路。跨越 12 國的亞太商業網絡，為品牌帶來最高規格的展示舞台。",
     cta: { label: "申請 VIP 方案", href: "/fabia" },
   },
   {

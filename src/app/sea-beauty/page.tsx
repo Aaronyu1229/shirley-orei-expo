@@ -8,14 +8,14 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "SEA Beauty Business Matching Expo — OREI Expo",
   description:
-    "越南胡志明市首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+    "越南河內首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
   alternates: {
     canonical: "/sea-beauty",
   },
   openGraph: {
     title: "SEA Beauty Business Matching Expo — OREI Expo",
     description:
-      "越南胡志明市首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+      "越南河內首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
     images: [
       {
         url: "/images/event-photo-2.jpg",
@@ -87,13 +87,13 @@ const jsonLd = {
   "@type": "Event",
   name: "SEA Beauty Business Matching Expo",
   description:
-    "越南胡志明市首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+    "越南河內首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
   location: {
     "@type": "Place",
-    name: "Ho Chi Minh City, Vietnam",
+    name: "Hanoi, Vietnam",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Ho Chi Minh City",
+      addressLocality: "Hanoi",
       addressCountry: "VN",
     },
   },
@@ -151,7 +151,7 @@ export default function SEABeautyPage() {
 
             <AnimateIn delay={0.3}>
               <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10">
-                越南胡志明市首屆大型美容 / 醫美 B2B 對接展，
+                越南河內首屆大型美容 / 醫美 B2B 對接展，
                 為台灣品牌打開東南亞最具潛力的美業市場。
               </p>
             </AnimateIn>
@@ -177,7 +177,7 @@ export default function SEABeautyPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { label: "地點", value: "越南胡志明市", sub: "Ho Chi Minh City, Vietnam" },
+              { label: "地點", value: "越南河內", sub: "Hanoi, Vietnam" },
               { label: "形式", value: "B2B 商務媒合", sub: "品牌展示 + 一對一媒合" },
               { label: "產業", value: "美容 / 醫美", sub: "Beauty & Medical Aesthetics" },
             ].map((info, i) => (

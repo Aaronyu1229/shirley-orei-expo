@@ -2,14 +2,14 @@ export const expos = [
   {
     title: "SEA Beauty Business Matching Expo",
     subtitle: "國際美容暨醫美商務媒合展",
-    desc: "越南胡志明市首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。",
+    desc: "越南河內首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。",
     descFull:
-      "越南胡志明市首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。展前精準配對、展中一對一媒合、展後通路跟進，提供完整品牌出海服務鏈。",
+      "越南河內首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。展前精準配對、展中一對一媒合、展後通路跟進，提供完整品牌出海服務鏈。",
     href: "/sea-beauty",
     tag: "Featured" as const,
     image: "/images/expo-beauty.jpg",
     imageAlt: "美容產品展示",
-    location: "越南胡志明市",
+    location: "越南河內",
     format: "B2B 商務媒合",
   },
   {

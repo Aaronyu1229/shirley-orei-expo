@@ -188,8 +188,6 @@ export default function ExposPage() {
                 國的亞太商業網絡，為您的品牌開啟國際化新篇章。
               </p>
               <div className="flex flex-wrap items-baseline gap-2 sm:gap-3 mb-8">
-                <span className="text-2xl sm:text-3xl font-bold font-serif">$1,500</span>
-                <span className="text-muted text-xs sm:text-sm">USD / Brand Booth</span>
                 <span className="text-xs text-accent font-medium border border-accent/30 px-2 sm:px-3 py-1">
                   限量名額
                 </span>

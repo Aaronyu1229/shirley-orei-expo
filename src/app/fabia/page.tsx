@@ -8,17 +8,17 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "FABIA VIP Exclusive Event — OREI Expo",
   description:
-    "FABIA 國際商業聯盟 VIP 專屬活動。USD $1,500 即享頂級參展體驗。",
+    "FABIA 國際商業聯盟 VIP 專屬活動，跨越 12 國的亞太商業網絡，為品牌帶來最高規格的展示舞台。",
   alternates: {
     canonical: "/fabia",
   },
   openGraph: {
     title: "FABIA VIP Exclusive Event — OREI Expo",
     description:
-      "FABIA 國際商業聯盟 VIP 專屬活動。USD $1,500 即享頂級參展體驗。",
+      "FABIA 國際商業聯盟 VIP 專屬活動，跨越 12 國的亞太商業網絡，為品牌帶來最高規格的展示舞台。",
     images: [
       {
-        url: "/images/venue-5.jpg",
+        url: "/images/fabia-vip-exclusive.jpg",
         width: 1200,
         height: 630,
         alt: "FABIA VIP Exclusive Event",
@@ -64,7 +64,7 @@ const jsonLd = {
   "@type": "Event",
   name: "FABIA VIP Exclusive Event — Asia Beauty & Wellness Summit 2026",
   description:
-    "FABIA 國際商業聯盟 VIP 專屬活動。USD $1,500 即享頂級參展體驗。",
+    "FABIA 國際商業聯盟 VIP 專屬活動，跨越 12 國的亞太商業網絡，為品牌帶來最高規格的展示舞台。",
   startDate: "2026-05-25",
   endDate: "2026-05-26",
   location: {
@@ -81,15 +81,9 @@ const jsonLd = {
     name: "歐瑞會展 OREI Expo",
     url: "https://www.oreiexpo.com",
   },
-  offers: {
-    "@type": "Offer",
-    price: "1500",
-    priceCurrency: "USD",
-    availability: "https://schema.org/LimitedAvailability",
-  },
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
-  image: "https://www.oreiexpo.com/images/venue-5.jpg",
+  image: "https://www.oreiexpo.com/images/fabia-vip-exclusive.jpg",
 };
 
 export default function FABIAPage() {
@@ -104,8 +98,8 @@ export default function FABIAPage() {
       {/* ═══════ Hero ═══════ */}
       <section className="relative min-h-[var(--vh-fallback,100vh)] flex items-center">
         <Image
-          src="/images/hero-fabia-gala.jpg"
-          alt="FABIA VIP 頂級晚宴會場"
+          src="/images/fabia-vip-exclusive.jpg"
+          alt="FABIA VIP Exclusive Event"
           fill
           className="object-cover"
           priority
@@ -137,10 +131,11 @@ export default function FABIAPage() {
 
             <AnimateIn delay={0.24}>
               <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 mb-8 sm:mb-10">
-                <span className="text-3xl sm:text-4xl font-bold text-white font-serif">$1,500</span>
-                <span className="text-white/50 text-xs sm:text-sm">USD / Brand Booth</span>
-                <span className="text-xs text-white/50 border border-white/20 px-2 sm:px-3 py-1 sm:py-1.5">
+                <span className="text-xs text-white/60 border border-white/20 px-2 sm:px-3 py-1 sm:py-1.5">
                   26 / 05 / 2026
+                </span>
+                <span className="text-xs text-white/60 border border-white/20 px-2 sm:px-3 py-1 sm:py-1.5">
+                  Brand Booth
                 </span>
               </div>
             </AnimateIn>
@@ -170,7 +165,7 @@ export default function FABIAPage() {
               VIP 專屬權益
             </h2>
             <p className="text-muted text-[17px] max-w-lg mb-16">
-              USD $1,500 即享四大頂級權益，為您的品牌帶來最大化曝光與商機
+              四大頂級權益，為您的品牌帶來最大化曝光與商機
             </p>
           </AnimateIn>
 
@@ -336,11 +331,8 @@ export default function FABIAPage() {
               <br />
               立即申請 FABIA VIP
             </h2>
-            <p className="text-white/50 text-lg leading-relaxed mb-4">
+            <p className="text-white/50 text-lg leading-relaxed mb-10">
               2026 年 5 月 26 日，與來自 12 國的品牌領袖齊聚一堂
-            </p>
-            <p className="text-2xl font-bold text-white mb-10 font-serif">
-              USD $1,500 / Brand Booth
             </p>
             <Link href="/contact" className="btn-accent">
               立即報名
