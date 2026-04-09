@@ -31,8 +31,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isHome = pathname === "/";
-  const isTransparent = !scrolled && isHome;
+  const hasHero = pathname === "/" || pathname === "/sea-beauty" || pathname === "/fabia" || pathname === "/contact";
+  const isTransparent = !scrolled && hasHero;
 
   const handleDropdownEnter = () => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
