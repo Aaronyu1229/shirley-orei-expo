@@ -220,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════ Expos ═══════ */}
+      {/* ═══════ Expos Teaser ═══════ */}
       <section id="expos" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <AnimateIn>
@@ -229,26 +229,24 @@ export default function Home() {
               展會作為實體入口
             </h2>
             <p className="text-muted text-[17px] max-w-xl mb-16">
-              三大展會，覆蓋東南亞核心美業市場
+              三大展會覆蓋東南亞核心美業市場，結合 FABIA 國際商業聯盟，為品牌提供完整國際化解決方案
             </p>
           </AnimateIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {expos.map((expo, i) => (
               <AnimateIn key={expo.title} delay={i * 0.1}>
                 <div className="card h-full flex flex-col overflow-hidden">
-                  {/* Card image */}
                   <div className="relative h-[200px] overflow-hidden">
                     <Image
                       src={expo.image}
                       alt={expo.imageAlt}
                       fill
-                      className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
+                      className={`object-cover ${
                         expo.tag === "Coming Soon" ? "grayscale-[30%]" : ""
                       }`}
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    {/* Dark overlay for Coming Soon */}
                     {expo.tag === "Coming Soon" && (
                       <div className="absolute inset-0 bg-dark/30" />
                     )}
@@ -262,78 +260,31 @@ export default function Home() {
                       {expo.tag}
                     </span>
                   </div>
-
-                  {/* Card body */}
                   <div className="p-5 sm:p-8 flex flex-col flex-1">
                     <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
-                    <p className="text-sm text-accent mb-4">{expo.subtitle}</p>
-                    <p className="text-muted text-[15px] leading-relaxed flex-1">
+                    <p className="text-sm text-accent mb-3">{expo.subtitle}</p>
+                    <p className="text-muted text-[15px] leading-relaxed flex-1 line-clamp-2">
                       {expo.desc}
                     </p>
-                    {expo.tag === "Featured" ? (
-                      <Link
-                        href={expo.href}
-                        className="mt-8 text-sm font-medium text-dark hover:text-accent transition-colors inline-flex items-center gap-2 group"
-                      >
-                        了解更多
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                          <path d="M6 3l5 5-5 5" />
-                        </svg>
-                      </Link>
-                    ) : (
-                      <span className="mt-8 text-sm text-light italic">敬請期待</span>
-                    )}
                   </div>
                 </div>
               </AnimateIn>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ═══════ FABIA Preview ═══════ */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimateIn variant="fadeLeft">
-              <p className="section-label">FABIA Global Alliance</p>
-              <h2 className="font-serif text-[clamp(2rem,3.5vw,3rem)] font-bold leading-tight mb-6">
-                FABIA VIP
-                <br />
-                Exclusive Event
-              </h2>
-              <p className="text-muted text-[17px] leading-relaxed mb-6">
-                加入 FABIA 國際商業聯盟，享受 VIP
-                專屬展位、品牌頒獎、優先商務媒合等頂級權益。跨越 12
-                國的亞太商業網絡，為您的品牌開啟國際化新篇章。
-              </p>
-              <div className="flex flex-wrap items-baseline gap-2 sm:gap-3 mb-8">
-                <span className="text-2xl sm:text-3xl font-bold font-serif">$1,500</span>
-                <span className="text-muted text-xs sm:text-sm">USD / Brand Booth</span>
-                <span className="text-xs text-accent font-medium border border-accent/30 px-2 sm:px-3 py-1">
-                  限量名額
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/fabia" className="btn-primary">
-                  了解 FABIA 方案
-                </Link>
-                <Link href="/contact" className="btn-outline">
-                  立即報名
-                </Link>
-              </div>
-            </AnimateIn>
-
-            <AnimateIn variant="fadeRight" delay={0.12}>
-              <Image
-                src="/images/fabia-poster.jpg"
-                alt="FABIA VIP Exclusive Event"
-                width={600}
-                height={900}
-                className="w-full max-w-[400px] mx-auto"
-              />
-            </AnimateIn>
-          </div>
+          <AnimateIn delay={0.3}>
+            <div className="text-center">
+              <Link
+                href="/expos"
+                className="inline-flex items-center gap-2 text-sm font-medium text-dark hover:text-accent transition-colors group"
+              >
+                查看所有展會
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                  <path d="M6 3l5 5-5 5" />
+                </svg>
+              </Link>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 

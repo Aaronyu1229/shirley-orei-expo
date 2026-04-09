@@ -9,8 +9,9 @@ const navLinks = [
   { label: "關於", href: "/#about" },
   {
     label: "展會",
-    href: "/#expos",
+    href: "/expos",
     children: [
+      { label: "展會總覽", href: "/expos" },
       { label: "SEA Beauty", href: "/sea-beauty" },
       { label: "FABIA", href: "/fabia" },
     ],
@@ -31,7 +32,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const hasHero = pathname === "/" || pathname === "/sea-beauty" || pathname === "/fabia" || pathname === "/contact";
+  const hasHero = pathname === "/" || pathname === "/expos" || pathname === "/sea-beauty" || pathname === "/fabia" || pathname === "/contact";
   const isTransparent = !scrolled && hasHero;
 
   const handleDropdownEnter = () => {
