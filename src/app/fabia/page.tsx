@@ -102,7 +102,7 @@ export default function FABIAPage() {
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center">
+      <section className="relative min-h-[var(--vh-fallback,100vh)] flex items-center">
         <Image
           src="/images/hero-fabia-gala.jpg"
           alt="FABIA VIP 頂級晚宴會場"

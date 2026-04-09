@@ -117,7 +117,7 @@ export default function SEABeautyPage() {
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center">
+      <section className="relative min-h-[var(--vh-fallback,100vh)] flex items-center">
         <Image
           src="/images/hero-sea-beauty.jpg"
           alt="SEA Beauty 國際美容商務媒合展會場"
