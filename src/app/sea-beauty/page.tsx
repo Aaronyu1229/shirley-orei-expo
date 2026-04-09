@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   title: "SEA Beauty Business Matching Expo — OREI Expo",
   description:
     "越南胡志明市首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+  alternates: {
+    canonical: "/sea-beauty",
+  },
+  openGraph: {
+    title: "SEA Beauty Business Matching Expo — OREI Expo",
+    description:
+      "越南胡志明市首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+    images: [
+      {
+        url: "/images/event-photo-2.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SEA Beauty Business Matching Expo",
+      },
+    ],
+  },
 };
 
 const timeline = [
@@ -66,16 +82,45 @@ const targetAudience = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "SEA Beauty Business Matching Expo",
+  description:
+    "越南胡志明市首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+  location: {
+    "@type": "Place",
+    name: "Ho Chi Minh City, Vietnam",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ho Chi Minh City",
+      addressCountry: "VN",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "歐瑞會展 OREI Expo",
+    url: "https://www.oreiexpo.com",
+  },
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  image: "https://www.oreiexpo.com/images/event-photo-2.jpg",
+};
+
 export default function SEABeautyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center">
         <Image
-          src="/images/event-photo-2.png"
-          alt="SEA Beauty 展會現場"
+          src="/images/hero-sea-beauty.jpg"
+          alt="SEA Beauty 國際美容商務媒合展會場"
           fill
           className="object-cover"
           priority
@@ -162,10 +207,10 @@ export default function SEABeautyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { src: "/images/venue-3.png", alt: "商務交流現場" },
-              { src: "/images/event-photo-1.png", alt: "品牌展示體驗" },
-              { src: "/images/event-photo-2.png", alt: "買家產品互動" },
-              { src: "/images/venue-4.png", alt: "展位商務洽談" },
+              { src: "/images/venue-3.jpg", alt: "商務交流現場" },
+              { src: "/images/event-photo-1.jpg", alt: "品牌展示體驗" },
+              { src: "/images/event-photo-2.jpg", alt: "買家產品互動" },
+              { src: "/images/venue-4.jpg", alt: "展位商務洽談" },
             ].map((photo, i) => (
               <AnimateIn key={photo.src} delay={i * 0.06}>
                 <div className="relative group overflow-hidden">
@@ -223,7 +268,7 @@ export default function SEABeautyPage() {
                   <ul className="space-y-3">
                     {phase.items.map((item) => (
                       <li key={item} className="flex items-start gap-3 text-[15px]">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0" aria-hidden="true">
                           <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent" />
                         </svg>
                         <span className="text-muted">{item}</span>

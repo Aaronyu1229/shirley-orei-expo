@@ -23,7 +23,7 @@ export default function Footer() {
             <p className="text-sm text-white/50 leading-relaxed mb-1">
               Your Premium Gateway to Southeast Asia
             </p>
-            <p className="text-sm text-white/35 leading-relaxed">
+            <p className="text-sm text-white/50 leading-relaxed">
               專注亞洲市場的跨國商務媒合與展會整合平台
             </p>
           </div>
@@ -94,10 +94,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/25">
+          <p className="text-xs text-white/40">
             &copy; 2026 OREI Expo. All rights reserved.
           </p>
-          <p className="text-xs text-white/15">
+          <p className="text-xs text-white/30">
             Empowering brands across Southeast Asia
           </p>
         </div>

@@ -17,6 +17,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* 100svh fallback for older browsers */
+    --vh-fallback: 100vh;
+  }
+
+  @supports (height: 100svh) {
+    html {
+      --vh-fallback: 100svh;
+    }
   }
 
   body {

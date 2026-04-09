@@ -91,7 +91,7 @@ export default function Home() {
 
             <AnimateIn variant="fadeRight" delay={0.1}>
               <Image
-                src="/images/event-photo-2.png"
+                src="/images/event-photo-2.jpg"
                 alt="商務媒合現場"
                 width={640}
                 height={440}
@@ -130,7 +130,7 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="hidden md:flex absolute top-1/2 -right-4 -translate-y-1/2 z-10 w-8 h-8 bg-accent items-center justify-center">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M5 12h14" />
                       <path d="M12 5l7 7-7 7" />
                     </svg>
@@ -166,13 +166,13 @@ export default function Home() {
                     <div key={step} className="flex items-center gap-2 sm:gap-5">
                       <span className="text-xs sm:text-sm font-medium whitespace-nowrap">{step}</span>
                       {i < 3 && (
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0 hidden sm:block">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0 hidden sm:block" aria-hidden="true">
                           <path d="M5 12h14" />
                           <path d="M12 5l7 7-7 7" />
                         </svg>
                         )}
                       {i < 3 && (
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0 sm:hidden rotate-90">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent shrink-0 sm:hidden rotate-90" aria-hidden="true">
                           <path d="M5 12h14" />
                           <path d="M12 5l7 7-7 7" />
                         </svg>
@@ -276,7 +276,7 @@ export default function Home() {
                         className="mt-8 text-sm font-medium text-dark hover:text-accent transition-colors inline-flex items-center gap-2 group"
                       >
                         了解更多
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
                           <path d="M6 3l5 5-5 5" />
                         </svg>
                       </Link>
@@ -326,7 +326,7 @@ export default function Home() {
 
             <AnimateIn variant="fadeRight" delay={0.12}>
               <Image
-                src="/images/fabia-poster.png"
+                src="/images/fabia-poster.jpg"
                 alt="FABIA VIP Exclusive Event"
                 width={600}
                 height={900}

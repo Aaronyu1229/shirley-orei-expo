@@ -34,7 +34,11 @@ function validateForm(data: {
   const errors: FormErrors = {};
   if (!data.company.trim()) errors.company = "請輸入公司名稱";
   if (!data.name.trim()) errors.name = "請輸入聯絡人姓名";
-  if (!data.phone.trim()) errors.phone = "請輸入電話號碼";
+  if (!data.phone.trim()) {
+    errors.phone = "請輸入電話號碼";
+  } else if (!/^[+\d][\d\s\-()]{6,}$/.test(data.phone.trim())) {
+    errors.phone = "請輸入有效的電話號碼格式";
+  }
   if (!data.email.trim()) {
     errors.email = "請輸入 Email";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
@@ -127,7 +131,7 @@ export default function ContactPage() {
       {/* ═══════ Hero ═══════ */}
       <section className="relative min-h-[45vh] sm:min-h-[50vh] flex items-center">
         <Image
-          src="/images/venue-3.png"
+          src="/images/venue-3.jpg"
           alt="歐瑞會展商務交流現場"
           fill
           className="object-cover"
@@ -367,7 +371,7 @@ export default function ContactPage() {
                         className="flex items-center justify-between text-sm text-white/60 hover:text-white transition-colors group"
                       >
                         {link.label}
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
                           <path d="M6 3l5 5-5 5" />
                         </svg>
                       </Link>

@@ -9,6 +9,22 @@ export const metadata: Metadata = {
   title: "FABIA VIP Exclusive Event — OREI Expo",
   description:
     "FABIA 國際商業聯盟 VIP 專屬活動。USD $1,500 即享頂級參展體驗。",
+  alternates: {
+    canonical: "/fabia",
+  },
+  openGraph: {
+    title: "FABIA VIP Exclusive Event — OREI Expo",
+    description:
+      "FABIA 國際商業聯盟 VIP 專屬活動。USD $1,500 即享頂級參展體驗。",
+    images: [
+      {
+        url: "/images/venue-5.jpg",
+        width: 1200,
+        height: 630,
+        alt: "FABIA VIP Exclusive Event",
+      },
+    ],
+  },
 };
 
 const benefits = [
@@ -43,16 +59,53 @@ const countries = [
   "菲律賓", "汶萊", "日本", "韓國", "香港", "澳洲",
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "FABIA VIP Exclusive Event — Asia Beauty & Wellness Summit 2026",
+  description:
+    "FABIA 國際商業聯盟 VIP 專屬活動。USD $1,500 即享頂級參展體驗。",
+  startDate: "2026-05-25",
+  endDate: "2026-05-26",
+  location: {
+    "@type": "Place",
+    name: "Muong Thanh Luxury Ha Long Centre Hotel",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Ha Long",
+      addressCountry: "VN",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "歐瑞會展 OREI Expo",
+    url: "https://www.oreiexpo.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "1500",
+    priceCurrency: "USD",
+    availability: "https://schema.org/LimitedAvailability",
+  },
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  image: "https://www.oreiexpo.com/images/venue-5.jpg",
+};
+
 export default function FABIAPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
 
       {/* ═══════ Hero ═══════ */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center">
         <Image
-          src="/images/venue-5.png"
-          alt="FABIA VIP 活動場景"
+          src="/images/hero-fabia-gala.jpg"
+          alt="FABIA VIP 頂級晚宴會場"
           fill
           className="object-cover"
           priority
@@ -167,7 +220,7 @@ export default function FABIAPage() {
 
             <AnimateIn delay={0.12} variant="fadeRight">
               <Image
-                src="/images/venue-5.png"
+                src="/images/venue-5.jpg"
                 alt="Asia Beauty & Wellness Summit 2026"
                 width={600}
                 height={800}
@@ -185,15 +238,22 @@ export default function FABIAPage() {
             <AnimateIn variant="fadeLeft">
               <div className="space-y-4">
                 <Image
-                  src="/images/fabia-season9-poster.png"
+                  src="/images/fabia-season9-poster.jpg"
                   alt="第九屆亞洲美業大賽 頒獎盛典海報"
                   width={600}
                   height={900}
                   className="w-full max-w-[440px] mx-auto"
                 />
                 <Image
-                  src="/images/venue-6.png"
+                  src="/images/venue-6.jpg"
                   alt="頒獎盛典活動現場"
+                  width={600}
+                  height={400}
+                  className="w-full max-w-[440px] mx-auto"
+                />
+                <Image
+                  src="/images/hero-conference.jpg"
+                  alt="國際商務峰會現場"
                   width={600}
                   height={400}
                   className="w-full max-w-[440px] mx-auto"
@@ -256,7 +316,7 @@ export default function FABIAPage() {
 
             <AnimateIn delay={0.12} variant="fadeRight">
               <Image
-                src="/images/fabia-countries.png"
+                src="/images/fabia-countries.jpg"
                 alt="FABIA 12 countries"
                 width={800}
                 height={400}

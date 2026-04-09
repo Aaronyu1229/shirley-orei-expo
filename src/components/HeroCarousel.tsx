@@ -108,7 +108,7 @@ export default function HeroCarousel() {
   }, [active]);
 
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden">
+    <section className="relative min-h-[var(--vh-fallback,100vh)] flex items-center overflow-hidden">
       {/* ── Slides ── */}
       {slides.map((slide, i) => (
         <div
@@ -159,9 +159,15 @@ export default function HeroCarousel() {
                 {slide.tag}
               </p>
 
-              <h1 className="font-serif text-[clamp(2.25rem,5.5vw,5rem)] font-bold leading-[1.08] tracking-tight text-white mb-5 sm:mb-8 whitespace-pre-line">
-                {slide.headline}
-              </h1>
+              {i === 0 ? (
+                <h1 className="font-serif text-[clamp(2.25rem,5.5vw,5rem)] font-bold leading-[1.08] tracking-tight text-white mb-5 sm:mb-8 whitespace-pre-line">
+                  {slide.headline}
+                </h1>
+              ) : (
+                <h2 className="font-serif text-[clamp(2.25rem,5.5vw,5rem)] font-bold leading-[1.08] tracking-tight text-white mb-5 sm:mb-8 whitespace-pre-line">
+                  {slide.headline}
+                </h2>
+              )}
 
               <p className="text-white/75 text-base sm:text-lg leading-relaxed max-w-lg mb-6 sm:mb-10">
                 {slide.desc}
@@ -188,6 +194,7 @@ export default function HeroCarousel() {
               <button
                 key={slide.src}
                 onClick={() => goTo(i)}
+                aria-label={`切換至第 ${i + 1} 張：${slide.tag}`}
                 className={`relative flex-1 py-5 text-left text-sm font-medium transition-colors duration-300 ${
                   i === active ? "text-white" : "text-white/60 hover:text-white/90"
                 }`}
