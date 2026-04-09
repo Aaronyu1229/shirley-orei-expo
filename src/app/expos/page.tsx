@@ -89,6 +89,18 @@ export default function ExposPage() {
             </p>
           </AnimateIn>
 
+          <AnimateIn delay={0.06}>
+            <div className="mb-12 overflow-hidden">
+              <Image
+                src="/images/venue-booths.jpg"
+                alt="展會現場展位與人流"
+                width={1280}
+                height={480}
+                className="w-full h-[240px] sm:h-[360px] object-cover"
+              />
+            </div>
+          </AnimateIn>
+
           <div className="space-y-12">
             {expos.map((expo, i) => (
               <AnimateIn key={expo.title} delay={i * 0.1}>

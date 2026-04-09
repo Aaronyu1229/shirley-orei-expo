@@ -207,6 +207,7 @@ export default function SEABeautyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
+              { src: "/images/venue-entrance.jpg", alt: "展會主入口設計" },
               { src: "/images/venue-3.jpg", alt: "商務交流現場" },
               { src: "/images/event-photo-1.jpg", alt: "品牌展示體驗" },
               { src: "/images/event-photo-2.jpg", alt: "買家產品互動" },
@@ -254,6 +255,18 @@ export default function SEABeautyPage() {
             <p className="text-muted text-[17px] max-w-lg mb-16">
               從展前規劃到展後落地，我們提供完整的品牌出海服務鏈
             </p>
+          </AnimateIn>
+
+          <AnimateIn delay={0.06}>
+            <div className="mb-12 overflow-hidden">
+              <Image
+                src="/images/venue-hallway.jpg"
+                alt="展會場地走道全景"
+                width={1280}
+                height={480}
+                className="w-full h-[240px] sm:h-[360px] object-cover"
+              />
+            </div>
           </AnimateIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
