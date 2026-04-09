@@ -5,42 +5,13 @@ import AnimateIn from "@/components/AnimateIn";
 import CountUp from "@/components/CountUp";
 import HeroCarousel from "@/components/HeroCarousel";
 import Footer from "@/components/Footer";
+import { expos } from "@/data/expos";
 
 const stats = [
   { number: 12, suffix: "", label: "亞太合作國家" },
   { number: 500, suffix: "+", label: "品牌展商" },
   { number: 10000, suffix: "+", label: "專業買家人次" },
   { number: 8, suffix: "", label: "年深耕經驗" },
-];
-
-const expos = [
-  {
-    title: "SEA Beauty Business Matching Expo",
-    subtitle: "國際美容暨醫美商務媒合展",
-    desc: "越南胡志明市首屆大型美容 / 醫美 B2B 對接展，為台灣品牌打開東南亞最具潛力的美業市場。",
-    href: "/sea-beauty",
-    tag: "Featured",
-    image: "/images/expo-beauty.jpg",
-    imageAlt: "美容產品展示",
-  },
-  {
-    title: "AMSC ASIA",
-    subtitle: "亞洲醫學美容暨抗衰老大會",
-    desc: "匯聚亞洲醫美抗衰頂級專家的學術與商業大會，品牌技術展示的絕佳舞台。",
-    href: "#",
-    tag: "Coming Soon",
-    image: "/images/expo-medical3.jpg",
-    imageAlt: "醫美護膚療程",
-  },
-  {
-    title: "MYCE Malaysia Consumer Expo",
-    subtitle: "馬來西亞消費展",
-    desc: "面向馬來西亞消費者的大型零售與體驗展會，快速建立品牌知名度。",
-    href: "#",
-    tag: "Coming Soon",
-    image: "/images/expo-consumer5.jpg",
-    imageAlt: "大型展會活動現場",
-  },
 ];
 
 export default function Home() {
@@ -329,7 +300,7 @@ export default function Home() {
               <Link href="/contact" className="btn-accent w-full sm:w-auto">
                 立即報名
               </Link>
-              <Link href="/sea-beauty" className="btn-outline-light w-full sm:w-auto">
+              <Link href="/expos" className="btn-outline-light w-full sm:w-auto">
                 瀏覽展會資訊
               </Link>
             </div>
