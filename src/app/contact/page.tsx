@@ -331,7 +331,34 @@ export default function ContactPage() {
                 </div>
               </AnimateIn>
 
-              <AnimateIn delay={0.2} variant="fadeRight">
+              <AnimateIn delay={0.15} variant="fadeRight">
+                <div className="border border-border p-6">
+                  <h3 className="text-xs font-medium tracking-[0.15em] uppercase text-muted mb-5">
+                    公司資訊
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="text-[15px] font-bold">柏緯洋行有限公司</p>
+                    <div className="space-y-2 text-[14px] text-muted">
+                      <p>高雄市新興區民權一路251號14樓之二</p>
+                      <p>
+                        Email：
+                        <a href="mailto:info@borways.com" className="text-dark hover:text-accent transition-colors font-medium">
+                          info@borways.com
+                        </a>
+                      </p>
+                      <p>
+                        TEL：
+                        <a href="tel:072231988" className="text-dark hover:text-accent transition-colors font-medium">
+                          07-2231988
+                        </a>
+                      </p>
+                      <p>統編：59307202</p>
+                    </div>
+                  </div>
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.25} variant="fadeRight">
                 <div className="border border-border p-6">
                   <h3 className="text-xs font-medium tracking-[0.15em] uppercase text-muted mb-5">
                     掃碼加好友
