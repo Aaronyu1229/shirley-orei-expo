@@ -56,11 +56,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src="/images/orei-icon.svg"
+            src="/images/orei-logo.png"
             alt="OREI Expo"
-            width={32}
-            height={32}
-            className="w-8 h-8"
+            width={120}
+            height={120}
+            className="w-8 h-8 object-contain"
           />
           <span
             className={`text-[15px] font-semibold tracking-[0.15em] transition-colors duration-300 ${

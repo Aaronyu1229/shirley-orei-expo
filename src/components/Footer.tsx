@@ -10,11 +10,11 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <Image
-                src="/images/orei-icon.svg"
+                src="/images/orei-logo.png"
                 alt="OREI Expo"
-                width={32}
-                height={32}
-                className="w-8 h-8"
+                width={120}
+                height={120}
+                className="w-8 h-8 object-contain"
               />
               <span className="text-[15px] font-semibold tracking-[0.15em]">
                 OREI EXPO

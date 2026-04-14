@@ -88,7 +88,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "歐瑞會展 OREI Expo",
               url: "https://www.oreiexpo.com",
-              logo: "https://www.oreiexpo.com/images/orei-icon.svg",
+              logo: "https://www.oreiexpo.com/images/orei-logo.png",
               description:
                 "專注亞洲市場的跨國商務媒合與展會整合平台，協助台灣美業與醫美品牌快速進入越南與東南亞市場。",
               contactPoint: {
