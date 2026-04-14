@@ -58,8 +58,8 @@ export default function Navbar() {
           <Image
             src="/images/orei-icon.png"
             alt="OREI Expo"
-            width={119}
-            height={132}
+            width={629}
+            height={704}
             className="w-7 h-8 object-contain"
           />
           <span

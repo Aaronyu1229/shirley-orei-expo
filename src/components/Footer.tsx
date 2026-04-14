@@ -12,8 +12,8 @@ export default function Footer() {
               <Image
                 src="/images/orei-icon.png"
                 alt="OREI Expo"
-                width={119}
-                height={132}
+                width={629}
+                height={704}
                 className="w-7 h-8 object-contain"
               />
               <span className="text-[15px] font-semibold tracking-[0.15em]">
