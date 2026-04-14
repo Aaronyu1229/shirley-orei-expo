@@ -9,7 +9,7 @@ export const expos = [
     tag: "Featured" as const,
     image: "/images/expo-beauty.jpg",
     imageAlt: "美容產品展示",
-    location: "越南河內",
+    location: "越南下龍灣",
     format: "B2B 商務媒合",
   },
   {

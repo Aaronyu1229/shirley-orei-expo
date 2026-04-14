@@ -88,12 +88,15 @@ const jsonLd = {
   name: "SEA Beauty Business Matching Expo",
   description:
     "越南河內首屆大型美容/醫美 B2B 對接展，協助台灣品牌快速進入東南亞美業市場。",
+  startDate: "2026-05-25",
+  endDate: "2026-05-26",
   location: {
     "@type": "Place",
-    name: "Hanoi, Vietnam",
+    name: "Muong Thanh Luxury Ha Long Centre Hotel",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Hanoi",
+      streetAddress: "Zone 2, Halong Road, Bai Chay Ward",
+      addressLocality: "Ha Long",
       addressCountry: "VN",
     },
   },
@@ -150,13 +153,30 @@ export default function SEABeautyPage() {
             </AnimateIn>
 
             <AnimateIn delay={0.3}>
-              <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10">
+              <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-6">
                 越南河內首屆大型美容 / 醫美 B2B 對接展，
                 為台灣品牌打開東南亞最具潛力的美業市場。
               </p>
             </AnimateIn>
 
-            <AnimateIn delay={0.4}>
+            <AnimateIn delay={0.35}>
+              <div className="space-y-2 text-white/70 text-sm mb-4">
+                <p>05 / 25 / 2026：B2B 商務媒合會</p>
+                <p>05 / 26 / 2026：國際美容大展</p>
+              </div>
+              <div className="flex items-start gap-2 text-white/50 text-sm mb-10">
+                <span className="shrink-0">📍</span>
+                <p>
+                  媒合會與展會地點：Muong Thanh Luxury Ha Long Centre Hotel
+                  <br />
+                  <span className="text-white/40">
+                    Zone 2, Halong Road, Bai Chay Ward, Halong City, Vietnam
+                  </span>
+                </p>
+              </div>
+            </AnimateIn>
+
+            <AnimateIn delay={0.45}>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="btn-accent">
                   立即報名參展
@@ -177,8 +197,8 @@ export default function SEABeautyPage() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { label: "地點", value: "越南河內", sub: "Hanoi, Vietnam" },
-              { label: "形式", value: "B2B 商務媒合", sub: "品牌展示 + 一對一媒合" },
+              { label: "日期", value: "2026 年 5 月 25 - 26 日", sub: "B2B 媒合會 + 國際美容大展" },
+              { label: "地點", value: "越南下龍灣", sub: "Muong Thanh Luxury Ha Long Centre Hotel" },
               { label: "產業", value: "美容 / 醫美", sub: "Beauty & Medical Aesthetics" },
             ].map((info, i) => (
               <AnimateIn key={info.label} delay={i * 0.08}>
