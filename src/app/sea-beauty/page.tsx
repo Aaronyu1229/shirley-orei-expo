@@ -209,9 +209,7 @@ export default function SEABeautyPage() {
             {[
               { src: "/images/venue-entrance.jpg", alt: "展會主入口設計" },
               { src: "/images/venue-3.jpg", alt: "商務交流現場" },
-              { src: "/images/event-photo-1.jpg", alt: "品牌展示體驗" },
               { src: "/images/event-photo-2.jpg", alt: "買家產品互動" },
-              { src: "/images/venue-4.jpg", alt: "展位商務洽談" },
             ].map((photo, i) => (
               <AnimateIn key={photo.src} delay={i * 0.06}>
                 <div className="relative group overflow-hidden">
