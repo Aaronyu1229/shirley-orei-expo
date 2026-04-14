@@ -80,15 +80,6 @@ export default function Footer() {
             </p>
             <div className="space-y-3 text-sm text-white/50">
               <p>LINE: ivyshirley</p>
-              <p>WeChat: S141339</p>
-              <a
-                href="https://wa.me/886953009113"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block hover:text-white transition-colors duration-200"
-              >
-                WhatsApp
-              </a>
             </div>
           </div>
         </div>

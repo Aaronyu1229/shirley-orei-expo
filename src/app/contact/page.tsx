@@ -12,8 +12,6 @@ const contactInfo = [
   { label: "電話", value: "+886 953 009 113", href: "tel:+886953009113" },
   { label: "Email", value: "shirley62133@gmail.com", href: "mailto:shirley62133@gmail.com" },
   { label: "LINE", value: "ivyshirley" },
-  { label: "WeChat", value: "S141339" },
-  { label: "WhatsApp", value: "+886 953 009 113", href: "https://wa.me/886953009113" },
 ];
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -363,23 +361,17 @@ export default function ContactPage() {
                   <h3 className="text-xs font-medium tracking-[0.15em] uppercase text-muted mb-5">
                     掃碼加好友
                   </h3>
-                  <div className="grid grid-cols-3 gap-4">
-                    {[
-                      { src: "/images/qr-line.jpeg", label: "LINE" },
-                      { src: "/images/qr-wechat.jpeg", label: "WeChat" },
-                      { src: "/images/qr-whatsapp.jpeg", label: "WhatsApp" },
-                    ].map((qr) => (
-                      <div key={qr.label} className="text-center">
-                        <Image
-                          src={qr.src}
-                          alt={`${qr.label} QR Code`}
-                          width={120}
-                          height={120}
-                          className="border border-border mx-auto mb-2"
-                        />
-                        <p className="text-xs text-muted font-medium">{qr.label}</p>
-                      </div>
-                    ))}
+                  <div className="flex justify-center">
+                    <div className="text-center">
+                      <Image
+                        src="/images/qr-line.jpeg"
+                        alt="LINE QR Code"
+                        width={160}
+                        height={160}
+                        className="border border-border mx-auto mb-2"
+                      />
+                      <p className="text-xs text-muted font-medium">LINE</p>
+                    </div>
                   </div>
                 </div>
               </AnimateIn>
