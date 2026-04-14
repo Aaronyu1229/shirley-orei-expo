@@ -54,7 +54,7 @@ export default function ExposPage() {
 
             <AnimateIn variant="slideUp" delay={0.08}>
               <h1 className="font-serif text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.08] tracking-tight text-white mb-8">
-                展會作為實體入口
+                2026 展會
               </h1>
             </AnimateIn>
 

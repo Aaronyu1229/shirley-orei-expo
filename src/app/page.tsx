@@ -197,7 +197,7 @@ export default function Home() {
           <AnimateIn>
             <p className="section-label">Expos</p>
             <h2 className="font-serif text-[clamp(2rem,3.5vw,3rem)] font-bold leading-tight mb-6">
-              展會作為實體入口
+              2026 展會
             </h2>
             <p className="text-muted text-[17px] max-w-xl mb-16">
               三大展會覆蓋東南亞核心美業市場，結合 FABIA 國際商業聯盟，為品牌提供完整國際化解決方案
