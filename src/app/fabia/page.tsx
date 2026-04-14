@@ -104,7 +104,7 @@ export default function FABIAPage() {
           className="object-cover"
           priority
         />
-        <div className="hero-overlay" />
+        <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full pt-24 pb-16 sm:py-32">
           <div className="max-w-2xl">
