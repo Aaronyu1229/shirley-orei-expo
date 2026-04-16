@@ -5,7 +5,6 @@ import AnimateIn from "@/components/AnimateIn";
 import CountUp from "@/components/CountUp";
 import HeroCarousel from "@/components/HeroCarousel";
 import Footer from "@/components/Footer";
-import { expos } from "@/data/expos";
 
 const stats = [
   { number: 12, suffix: "", label: "亞太合作國家" },
@@ -188,74 +187,6 @@ export default function Home() {
               </AnimateIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ═══════ Expos Teaser ═══════ */}
-      <section id="expos" className="py-24 lg:py-32 bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <AnimateIn>
-            <p className="section-label">Expos</p>
-            <h2 className="font-serif text-[clamp(2rem,3.5vw,3rem)] font-bold leading-tight mb-6">
-              2026 展會
-            </h2>
-            <p className="text-muted text-[17px] max-w-xl mb-16">
-              三大展會覆蓋東南亞核心美業市場，結合 FABIA 國際商業聯盟，為品牌提供完整國際化解決方案
-            </p>
-          </AnimateIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {expos.map((expo, i) => (
-              <AnimateIn key={expo.title} delay={i * 0.1}>
-                <div className="card h-full flex flex-col overflow-hidden">
-                  <div className="relative h-[200px] overflow-hidden">
-                    <Image
-                      src={expo.image}
-                      alt={expo.imageAlt}
-                      fill
-                      className={`object-cover ${
-                        expo.tag === "Coming Soon" ? "grayscale-[30%]" : ""
-                      }`}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    {expo.tag === "Coming Soon" && (
-                      <div className="absolute inset-0 bg-dark/30" />
-                    )}
-                    <span
-                      className={`absolute top-4 left-4 text-xs tracking-[0.15em] uppercase font-semibold px-3 py-1.5 ${
-                        expo.tag === "Featured"
-                          ? "bg-accent text-white"
-                          : "bg-white/90 text-dark"
-                      }`}
-                    >
-                      {expo.tag}
-                    </span>
-                  </div>
-                  <div className="p-5 sm:p-8 flex flex-col flex-1">
-                    <h3 className="text-lg font-bold mb-1">{expo.title}</h3>
-                    <p className="text-sm text-accent mb-3">{expo.subtitle}</p>
-                    <p className="text-muted text-[15px] leading-relaxed flex-1 line-clamp-2">
-                      {expo.desc}
-                    </p>
-                  </div>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-
-          <AnimateIn delay={0.3}>
-            <div className="text-center">
-              <Link
-                href="/expos"
-                className="inline-flex items-center gap-2 text-sm font-medium text-dark hover:text-accent transition-colors group"
-              >
-                查看所有展會
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  <path d="M6 3l5 5-5 5" />
-                </svg>
-              </Link>
-            </div>
-          </AnimateIn>
         </div>
       </section>
 
